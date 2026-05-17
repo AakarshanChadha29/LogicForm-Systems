@@ -4,29 +4,25 @@ import { audienceSegments, trustSignals } from "@/data/trust";
 
 export function TrustSection() {
   return (
-    <Section id="trust" className="py-12 md:py-16">
+    <Section id="trust" className="py-14 md:py-16">
       <Container>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {trustSignals.map((signal) => (
-            <article
-              key={signal.id}
-              className="rounded-[var(--radius-md)] border border-white/10 bg-white/[0.02] px-4 py-4"
-            >
-              <p className="text-sm font-medium text-white">{signal.label}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{signal.detail}</p>
+            <article key={signal.id} className="surface-card px-5 py-4">
+              <p className="text-sm font-medium text-foreground">{signal.label}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {signal.detail}
+              </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-5 md:p-6">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-accent/90">
-            Who we help
-          </p>
+        <div className="mt-6 surface-card p-6 md:p-7">
+          <p className="text-eyebrow">Who we serve</p>
           <ul className="mt-4 grid gap-2 md:grid-cols-2">
             {audienceSegments.map((segment) => (
-              <li key={segment} className="flex gap-2.5 text-sm text-zinc-300">
-                <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent/90" />
-                <span>{segment}</span>
+              <li key={segment} className="text-sm text-muted-foreground">
+                {segment}
               </li>
             ))}
           </ul>

@@ -6,7 +6,7 @@ import { skillGroups } from "@/data/skills";
 
 export function SkillsSection() {
   return (
-    <Section id="skills">
+    <Section id="skills" className="section-divider">
       <Container>
         <SectionHeader
           eyebrow="Technical Stack"
@@ -14,18 +14,15 @@ export function SkillsSection() {
           description="A practical stack spanning product engineering, systems work, IT operations, and computational problem-solving."
         />
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <article
-              key={group.id}
-              className="rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-6"
-            >
-              <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+            <article key={group.id} className="surface-card p-6">
+              <h3 className="text-base font-semibold text-foreground">{group.title}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-full border border-white/15 bg-black/35 px-3 py-1 font-mono text-[11px] text-zinc-300"
+                    className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
                   >
                     {skill}
                   </li>
@@ -35,8 +32,8 @@ export function SkillsSection() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-6">
-          <h3 className="text-lg font-semibold text-white">Languages</h3>
+        <div className="mt-6 surface-card p-6">
+          <h3 className="text-base font-semibold text-foreground">Languages</h3>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             Communication support for international clients across Europe and India.
           </p>
@@ -44,10 +41,10 @@ export function SkillsSection() {
             {languageCapabilities.map((entry) => (
               <li
                 key={entry.id}
-                className="rounded-[var(--radius-md)] border border-white/10 bg-black/25 px-4 py-3"
+                className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-inset)] px-4 py-3"
               >
-                <p className="text-sm font-medium text-white">{entry.language}</p>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-400">
+                <p className="text-sm font-medium text-foreground">{entry.language}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                   {entry.proficiency}
                 </p>
               </li>

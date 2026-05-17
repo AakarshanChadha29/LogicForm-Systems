@@ -5,54 +5,50 @@ import { SectionHeader } from "@/components/layout/section-header";
 const comparison = [
   {
     title: "Prototype",
-    tone: "muted" as const,
     points: [
-      "Works in demos, not under real load",
-      "Manual processes and fragile workflows",
-      "Inconsistent behavior across environments",
-      "Limited scalability and unclear operating costs",
+      "Demonstrates ideas under ideal conditions",
+      "Manual workflows and fragile dependencies",
+      "Unclear ownership and operating cost",
     ],
   },
   {
     title: "Production",
-    tone: "accent" as const,
+    highlighted: true,
     points: [
-      "Built for real users, traffic, and operations",
-      "Automated workflows with clear ownership",
-      "Reliable, monitored, and maintainable systems",
-      "Architecture structured for growth and integrations",
+      "Designed for real users, load, and operations",
+      "Automated, observable, and maintainable",
+      "Structured for security, scale, and iteration",
     ],
   },
 ] as const;
 
 export function PrototypeProductionSection() {
   return (
-    <Section id="solutions">
+    <Section id="solutions" className="section-divider">
       <Container>
         <SectionHeader
           eyebrow="Delivery Maturity"
           title="From Prototype to Production"
-          description="Many teams can prototype quickly. Scaling into dependable production systems requires stronger architecture, security awareness, and operational discipline. Veltrix Labs bridges that gap."
+          description="We help teams cross the gap between proof of concept and systems that operate reliably in real business environments."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {comparison.map((column) => (
             <article
               key={column.title}
               className={
-                column.tone === "accent"
-                  ? "rounded-[var(--radius-lg)] border border-accent/30 bg-accent/[0.06] p-6"
-                  : "rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-6"
+                "highlighted" in column && column.highlighted
+                  ? "surface-card border-[color-mix(in_srgb,var(--accent)_28%,var(--border))] bg-[var(--accent-muted)] p-6"
+                  : "surface-card p-6"
               }
             >
-              <h3 className="text-2xl font-semibold tracking-tight text-white">
+              <h3 className="text-xl font-semibold tracking-tight text-foreground">
                 {column.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
                 {column.points.map((point) => (
-                  <li key={point} className="flex gap-2.5 text-sm text-zinc-300">
-                    <span className="mt-[0.46rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent/90" />
-                    <span>{point}</span>
+                  <li key={point} className="text-sm leading-relaxed text-muted-foreground">
+                    {point}
                   </li>
                 ))}
               </ul>

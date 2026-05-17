@@ -1,17 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import {
-  motion,
-  type MotionValue,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -19,134 +9,97 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-type LogicWindowData = {
-  title: string;
-  language: string;
-  code: string;
-  className: string;
-};
-
-const logicWindows: LogicWindowData[] = [
+const codeSnippets = [
   {
-    title: "Infrastructure Provisioning",
+    title: "Infrastructure",
     language: "terraform",
-    code: `module "vpc_core" {
-  source  = "terraform-aws-modules/vpc/aws"
-  cidr    = var.vpc_cidr
-  azs     = var.availability_zones
+    code: `module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+  cidr   = var.vpc_cidr
 }`,
-    className: "top-0 right-2",
   },
   {
-    title: "RAG Inference Pipeline",
+    title: "AI workflow",
     language: "python",
-    code: `retriever = VectorIndex(
-  provider="pgvector",
-  embedder="text-embedding-3-large"
-)
-answer = rag_chain.invoke({"query": user_prompt})`,
-    className: "top-[9.25rem] right-10",
+    code: `pipeline = RAGPipeline(
+  retriever="pgvector",
+  guardrails=True,
+)`,
   },
   {
-    title: "Security Gateway",
-    language: "java",
-    code: `http.authorizeHttpRequests(auth -> auth
-  .requestMatchers("/admin/**").hasRole("ADMIN")
-  .anyRequest().authenticated());`,
-    className: "top-[18.5rem] right-0",
+    title: "Access control",
+    language: "policy",
+    code: `roles:
+  admin: [deploy, audit]
+  ops:   [monitor, support]`,
   },
-];
-
-const trustBullets = [
-  "Production-first delivery",
-  "Secure-by-design patterns",
-  "Europe & India market support",
 ] as const;
 
-function LogicWindow({
-  className,
-  title,
-  language,
-  code,
-  scrollOffset,
-}: LogicWindowData & { scrollOffset: MotionValue<number> }) {
-  const prefersReducedMotion = useReducedMotion();
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-  const smoothRotateX = useSpring(rotateX, { stiffness: 140, damping: 18 });
-  const smoothRotateY = useSpring(rotateY, { stiffness: 140, damping: 18 });
+const trustBullets = [
+  "TU Berlin engineering foundation",
+  "Germany-based · Europe & international delivery",
+  "Production systems, not demo projects",
+] as const;
 
+function SystemPanel({ className }: { className?: string }) {
   return (
-    <motion.article
-      className={cn(
-        "relative w-[min(27rem,100%)] rounded-[var(--radius-lg)] border border-cyan-400/30 bg-[#0b1220]/85 p-4 shadow-[0_20px_48px_-28px_rgba(0,162,255,0.55)] backdrop-blur-md",
-        className,
-      )}
-      style={{
-        rotateX: smoothRotateX,
-        rotateY: smoothRotateY,
-        y: scrollOffset,
-      }}
-      animate={prefersReducedMotion ? undefined : { y: [0, -7, 0] }}
-      transition={{
-        duration: prefersReducedMotion ? 0 : 8.5,
-        ease: "easeInOut",
-        repeat: Infinity,
-      }}
-      onMouseMove={(event) => {
-        if (prefersReducedMotion) return;
-        const bounds = event.currentTarget.getBoundingClientRect();
-        const px = (event.clientX - bounds.left) / bounds.width;
-        const py = (event.clientY - bounds.top) / bounds.height;
-        rotateY.set((px - 0.5) * 5);
-        rotateX.set(-(py - 0.5) * 5);
-      }}
-      onMouseLeave={() => {
-        rotateX.set(0);
-        rotateY.set(0);
-      }}
-    >
-      <div className="mb-3 flex items-center justify-between">
-        <p className="text-xs font-medium text-white/90">{title}</p>
-        <span className="rounded-full border border-cyan-300/35 bg-cyan-300/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-200">
-          {language}
-        </span>
+    <div className={cn("surface-card overflow-hidden", className)}>
+      <div className="border-b border-[var(--border)] px-4 py-3 md:px-5">
+        <p className="text-eyebrow">Delivery stack</p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Architecture · AI · Security · Operations
+        </p>
       </div>
-      <pre className="overflow-x-auto rounded-[var(--radius-sm)] border border-white/15 bg-[#020712]/85 p-3 font-mono text-[11px] leading-relaxed text-zinc-100">
-        <code>{code}</code>
-      </pre>
-    </motion.article>
+      <div className="space-y-3 p-4 md:p-5">
+        {codeSnippets.map((snippet) => (
+          <div
+            key={snippet.title}
+            className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-inset)] p-3"
+          >
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <span className="text-xs font-medium text-foreground/90">{snippet.title}</span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                {snippet.language}
+              </span>
+            </div>
+            <pre className="overflow-x-auto font-mono text-[11px] leading-relaxed text-muted-foreground">
+              <code>{snippet.code}</code>
+            </pre>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const driftOne = useTransform(scrollYProgress, [0, 1], [18, -22]);
-  const driftTwo = useTransform(scrollYProgress, [0, 1], [0, -18]);
-  const driftThree = useTransform(scrollYProgress, [0, 1], [-14, -26]);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <Section id="hero" ref={sectionRef} className="pt-18 md:pt-24">
+    <Section id="hero" className="pt-20 pb-8 md:pt-28 md:pb-12">
       <Container>
-        <div className="grid items-start gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
-          <div className="relative z-20 pt-2 lg:pt-8">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-3 py-1 text-[11px] tracking-[0.14em] text-muted-foreground">
-              {siteConfig.tagline}
-              <ArrowRight size={14} aria-hidden />
-            </p>
-            <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-[1.06] tracking-tight md:text-6xl">
-              Engineering Production-Grade AI, Cloud, and Software Systems.
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"
+        >
+          <div className="max-w-xl">
+            <p className="text-eyebrow">{siteConfig.tagline}</p>
+            <h1 className="mt-4 text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-[2.75rem] md:leading-[1.06]">
+              Engineering Production-Grade Software, AI, and Infrastructure.
             </h1>
-            <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-zinc-200 md:text-xl">
+            <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">
               {siteConfig.description}
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90">
+              Reliable engineering intelligence for teams that need systems built to last—not
+              prototypes dressed as products.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="#contact" className={buttonVariants({ size: "lg" })}>
-                Start a Project
+                Book Consultation
               </Link>
               <Link
                 href="#projects"
@@ -155,35 +108,22 @@ export function HeroSection() {
                 View Case Studies
               </Link>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+
+            <ul className="mt-10 space-y-2.5 border-t border-[var(--border)] pt-8">
               {trustBullets.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-zinc-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                <li key={item} className="flex gap-2.5 text-sm text-muted-foreground">
+                  <span
+                    className="mt-2 h-px w-3 shrink-0 bg-accent/70"
+                    aria-hidden
+                  />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="relative hidden min-h-[34rem] lg:block">
-            <div className="pointer-events-none absolute inset-0">
-              <LogicWindow {...logicWindows[0]} scrollOffset={driftOne} />
-              <LogicWindow {...logicWindows[1]} scrollOffset={driftTwo} />
-              <LogicWindow {...logicWindows[2]} scrollOffset={driftThree} />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid gap-4 lg:hidden">
-          {logicWindows.map((window, index) => (
-            <LogicWindow
-              key={window.title}
-              {...window}
-              className="static w-full"
-              scrollOffset={index === 0 ? driftOne : index === 1 ? driftTwo : driftThree}
-            />
-          ))}
-        </div>
+          <SystemPanel className="lg:max-w-md lg:justify-self-end" />
+        </motion.div>
       </Container>
     </Section>
   );

@@ -25,27 +25,25 @@ export function FounderSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <Section id="founder">
+    <Section id="founder" className="section-divider">
       <Container>
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
           whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, ease: "easeOut", delay: 0.05 }}
-          className="max-w-4xl"
+          className="max-w-3xl"
         >
-          <p className="text-[11px] uppercase tracking-[0.16em] text-accent/90">
-            Founder & Technical Leadership
-          </p>
-          <h2 className="mt-3 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <p className="text-eyebrow">Founder & Technical Leadership</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
             {siteConfig.founderName}
           </h2>
-          <p className="mt-3 flex items-center gap-2 text-sm text-zinc-300">
+          <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin size={14} className="text-accent" aria-hidden />
             {siteConfig.founderTitle} · Based in Germany
           </p>
 
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-zinc-200">
+          <p className="mt-6 text-lg leading-relaxed text-foreground/90">
             I combine computational engineering, IT operations, and full-stack software
             development to build practical systems that solve real business problems—not
             demo projects that fall apart in production.
@@ -60,8 +58,7 @@ export function FounderSection() {
 
           <ul className="mt-8 grid gap-3 md:grid-cols-2">
             {credibilityMarkers.map((marker) => (
-              <li key={marker} className="flex gap-3 text-sm text-zinc-300">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/90" />
+              <li key={marker} className="text-sm text-muted-foreground">
                 <span>{marker}</span>
               </li>
             ))}
@@ -71,7 +68,7 @@ export function FounderSection() {
             {capabilityMarkers.map(({ label, icon: Icon }) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.03] px-3 py-1.5 text-[11px] text-zinc-300"
+                className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-card)] px-3 py-1.5 text-[11px] text-muted-foreground"
               >
                 <Icon size={13} className="text-accent" aria-hidden />
                 {label}

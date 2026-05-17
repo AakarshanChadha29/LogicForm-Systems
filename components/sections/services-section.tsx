@@ -6,7 +6,7 @@ import { serviceOfferings } from "@/data/services";
 
 export function ServicesSection() {
   return (
-    <Section id="services">
+    <Section id="services" className="section-divider">
       <Container>
         <SectionHeader
           eyebrow="Services"

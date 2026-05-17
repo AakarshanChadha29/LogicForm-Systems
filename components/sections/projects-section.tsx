@@ -20,40 +20,35 @@ function ProjectCard({
   onOpen: (id: string) => void;
 }) {
   return (
-    <article className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-6 transition-[border-color,transform,box-shadow,background-color] duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.03] hover:shadow-[0_18px_48px_-34px_rgba(0,0,0,0.75)]">
+    <article className="surface-card-interactive group flex h-full flex-col p-6">
       <div className="mb-5 flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-accent/90">
-            {project.label}
-          </p>
-          <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">
+          <p className="text-eyebrow">{project.label}</p>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
             {project.title}
           </h3>
         </div>
-        <span className="rounded-md border border-white/15 bg-white/5 p-2 text-muted-foreground">
-          <Cpu size={18} />
+        <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] p-2 text-muted-foreground">
+          <Cpu size={17} strokeWidth={1.75} aria-hidden />
         </span>
       </div>
 
-      <p className="text-sm leading-relaxed text-zinc-300">{project.summary}</p>
+      <p className="text-sm leading-relaxed text-muted-foreground">{project.summary}</p>
 
       <ul className="mt-5 flex flex-wrap gap-2">
         {project.stack.map((item) => (
           <li
             key={item}
-            className="rounded-full border border-white/15 bg-black/35 px-2.5 py-1 font-mono text-[11px] text-zinc-300"
+            className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
           >
             {item}
           </li>
         ))}
       </ul>
 
-      <ul className="mt-6 space-y-2 text-sm text-zinc-300">
+      <ul className="mt-6 space-y-2 border-t border-[var(--border)] pt-5 text-sm text-muted-foreground">
         {project.impact.map((point) => (
-          <li key={point} className="flex gap-2">
-            <span className="mt-[0.42rem] h-1.5 w-1.5 rounded-full bg-accent/90" />
-            <span>{point}</span>
-          </li>
+          <li key={point}>{point}</li>
         ))}
       </ul>
 
@@ -61,7 +56,7 @@ function ProjectCard({
         <button
           type="button"
           onClick={() => onOpen(project.id)}
-          className={cn(buttonVariants({ variant: "ghost" }), "border-white/25")}
+          className={buttonVariants({ variant: "ghost" })}
         >
           View Engineering Specs
         </button>
@@ -118,7 +113,7 @@ function ProjectModal({
           aria-modal="true"
           aria-labelledby={`${project.id}-title`}
           aria-describedby={`${project.id}-overview`}
-          className="relative w-full max-w-3xl rounded-[var(--radius-xl)] border border-white/15 bg-[#0d0d10]/95 p-6 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)] backdrop-blur-md md:p-8"
+          className="relative w-full max-w-3xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface-elevated)] p-6 shadow-[var(--shadow-elevated)] md:p-8"
           initial={prefersReducedMotion ? false : { opacity: 0, y: 16, scale: 0.98 }}
           animate={prefersReducedMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
           exit={prefersReducedMotion ? {} : { opacity: 0, y: 12, scale: 0.98 }}
@@ -235,12 +230,12 @@ export function ProjectsSection() {
   }, [activeProject]);
 
   return (
-    <Section id="projects">
+    <Section id="projects" className="section-divider">
       <Container>
         <SectionHeader
           eyebrow="Case Studies"
-          title="Selected Engineering Systems"
-          description="Real and conceptual systems engineered to combine deep technical execution with measurable business value."
+          title="Engineering Work & System Delivery"
+          description="Selected projects that demonstrate how Veltrix Labs approaches architecture, implementation, and business-facing technical outcomes."
         />
 
         <div className="grid gap-5 lg:grid-cols-3">

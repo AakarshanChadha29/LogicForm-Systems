@@ -5,38 +5,25 @@ import { deliveryPhases } from "@/data/process";
 
 export function ProcessSection() {
   return (
-    <Section id="process">
+    <Section id="process" className="section-divider">
       <Container>
         <SectionHeader
           eyebrow="Delivery Method"
-          title="A Clear Path from Brief to Production"
-          description="Structured engineering execution with practical checkpoints—so projects move forward with clarity, not chaos."
+          title="Structured Engineering from Discovery to Optimization"
+          description="A disciplined delivery model designed for clarity, accountability, and production outcomes."
         />
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {deliveryPhases.map((phase) => (
-            <article
-              key={phase.id}
-              className="rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] p-6"
-            >
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                Phase {phase.step}
-              </p>
-              <h3 className="mt-3 text-xl font-semibold text-white">{phase.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-300">
+            <li key={phase.id} className="surface-card p-5">
+              <p className="font-mono text-xs text-accent">{phase.step}</p>
+              <h3 className="mt-3 text-base font-semibold text-foreground">{phase.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {phase.description}
               </p>
-              <ul className="mt-4 space-y-2">
-                {phase.focus.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-zinc-400">
-                    <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent/85" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </Container>
     </Section>
   );

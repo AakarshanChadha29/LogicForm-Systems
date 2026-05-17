@@ -3,44 +3,42 @@ export type DeliveryPhase = {
   step: string;
   title: string;
   description: string;
-  focus: string[];
 };
 
 export const deliveryPhases: DeliveryPhase[] = [
   {
-    id: "discover",
+    id: "discovery",
     step: "01",
-    title: "Discovery & Scoping",
+    title: "Discovery",
     description:
-      "We clarify goals, constraints, users, and technical risks before writing production code.",
-    focus: [
-      "Business requirements and success criteria",
-      "System boundaries and integration points",
-      "Delivery timeline and priority mapping",
-    ],
+      "Clarify business goals, constraints, stakeholders, and technical risks before committing to architecture.",
   },
   {
-    id: "build",
+    id: "architecture",
     step: "02",
-    title: "Build & Integration",
+    title: "Architecture",
     description:
-      "Core product, workflows, APIs, and interfaces are implemented with clean structure and practical testing.",
-    focus: [
-      "Incremental delivery with review checkpoints",
-      "Secure patterns for auth, data, and access",
-      "Documentation for maintainability",
-    ],
+      "Define system boundaries, data flows, security posture, and an execution roadmap aligned to production needs.",
   },
   {
-    id: "deliver",
+    id: "engineering",
     step: "03",
-    title: "Delivery & Production Support",
+    title: "Engineering",
     description:
-      "Systems are prepared for real usage with deployment readiness, handover, and optional ongoing support.",
-    focus: [
-      "Production deployment and operational checks",
-      "Performance and accessibility validation",
-      "Support path for improvements and iterations",
-    ],
+      "Build core product logic, integrations, and interfaces with disciplined structure and review checkpoints.",
+  },
+  {
+    id: "deployment",
+    step: "04",
+    title: "Deployment",
+    description:
+      "Prepare environments, release workflows, monitoring foundations, and operational handover for real usage.",
+  },
+  {
+    id: "optimization",
+    step: "05",
+    title: "Optimization",
+    description:
+      "Improve reliability, performance, and maintainability as usage grows and requirements evolve.",
   },
 ];

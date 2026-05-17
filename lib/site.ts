@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Veltrix Labs",
-  tagline: "Production-Grade Software, AI, and Cloud Systems",
+  tagline: "Reliable engineering intelligence for production systems",
   description:
-    "Veltrix Labs helps founders, startups, and growing businesses design, build, and scale secure software platforms, automation systems, dashboards, and AI-powered workflows.",
+    "Veltrix Labs helps startups and businesses design, build, and scale secure software systems, automation workflows, cloud platforms, and operational tools.",
   url: "https://veltrixlabs.com",
   contactEmail: "hello@veltrixlabs.com",
   legalName: "Veltrix Labs",
