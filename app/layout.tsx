@@ -20,22 +20,24 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
+const pageTitle = "Veltrix Labs | AI, Software & Cloud Engineering Consultancy";
+
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
-  colorScheme: "dark",
+  themeColor: "#f7f9fc",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: `${siteConfig.name} · ${siteConfig.tagline}`,
+    default: pageTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
   category: "technology",
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: siteConfig.founderName }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   robots: {
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    title: pageTitle,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -73,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    title: pageTitle,
     description: siteConfig.description,
     images: ["/og-image.svg"],
   },
@@ -154,7 +156,7 @@ export default function RootLayout({
       <body className="min-h-full overflow-x-clip bg-background text-foreground">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-md focus:bg-black focus:px-3 focus:py-2 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-md focus:bg-[var(--accent)] focus:px-3 focus:py-2 focus:text-sm focus:text-white"
         >
           Skip to main content
         </a>
@@ -162,7 +164,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <div data-theme="dark" className="relative min-h-screen">
+        <div data-theme="light" className="relative min-h-screen">
           <NeuralBackground />
           {children}
         </div>

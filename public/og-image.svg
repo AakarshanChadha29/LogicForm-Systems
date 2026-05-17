@@ -1,40 +1,14 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#050505" />
-  <rect x="48" y="48" width="1104" height="534" rx="24" fill="url(#surface)" stroke="rgba(255,255,255,0.18)" />
-  <g opacity="0.35">
-    <path d="M80 140H1120" stroke="rgba(255,255,255,0.12)" />
-    <path d="M80 220H1120" stroke="rgba(255,255,255,0.10)" />
-    <path d="M80 300H1120" stroke="rgba(255,255,255,0.10)" />
-    <path d="M80 380H1120" stroke="rgba(255,255,255,0.10)" />
-    <path d="M80 460H1120" stroke="rgba(255,255,255,0.10)" />
-    <path d="M240 80V550" stroke="rgba(255,255,255,0.08)" />
-    <path d="M440 80V550" stroke="rgba(255,255,255,0.08)" />
-    <path d="M640 80V550" stroke="rgba(255,255,255,0.08)" />
-    <path d="M840 80V550" stroke="rgba(255,255,255,0.08)" />
-    <path d="M1040 80V550" stroke="rgba(255,255,255,0.08)" />
-  </g>
-  <circle cx="960" cy="150" r="170" fill="url(#glow)" opacity="0.6" />
-  <text x="96" y="188" fill="#00A2FF" font-size="22" font-family="monospace" letter-spacing="4">VELTRIX LABS</text>
-  <text x="96" y="290" fill="#FFFFFF" font-size="62" font-family="Inter, Arial, sans-serif" font-weight="600">
-    Engineering
-  </text>
-  <text x="96" y="360" fill="#FFFFFF" font-size="62" font-family="Inter, Arial, sans-serif" font-weight="600">
-    Intelligence.
-  </text>
-  <text x="96" y="432" fill="#B0B3BC" font-size="28" font-family="Inter, Arial, sans-serif">
-    AI systems, secure infrastructure, and scalable digital products.
-  </text>
-  <text x="96" y="500" fill="#8F95A3" font-size="22" font-family="monospace">
-    Production-first systems for global teams
-  </text>
-  <defs>
-    <linearGradient id="surface" x1="48" y1="48" x2="1152" y2="582" gradientUnits="userSpaceOnUse">
-      <stop stop-color="rgba(255,255,255,0.06)" />
-      <stop offset="1" stop-color="rgba(255,255,255,0.02)" />
-    </linearGradient>
-    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 150) rotate(90) scale(170)">
-      <stop stop-color="#00A2FF" />
-      <stop offset="1" stop-color="#00A2FF" stop-opacity="0" />
-    </radialGradient>
-  </defs>
+  <rect width="1200" height="630" fill="#F7F9FC"/>
+  <rect x="48" y="48" width="1104" height="534" rx="24" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="96" y="168" fill="#2563EB" font-size="20" font-family="system-ui, sans-serif" font-weight="600" letter-spacing="3">VELTRIX LABS</text>
+  <text x="96" y="268" fill="#0B1220" font-size="52" font-family="system-ui, sans-serif" font-weight="600">Production-grade</text>
+  <text x="96" y="332" fill="#0B1220" font-size="52" font-family="system-ui, sans-serif" font-weight="600">software &amp; infrastructure</text>
+  <text x="96" y="410" fill="#475569" font-size="26" font-family="system-ui, sans-serif">AI · Cloud · Dashboards · Automation</text>
+  <text x="96" y="468" fill="#64748B" font-size="20" font-family="system-ui, sans-serif">Engineering consultancy · Germany · Europe · International</text>
+  <rect x="820" y="140" width="280" height="360" rx="16" fill="#EEF3F8" stroke="#E2E8F0"/>
+  <rect x="848" y="180" width="224" height="48" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="848" y="248" width="224" height="48" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="848" y="316" width="224" height="48" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="848" y="384" width="224" height="80" rx="8" fill="#0F172A"/>
 </svg>

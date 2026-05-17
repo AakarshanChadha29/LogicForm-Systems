@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { ContactSection } from "@/components/sections/contact-section";
-import { EngagementSection } from "@/components/sections/pricing-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { FounderSection } from "@/components/sections/founder-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
@@ -21,11 +21,11 @@ export function Homepage() {
         <ServicesSection />
         <PrototypeProductionSection />
         <ProjectsSection />
+        <TestimonialsSection />
         <ProcessSection />
         <SkillsSection />
+        <PricingSection />
         <FounderSection />
-        <EngagementSection />
-        <TestimonialsSection />
         <ContactSection />
       </main>
     </>

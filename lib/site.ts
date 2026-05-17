@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Veltrix Labs",
-  tagline: "Reliable engineering intelligence for production systems",
+  tagline: "AI, Software & Cloud Engineering Consultancy",
   description:
-    "Veltrix Labs helps startups and businesses design, build, and scale secure software systems, automation workflows, cloud platforms, and operational tools.",
+    "Veltrix Labs builds production-grade software, AI automation workflows, dashboards, cloud infrastructure, and business systems for startups, founders, and growing companies.",
   url: "https://veltrixlabs.com",
-  contactEmail: "hello@veltrixlabs.com",
+  contactEmail: "chadhaaakarshan@gmail.com",
   legalName: "Veltrix Labs",
   founderName: "Aakarshan Chadha",
   founderTitle: "Founder & Technical Consultant",

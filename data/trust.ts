@@ -28,15 +28,13 @@ export const audienceSegments = [
   "Teams needing a technical partner—not just a freelancer",
 ] as const;
 
-export const testimonialPlaceholders = [
-  {
-    id: "placeholder-1",
-    role: "Client testimonial slot",
-    note: "Reserved for verified client feedback. No fabricated endorsements are shown on this site.",
-  },
-  {
-    id: "placeholder-2",
-    role: "Project reference slot",
-    note: "Additional references can be added as engagements are completed and approved for publication.",
-  },
-] as const;
+export const arroyoTestimonial = {
+  id: "arroyo-technologies",
+  reviewerName: "Arroyo Technologies Leadership",
+  reviewerRole: "Client Review",
+  label: "Approved client feedback",
+  quote:
+    "Veltrix Labs helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity. The work showed strong technical understanding, fast execution, and attention to how real customers evaluate industrial solutions.",
+  company: "Arroyo Technologies",
+  projectUrl: "https://www.arroyo-technologies.com/",
+} as const;

@@ -4,8 +4,9 @@ export type ProjectCaseStudy = {
   label: string;
   summary: string;
   stack: string[];
-  impact: string[];
+  highlights: string[];
   liveUrl?: string;
+  featured?: boolean;
   modal: {
     overview: string;
     architecture: string[];
@@ -18,10 +19,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
   {
     id: "arroyo-technologies",
     title: "Arroyo Technologies",
-    label: "Full-Stack Corporate Platform",
+    label: "Full-Stack Digital Platform",
+    featured: true,
     liveUrl: "https://www.arroyo-technologies.com/",
     summary:
-      "Full-stack website and digital platform for Arroyo Technologies, presenting an advanced ionization-based water purification system for international markets.",
+      "Designed and built a full-stack digital platform for Arroyo Technologies, presenting ionization-based water purification systems for residential, hospitality, school, and commercial environments.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -30,24 +32,25 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "SEO",
       "Product Storytelling",
     ],
-    impact: [
-      "Built to support international market positioning",
-      "Structured for technical credibility with industrial buyers",
-      "Designed for clarity, performance, and responsive delivery",
-      "Focused on business-facing presentation, not demo-level polish",
+    highlights: [
+      "Full-stack delivery with responsive UI and product storytelling",
+      "SEO structure and performance-focused implementation",
+      "Product, application, and legal/documentation pages",
+      "Contact flow and international market positioning",
     ],
     modal: {
       overview:
-        "End-to-end full-stack delivery for a corporate platform that communicates complex product technology to international stakeholders with confidence and clarity.",
+        "End-to-end full-stack platform for Arroyo Technologies—translating complex ionization-based water purification technology into a clear, professional digital presence for residential, hospitality, school, and commercial buyers.",
       architecture: [
-        "Component-driven frontend with structured content hierarchy",
-        "Performance-oriented rendering for global audiences",
-        "Responsive layout system for desktop and mobile buyers",
+        "Structured content hierarchy for product and application pages",
+        "Responsive layout system for international stakeholders",
         "SEO and metadata foundation for discoverability",
+        "Legal and documentation structure for commercial trust",
+        "Performance-oriented implementation for global audiences",
       ],
       tools: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
       outcome:
-        "Delivered a market-ready digital presence that aligns product storytelling with engineering credibility.",
+        "A market-ready platform that presents industrial water purification systems with clarity, credibility, and practical business structure.",
     },
   },
   {
@@ -64,7 +67,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Dashboards",
       "Workflow Automation",
     ],
-    impact: [
+    highlights: [
       "Designed for scalability across evolving business needs",
       "Focused on reducing manual work in daily operations",
       "Structured for future automation and integrations",
@@ -104,7 +107,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Research Workflows",
       "Evaluation Design",
     ],
-    impact: [
+    highlights: [
       "Structured for source-grounded academic retrieval workflows",
       "Designed to support complex document-oriented research tasks",
       "Focused on practical automation in knowledge-heavy environments",

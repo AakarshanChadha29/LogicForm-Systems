@@ -20,7 +20,13 @@ function ProjectCard({
   onOpen: (id: string) => void;
 }) {
   return (
-    <article className="surface-card-interactive group flex h-full flex-col p-6">
+    <article
+      className={cn(
+        "surface-card-interactive group flex h-full flex-col p-6",
+        project.featured &&
+          "border-[color-mix(in_srgb,var(--accent)_22%,var(--border))] bg-[var(--accent-muted)]",
+      )}
+    >
       <div className="mb-5 flex items-start justify-between gap-4">
         <div>
           <p className="text-eyebrow">{project.label}</p>
@@ -47,7 +53,7 @@ function ProjectCard({
       </ul>
 
       <ul className="mt-6 space-y-2 border-t border-[var(--border)] pt-5 text-sm text-muted-foreground">
-        {project.impact.map((point) => (
+        {project.highlights.map((point) => (
           <li key={point}>{point}</li>
         ))}
       </ul>
@@ -65,9 +71,9 @@ function ProjectCard({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-accent"
           >
-            Visit Live System <ArrowUpRight size={15} />
+            Visit Live Project <ArrowUpRight size={15} />
           </Link>
         ) : null}
       </div>
@@ -100,7 +106,7 @@ function ProjectModal({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[70] flex items-end justify-center bg-black/70 p-4 backdrop-blur-sm md:items-center"
+        className="fixed inset-0 z-[70] flex items-end justify-center bg-slate-900/40 p-4 backdrop-blur-sm md:items-center"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
         animate={prefersReducedMotion ? {} : { opacity: 1 }}
         exit={prefersReducedMotion ? {} : { opacity: 0 }}
@@ -123,7 +129,7 @@ function ProjectModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 text-muted-foreground transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
+            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 text-muted-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
             aria-label="Close engineering specs modal"
           >
             <X size={16} />
@@ -134,7 +140,7 @@ function ProjectModal({
           </p>
           <h3
             id={`${project.id}-title`}
-            className="mt-2 text-2xl font-semibold text-white md:text-3xl"
+            className="mt-2 text-2xl font-semibold text-foreground md:text-3xl"
           >
             {project.title}
           </h3>
@@ -146,7 +152,7 @@ function ProjectModal({
               </p>
               <p
                 id={`${project.id}-overview`}
-                className="mt-2 text-sm leading-relaxed text-zinc-300"
+                className="mt-2 text-sm leading-relaxed text-muted-foreground"
               >
                 {project.modal.overview}
               </p>
@@ -156,18 +162,18 @@ function ProjectModal({
               <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 Business Outcome
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {project.modal.outcome}
               </p>
             </div>
           </div>
 
           <div className="mt-6 grid gap-5 md:grid-cols-2">
-            <div className="rounded-[var(--radius-md)] border border-white/10 bg-black/35 p-4">
+            <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-inset)] p-4">
               <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 Architecture Notes
               </p>
-              <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 {project.modal.architecture.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-[0.42rem] h-1.5 w-1.5 rounded-full bg-accent/85" />
@@ -177,7 +183,7 @@ function ProjectModal({
               </ul>
             </div>
 
-            <div className="rounded-[var(--radius-md)] border border-white/10 bg-black/35 p-4">
+            <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-inset)] p-4">
               <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 Tools Used
               </p>
@@ -185,7 +191,7 @@ function ProjectModal({
                 {project.modal.tools.map((tool) => (
                   <li
                     key={tool}
-                    className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-zinc-300"
+                    className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
                   >
                     {tool}
                   </li>
@@ -202,7 +208,7 @@ function ProjectModal({
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ size: "lg" }))}
               >
-                Open Live System
+                Visit Live Project
               </Link>
             </div>
           ) : null}

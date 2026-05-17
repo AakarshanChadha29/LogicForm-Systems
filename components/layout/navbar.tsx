@@ -27,7 +27,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
-          ? "border-[var(--border)] bg-[rgba(10,10,11,0.88)] backdrop-blur-md"
+          ? "border-[var(--border)] bg-white/90 backdrop-blur-md"
           : "border-transparent bg-transparent",
       )}
     >
@@ -56,12 +56,12 @@ export function Navbar() {
           href="#contact"
           className={cn(buttonVariants({ size: "md" }), "hidden xl:inline-flex")}
         >
-          Book Consultation
+          Start a Project
         </Link>
 
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:bg-[var(--surface-card)] hover:text-foreground md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
@@ -74,8 +74,8 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-[var(--border)] transition-all md:hidden",
-          menuOpen ? "max-h-80" : "max-h-0",
+          "overflow-hidden border-t border-[var(--border)] bg-white transition-all md:hidden",
+          menuOpen ? "max-h-96" : "max-h-0",
         )}
       >
         <Container className="flex flex-col gap-1 py-4">
@@ -83,7 +83,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="rounded-[var(--radius-sm)] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-[var(--surface-card)] hover:text-foreground"
+              className="rounded-[var(--radius-sm)] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -94,7 +94,7 @@ export function Navbar() {
             className={cn(buttonVariants({ size: "md" }), "mt-3 w-full justify-center")}
             onClick={() => setMenuOpen(false)}
           >
-            Book Consultation
+            Start a Project
           </Link>
         </Container>
       </div>
