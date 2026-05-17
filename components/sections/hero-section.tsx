@@ -2,90 +2,50 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { Cloud, Database, LayoutDashboard, Shield } from "lucide-react";
+import { CheckCircle2, Cloud, Database, LayoutDashboard, Shield } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { buttonVariants } from "@/components/ui/button";
+import { trustSignals } from "@/data/trust";
 import { cn } from "@/lib/utils";
-
-const trustBullets = [
-  "TU Berlin engineering foundation",
-  "Germany-based · Europe & international delivery",
-  "Production systems, not demo projects",
-] as const;
 
 const architectureLayers = [
   { label: "Application layer", detail: "Dashboards · APIs · Admin UI", icon: LayoutDashboard },
-  { label: "AI & automation", detail: "Workflows · Integrations · Agents", icon: Cloud },
-  { label: "Data & infrastructure", detail: "Cloud · Databases · Observability", icon: Database },
-  { label: "Security & operations", detail: "Access · Monitoring · Handover", icon: Shield },
+  { label: "AI & automation", detail: "Workflows · Integrations", icon: Cloud },
+  { label: "Infrastructure", detail: "Cloud · Data · Observability", icon: Database },
+  { label: "Security & ops", detail: "Access · Monitoring", icon: Shield },
 ] as const;
-
-const pipelineSteps = ["Ingest", "Process", "Automate", "Deliver"] as const;
 
 function HeroVisual({ className }: { className?: string }) {
   return (
     <div className={cn("surface-card overflow-hidden", className)}>
-      <div className="border-b border-[var(--border)] bg-[var(--surface-inset)] px-4 py-3 md:px-5">
-        <p className="text-eyebrow">System overview</p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          Architecture · AI pipelines · Operations
-        </p>
+      <div className="border-b border-[var(--border)] bg-[var(--surface-inset)] px-4 py-3">
+        <p className="text-eyebrow">Delivery architecture</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">From concept to production operations</p>
       </div>
-
-      <div className="space-y-3 p-4 md:p-5">
+      <div className="grid gap-2 p-4 sm:grid-cols-2">
         {architectureLayers.map((layer) => {
           const Icon = layer.icon;
           return (
             <div
               key={layer.label}
-              className="flex items-start gap-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-3 py-2.5"
+              className="rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-3 py-2.5"
             >
-              <span className="mt-0.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] p-1.5 text-accent">
-                <Icon size={14} aria-hidden />
-              </span>
-              <div>
+              <div className="flex items-center gap-2">
+                <span className="rounded-[var(--radius-sm)] bg-[var(--accent-muted)] p-1 text-accent">
+                  <Icon size={13} aria-hidden />
+                </span>
                 <p className="text-xs font-medium text-foreground">{layer.label}</p>
-                <p className="text-[11px] text-muted-foreground">{layer.detail}</p>
               </div>
+              <p className="mt-1 pl-7 text-[11px] text-muted-foreground">{layer.detail}</p>
             </div>
           );
         })}
-
-        <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-inset)] p-3">
-          <p className="text-[11px] font-medium text-foreground">AI / cloud pipeline</p>
-          <div className="mt-2 flex flex-wrap items-center gap-1.5">
-            {pipelineSteps.map((step, index) => (
-              <span key={step} className="flex items-center gap-1.5">
-                <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-white px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
-                  {step}
-                </span>
-                {index < pipelineSteps.length - 1 ? (
-                  <span className="text-[10px] text-[var(--border-strong)]" aria-hidden>
-                    →
-                  </span>
-                ) : null}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[#0f172a] p-3 font-mono text-[10px] leading-relaxed text-slate-300">
-          <p>
-            <span className="text-blue-400">const</span> delivery ={" "}
-            <span className="text-emerald-400">{"{"}</span>
-          </p>
-          <p className="pl-3">
-            stack: <span className="text-amber-200">&quot;Next.js · TypeScript&quot;</span>,
-          </p>
-          <p className="pl-3">
-            focus: <span className="text-amber-200">&quot;production-ready&quot;</span>
-          </p>
-          <p>
-            <span className="text-emerald-400">{"}"}</span>;
-          </p>
-        </div>
+      </div>
+      <div className="border-t border-[var(--border)] bg-[#0f172a] px-4 py-3 font-mono text-[10px] leading-relaxed text-slate-300">
+        <span className="text-blue-400">export</span> const stack ={" "}
+        <span className="text-amber-200">&quot;Next.js · TypeScript · Cloud&quot;</span>;
       </div>
     </div>
   );
@@ -95,48 +55,56 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <Section id="hero" className="pt-20 pb-8 md:pt-28 md:pb-12">
+    <Section id="hero" className="!pt-[calc(4.25rem+1.5rem)] !pb-10 md:!pt-[calc(4.25rem+2.5rem)]">
       <Container>
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"
+          className="grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:gap-14"
         >
-          <div className="max-w-xl">
-            <p className="text-eyebrow">Veltrix Labs · Engineering Consultancy</p>
-            <h1 className="mt-4 text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-[2.75rem] md:leading-[1.06]">
+          <div>
+            <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-white px-3 py-1 text-xs font-medium text-[var(--foreground-secondary)] shadow-[var(--shadow-card)]">
+              Packages from <span className="ml-1 text-accent">€999</span>
+              <span className="mx-2 text-[var(--border-strong)]">·</span>
+              Germany · Europe · International
+            </span>
+
+            <h1 className="mt-5 max-w-[18ch] text-balance text-[2.35rem] font-semibold leading-[1.06] tracking-tight text-foreground sm:text-5xl lg:text-[3.15rem]">
               Engineering Production-Grade Software, AI, and Infrastructure.
             </h1>
-            <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Veltrix Labs helps startups, founders, and growing businesses design, build, and
-              scale secure software systems, automation workflows, dashboards, cloud platforms, and
+            <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+              Veltrix Labs helps startups, founders, and growing businesses design, build, and scale
+              secure software systems, automation workflows, dashboards, cloud platforms, and
               operational tools.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link href="#contact" className={buttonVariants({ size: "lg" })}>
                 Start a Project
               </Link>
-              <Link
-                href="#projects"
-                className={buttonVariants({ variant: "ghost", size: "lg" })}
-              >
+              <Link href="#projects" className={buttonVariants({ variant: "ghost", size: "lg" })}>
                 View Case Studies
               </Link>
             </div>
 
-            <ul className="mt-10 space-y-2.5 border-t border-[var(--border)] pt-8">
-              {trustBullets.map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm text-muted-foreground">
-                  <span className="mt-2 h-px w-3 shrink-0 bg-accent/70" aria-hidden />
-                  {item}
-                </li>
+            <div className="mt-8 grid gap-2 sm:grid-cols-2">
+              {trustSignals.map((signal) => (
+                <div
+                  key={signal.id}
+                  className="flex items-start gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-white/80 px-3 py-2.5"
+                >
+                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-accent" aria-hidden />
+                  <div>
+                    <p className="text-xs font-medium text-foreground">{signal.label}</p>
+                    <p className="text-[11px] text-muted-foreground">{signal.detail}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <HeroVisual className="lg:max-w-md lg:justify-self-end" />
+          <HeroVisual className="w-full lg:justify-self-end" />
         </motion.div>
       </Container>
     </Section>

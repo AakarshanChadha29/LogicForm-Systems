@@ -16,7 +16,7 @@ export function SectionHeader({
   ...props
 }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-14 max-w-2xl", className)} {...props}>
+    <div className={cn("mb-8 max-w-2xl md:mb-10", className)} {...props}>
       <p className="text-eyebrow">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
         {title}

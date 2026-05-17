@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { Logo } from "@/components/brand/logo";
 import { navigationItems } from "@/data/navigation";
 import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -27,20 +27,14 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
-          ? "border-[var(--border)] bg-white/90 backdrop-blur-md"
-          : "border-transparent bg-transparent",
+          ? "border-[var(--border)] bg-white/92 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+          : "border-transparent bg-white/70 backdrop-blur-sm",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-6">
-        <Link
-          href="/"
-          aria-label="Veltrix Labs home"
-          className="text-sm font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
-        >
-          {siteConfig.name}
-        </Link>
+      <Container className="flex h-[4.25rem] items-center justify-between gap-4">
+        <Logo size="md" />
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-7" aria-label="Primary">
           {navigationItems.map((item) => (
             <Link
               key={item.label}
@@ -52,30 +46,32 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Link
-          href="#contact"
-          className={cn(buttonVariants({ size: "md" }), "hidden xl:inline-flex")}
-        >
-          Start a Project
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="#contact"
+            className={cn(buttonVariants({ size: "md" }), "hidden sm:inline-flex")}
+          >
+            Start a Project
+          </Link>
 
-        <button
-          type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground md:hidden"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          aria-label="Toggle navigation menu"
-        >
-          {menuOpen ? <X size={17} /> : <Menu size={17} />}
-        </button>
+          <button
+            type="button"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground lg:hidden"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? <X size={17} /> : <Menu size={17} />}
+          </button>
+        </div>
       </Container>
 
       <div
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-[var(--border)] bg-white transition-all md:hidden",
-          menuOpen ? "max-h-96" : "max-h-0",
+          "overflow-hidden border-t border-[var(--border)] bg-white transition-all lg:hidden",
+          menuOpen ? "max-h-[28rem]" : "max-h-0",
         )}
       >
         <Container className="flex flex-col gap-1 py-4">

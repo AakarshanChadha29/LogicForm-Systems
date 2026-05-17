@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Code2, Link2, Mail } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 
+import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { buttonVariants } from "@/components/ui/button";
@@ -317,8 +318,9 @@ export function ContactSection() {
           </div>
 
           <footer className="mt-8 border-t border-[var(--border)] pt-6">
-            <div className="flex flex-col gap-3 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
-              <p>
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <Logo size="sm" linked={false} />
+              <p className="text-xs text-muted-foreground">
                 © {year} {siteConfig.name}. All rights reserved.
               </p>
               <nav aria-label="Footer" className="flex flex-wrap gap-4">
