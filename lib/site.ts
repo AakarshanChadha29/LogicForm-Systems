@@ -1,0 +1,31 @@
+export const siteConfig = {
+  name: "Veltrix Labs",
+  tagline: "Production-Grade Software, AI, and Cloud Systems",
+  description:
+    "Veltrix Labs helps founders, startups, and growing businesses design, build, and scale secure software platforms, automation systems, dashboards, and AI-powered workflows.",
+  url: "https://veltrixlabs.com",
+  contactEmail: "hello@veltrixlabs.com",
+  legalName: "Veltrix Labs",
+  founderName: "Aakarshan Chadha",
+  founderTitle: "Founder & Technical Consultant",
+  locale: "en_GB",
+  keywords: [
+    "Veltrix Labs",
+    "AI automation consultant Germany",
+    "full-stack developer Germany",
+    "SaaS engineering consultant",
+    "cloud infrastructure consultant",
+    "CRM dashboard developer",
+    "Next.js developer Germany",
+    "technical consultant Europe India",
+    "custom software development",
+    "production AI systems",
+    "business automation systems",
+    "engineering consultancy Germany",
+    "production-grade software",
+  ],
+  socialLinks: {
+    linkedin: "https://www.linkedin.com/company/veltrix-labs",
+    github: "https://github.com/veltrix-labs",
+  },
+} as const;
