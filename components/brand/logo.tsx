@@ -17,21 +17,21 @@ type LogoProps = {
 
 const LOGO_ALT = "Logicform Systems logo";
 
-const fullLogoSources = ["/logo.png", "/logo.svg"] as const;
+const fullLogoSources = ["/logo.svg", "/logo.png"] as const;
 const markLogoSource = "/logo-mark.svg";
 
 const sizes = {
   sm: {
     mark: { width: 26, height: 26 },
-    full: { width: 132, height: 22 },
+    full: { width: 148, height: 25 },
   },
   md: {
     mark: { width: 32, height: 32 },
-    full: { width: 168, height: 28 },
+    full: { width: 188, height: 32 },
   },
   lg: {
-    mark: { width: 36, height: 36 },
-    full: { width: 192, height: 32 },
+    mark: { width: 38, height: 38 },
+    full: { width: 220, height: 37 },
   },
 } as const;
 
