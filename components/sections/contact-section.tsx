@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site";
 
 export function ContactSection({ compact = false }: { compact?: boolean }) {
   return (
-    <Section id="contact" className={compact ? "!pb-10" : "section-divider pb-16"}>
+    <Section id="contact" className={compact ? "!pb-32" : "section-divider pb-32"}>
       <Container>
         <div className="premium-media overflow-hidden rounded-[var(--radius-xl)] p-6 md:p-9">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">

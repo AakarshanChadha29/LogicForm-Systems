@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,6 @@ type LogoProps = {
 
 const LOGO_ALT = "Logicform Systems logo";
 
-const fullLogoSources = ["/logo.svg", "/logo.png"] as const;
 const markLogoSource = "/logo-mark.svg";
 
 const sizes = {
@@ -35,18 +34,20 @@ const sizes = {
   },
 } as const;
 
-function LogoTextFallback({ size }: { size: LogoProps["size"] }) {
+function LogoText({ size }: { size: LogoProps["size"] }) {
   return (
     <span
       className={cn(
-        "font-semibold tracking-tight",
+        "leading-none",
         size === "sm" && "text-sm",
         size === "md" && "text-base",
         size === "lg" && "text-lg",
       )}
     >
-      <span className="text-[var(--foreground)]">Logicform</span>{" "}
-      <span className="text-[var(--foreground-secondary)]">Systems</span>
+      <span className="font-semibold tracking-tight text-[var(--foreground)]">Logicform</span>
+      <span className="ml-2 font-medium tracking-tight text-[var(--foreground-secondary)]">
+        Systems
+      </span>
     </span>
   );
 }
@@ -86,46 +87,35 @@ export function Logo({
   framed = true,
 }: LogoProps) {
   const dimensions = sizes[size][variant === "mark" ? "mark" : "full"];
-  const [sourceIndex, setSourceIndex] = useState(0);
   const [showTextFallback, setShowTextFallback] = useState(false);
 
-  const src = variant === "mark" ? markLogoSource : fullLogoSources[sourceIndex];
-
-  const handleImageError = useCallback(() => {
-    if (variant === "mark") {
-      setShowTextFallback(true);
-      return;
-    }
-
-    setSourceIndex((current) => {
-      const next = current + 1;
-      if (next < fullLogoSources.length) {
-        return next;
-      }
-      setShowTextFallback(true);
-      return current;
-    });
-  }, [variant]);
-
-  const content = showTextFallback ? (
-    <LogoTextFallback size={size} />
+  const mark = showTextFallback ? (
+    <span className="font-semibold text-accent">LF</span>
   ) : (
     <Image
-      key={src}
-      src={src}
+      src={markLogoSource}
       alt={LOGO_ALT}
-      width={dimensions.width}
-      height={dimensions.height}
+      width={variant === "mark" ? dimensions.width : sizes[size].mark.width}
+      height={variant === "mark" ? dimensions.height : sizes[size].mark.height}
       priority={size === "md" && linked}
-      unoptimized={src.endsWith(".svg")}
-      onError={handleImageError}
+      unoptimized
+      onError={() => setShowTextFallback(true)}
       className={cn(
         "h-auto max-h-full w-auto max-w-full shrink-0 object-contain object-left",
-        variant === "full" && "brightness-[1.02] contrast-[1.02]",
-        className,
+        variant === "mark" && className,
       )}
     />
   );
+
+  const content =
+    variant === "mark" ? (
+      mark
+    ) : (
+      <span className={cn("inline-flex items-center gap-2.5", className)}>
+        {mark}
+        <LogoText size={size} />
+      </span>
+    );
 
   const logoBody = framed ? (
     <LogoFrame size={size} className={linked ? undefined : className}>

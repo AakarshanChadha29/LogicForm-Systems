@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { MessageSquareText } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_PHONE = "491782681334";
@@ -20,27 +23,45 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function WhatsAppButton() {
   return (
-    <a
-      href={whatsappHref}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contact Logicform Systems on WhatsApp"
+    <div
       className={cn(
-        "fixed z-[60] inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--border-strong)]",
-        "bg-[var(--surface-card)] px-3.5 text-sm font-medium text-[var(--foreground)] shadow-[var(--shadow-elevated)]",
-        "backdrop-blur-xl transition-[transform,box-shadow,border-color,background-color] duration-200",
-        "hover:border-[var(--accent)] hover:bg-[var(--surface-elevated)] hover:shadow-[0_0_24px_-6px_rgba(212,175,55,0.35)]",
-        "hover:scale-[1.03] active:scale-[0.98]",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
+        "fixed z-[60] flex items-center gap-2",
         "bottom-[max(1rem,env(safe-area-inset-bottom,0px))] right-[max(1rem,env(safe-area-inset-right,0px))]",
         "sm:bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] sm:right-[max(1.25rem,env(safe-area-inset-right,0px))]",
-        "sm:h-auto sm:px-4 sm:py-3",
       )}
     >
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-[#0a0a0a] sm:h-7 sm:w-7">
-        <WhatsAppIcon className="h-4 w-4" />
-      </span>
-      <span className="sr-only sm:not-sr-only sm:inline">WhatsApp</span>
-    </a>
+      <Link
+        href="/contact"
+        aria-label="Contact Logicform Systems"
+        className={floatingButtonClass}
+      >
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-[#0a0a0a]">
+          <MessageSquareText size={15} aria-hidden />
+        </span>
+        <span className="sr-only sm:not-sr-only sm:inline">Contact us</span>
+      </Link>
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Logicform Systems on WhatsApp"
+        className={floatingButtonClass}
+      >
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-[#0a0a0a] sm:h-7 sm:w-7">
+          <WhatsAppIcon className="h-4 w-4" />
+        </span>
+        <span className="sr-only sm:not-sr-only sm:inline">WhatsApp</span>
+      </a>
+    </div>
   );
 }
+
+const floatingButtonClass = cn(
+  "inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--border-strong)]",
+  "bg-[rgba(12,11,9,0.78)] px-3.5 text-sm font-medium text-[var(--foreground)] shadow-[var(--shadow-elevated)]",
+  "backdrop-blur-xl transition-[transform,box-shadow,border-color,background-color] duration-200",
+  "hover:border-[var(--accent)] hover:bg-[var(--surface-elevated)] hover:shadow-[0_0_24px_-6px_rgba(212,175,55,0.35)]",
+  "hover:scale-[1.03] active:scale-[0.98]",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
+  "sm:h-auto sm:px-4 sm:py-3",
+);

@@ -41,7 +41,7 @@ export function HeroSection() {
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
               <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                Start a project
+                Share your idea
                 <ArrowRight size={16} aria-hidden />
               </Link>
               <Link

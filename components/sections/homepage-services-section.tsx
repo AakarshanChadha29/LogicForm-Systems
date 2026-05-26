@@ -49,7 +49,14 @@ function ServiceCardContent({
         href={href}
         className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
       >
-        Read full service page
+        Understand this service
+        <ArrowRight size={14} aria-hidden />
+      </Link>
+      <Link
+        href="/contact"
+        className="mt-3 inline-flex items-center gap-1.5 text-sm text-[var(--foreground-secondary)] hover:text-foreground"
+      >
+        Share your idea
         <ArrowRight size={14} aria-hidden />
       </Link>
     </>
@@ -123,7 +130,7 @@ export function HomepageServicesSection() {
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           Not sure what should come first?{" "}
           <Link href="/services/systems-audit" className="text-accent hover:text-[var(--accent-hover)]">
-            Start with a Digital Systems Audit
+            Start with a Digital Systems & AI Audit
           </Link>{" "}
           or{" "}
           <Link href="/contact" className="text-accent hover:text-[var(--accent-hover)]">

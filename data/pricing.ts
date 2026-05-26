@@ -60,7 +60,7 @@ export const homepagePricingPackages: PricingPackage[] = [
 ];
 
 export const pricingAuditNote =
-  "Need clarity before building? Start with a Digital Systems Audit from €1,200.";
+  "Need clarity before building? Start with a Digital Systems & AI Audit from €1,200.";
 
 export const pricingNote =
   "Final pricing depends on scope, integrations, data complexity, automation risk, content depth, and support requirements. Smaller implementation phases are possible when a project needs to start lean and grow deliberately.";

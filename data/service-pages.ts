@@ -11,10 +11,14 @@ export type ServicePageContent = {
   title: string;
   description: string;
   heroSummary: string;
+  visualImage: string;
   problem: string;
   builds: string[];
   useCases: string[];
   techStack: string[];
+  platforms: string[];
+  developerTools: string[];
+  integrationIdeas: string[];
   process: string[];
   pricingRange: string;
   deliverables: string[];
@@ -29,15 +33,17 @@ export type ServicePageContent = {
 export const servicePages: ServicePageContent[] = [
   {
     slug: "systems-audit",
-    title: "Systems Audit",
-    description: "Technical and operational audit to decide what to build first.",
+    title: "Digital Systems & AI Audit",
+    description: "Technical, operational, and AI-readiness audit to decide what to build first.",
     heroSummary:
-      "A structured review of your current tools, workflows, and bottlenecks that produces a practical systems roadmap.",
+      "A structured review of your current tools, workflows, bottlenecks, and AI opportunities that produces a practical systems roadmap.",
+    visualImage: "/brand/service-systems-audit.png",
     problem:
       "Many teams know operations feel fragmented but do not know where to start. Without a clear sequence, they over-buy tools, build in the wrong order, and lose momentum.",
     builds: [
       "Current-state systems map across website, CRM, data, operations, and reporting",
       "Bottleneck analysis for revenue, execution, and internal handoffs",
+      "AI opportunity review: where automation can help and where human approval should stay",
       "Phased roadmap with priorities, effort, and implementation recommendations",
       "Architecture notes for integrations, data ownership, and governance",
     ],
@@ -47,7 +53,14 @@ export const servicePages: ServicePageContent[] = [
       "Aligning technical and commercial teams around one roadmap",
       "Pre-investment system planning before execution",
     ],
-    techStack: ["Miro", "Notion", "Google Workspace", "Process mapping", "API landscape review"],
+    techStack: ["Process mapping", "Systems architecture", "AI-readiness review", "API landscape review"],
+    platforms: ["Google Workspace", "Notion", "Miro", "Airtable", "HubSpot", "Jira", "Confluence"],
+    developerTools: ["Architecture diagrams", "Workflow maps", "Requirements docs", "Access review", "Data flow notes"],
+    integrationIdeas: [
+      "Map lead, client, delivery, finance, and reporting flows before choosing tools",
+      "Identify where AI can summarize, draft, route, or check work safely",
+      "Create a phased build order so the first investment supports the second",
+    ],
     process: [
       "Discovery and stakeholder interviews",
       "Workflow and tooling analysis",
@@ -59,6 +72,7 @@ export const servicePages: ServicePageContent[] = [
     deliverables: [
       "Systems audit report",
       "Prioritized roadmap",
+      "AI and automation opportunity map",
       "Architecture recommendations",
       "90-day action plan",
     ],
@@ -73,8 +87,8 @@ export const servicePages: ServicePageContent[] = [
       },
     ],
     ctaTitle: "Start with clarity before you build",
-    ctaText: "Book a systems audit and get a practical roadmap for execution.",
-    metaTitle: "Systems Audit Services | Logicform Systems",
+    ctaText: "Book a Digital Systems & AI Audit and get a practical roadmap for what to fix, automate, build, and maintain first.",
+    metaTitle: "Digital Systems & AI Audit | Logicform Systems",
     metaDescription:
       "Logicform Systems delivers systems audits and implementation roadmaps to help businesses prioritize the right digital systems first.",
     keywords: ["systems audit", "digital roadmap", "workflow analysis", "operations audit"],
@@ -85,6 +99,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Credible business websites built as part of a wider operating system.",
     heroSummary:
       "Launch or redesign a business website that communicates clearly, converts reliably, and connects with your operational stack.",
+    visualImage: "/brand/service-websites.png",
     problem:
       "Many websites look acceptable but fail operationally: weak structure, poor conversion flow, disconnected lead capture, and no system integration.",
     builds: [
@@ -100,6 +115,13 @@ export const servicePages: ServicePageContent[] = [
       "Replacing outdated CMS or fragmented pages",
     ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GA4 / analytics tooling"],
+    platforms: ["Google Analytics", "Search Console", "HubSpot", "Zoho CRM", "Resend", "Calendly", "Google Workspace"],
+    developerTools: ["GitHub", "Vercel", "Figma", "Lighthouse", "ESLint", "Responsive QA"],
+    integrationIdeas: [
+      "Connect contact and quote requests to CRM, email, or an internal intake board",
+      "Track high-intent actions instead of only page views",
+      "Prepare the site for future dashboards, automation, and client portals",
+    ],
     process: [
       "Messaging and structure workshop",
       "Wireframe and visual direction",
@@ -137,6 +159,7 @@ export const servicePages: ServicePageContent[] = [
     description: "AI-assisted workflows that remove repetitive work without losing control.",
     heroSummary:
       "Design and deploy automation flows that connect tools, reduce manual effort, and preserve human approvals where judgment matters.",
+    visualImage: "/brand/service-ai-automation.png",
     problem:
       "Operations often depend on copy-paste steps across inboxes, spreadsheets, and CRMs. This creates delays, errors, and opaque ownership.",
     builds: [
@@ -152,6 +175,13 @@ export const servicePages: ServicePageContent[] = [
       "CRM and support workflow synchronization",
     ],
     techStack: ["OpenAI APIs", "Node.js", "Next.js", "Webhooks", "Zapier / Make / custom orchestration"],
+    platforms: ["OpenAI", "Make", "Zapier", "n8n", "Google Workspace", "Slack", "Microsoft Teams", "HubSpot"],
+    developerTools: ["API clients", "Webhook testing", "Logging", "Version control", "Prompt evaluation", "Runbooks"],
+    integrationIdeas: [
+      "Route leads, tasks, files, and approvals across the tools your team already uses",
+      "Use AI for drafting, classification, summarization, and operator support",
+      "Keep exception handling and human approval visible from day one",
+    ],
     process: [
       "Current workflow analysis",
       "Automation blueprint and risk checks",
@@ -190,6 +220,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Operational dashboards and internal systems for visibility and control.",
     heroSummary:
       "Build dashboards and internal tools that unify your data and workflows into one reliable operating interface.",
+    visualImage: "/brand/service-dashboards.png",
     problem:
       "Data is often scattered across tools with no shared source of truth. Teams spend time collecting numbers instead of acting on them.",
     builds: [
@@ -205,6 +236,13 @@ export const servicePages: ServicePageContent[] = [
       "Executive reporting and KPI governance",
     ],
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "REST APIs", "Charting libraries"],
+    platforms: ["Google Sheets", "Airtable", "HubSpot", "Looker Studio", "Power BI", "Stripe", "GA4"],
+    developerTools: ["SQL modeling", "API integrations", "Role-based views", "Data validation", "Chart libraries"],
+    integrationIdeas: [
+      "Pull live data from CRM, spreadsheets, forms, finance tools, or custom databases",
+      "Create role-specific views for founders, operations, sales, and delivery teams",
+      "Add alerts and AI summaries so reports become action signals",
+    ],
     process: [
       "Metrics and workflow definition",
       "Data model and integration planning",
@@ -242,6 +280,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Product-grade web applications and portals built around real workflows.",
     heroSummary:
       "Develop custom web applications, portals, and operational software tailored to your business model and growth stage.",
+    visualImage: "/brand/service-custom-web-apps.png",
     problem:
       "Off-the-shelf tools rarely fit core workflows end-to-end. Teams compromise process quality or create brittle manual workarounds.",
     builds: [
@@ -257,6 +296,13 @@ export const servicePages: ServicePageContent[] = [
       "Specialized workflow tools unavailable off-the-shelf",
     ],
     techStack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Vercel / cloud services"],
+    platforms: ["Stripe", "Resend", "Clerk/Auth", "Supabase", "Neon", "HubSpot", "Google Workspace"],
+    developerTools: ["GitHub", "Prisma", "API design", "Database schema", "QA flows", "Deployment pipelines"],
+    integrationIdeas: [
+      "Build portals, admin panels, CRMs, MVPs, and internal systems around your exact process",
+      "Connect payments, email, authentication, files, analytics, and external APIs",
+      "Design the foundation so automation and reporting can be added later",
+    ],
     process: [
       "Product and workflow discovery",
       "System design and scope definition",
@@ -294,6 +340,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Reliable internal technical operations and support systems.",
     heroSummary:
       "Improve day-to-day technical operations with structured access workflows, process documentation, and practical support systems.",
+    visualImage: "/brand/service-it-operations.png",
     problem:
       "Internal operations become fragile when access, support, and process ownership are undocumented or inconsistent across teams.",
     builds: [
@@ -309,6 +356,13 @@ export const servicePages: ServicePageContent[] = [
       "Preparing for compliance and governance maturity",
     ],
     techStack: ["Google Workspace", "Atlassian", "Service workflows", "Documentation systems"],
+    platforms: ["Google Workspace", "Atlassian", "Jira", "Confluence", "Slack", "Microsoft 365", "Notion"],
+    developerTools: ["Access matrices", "SOP templates", "Support workflows", "Permission reviews", "Operational runbooks"],
+    integrationIdeas: [
+      "Standardize onboarding, offboarding, support requests, and access approvals",
+      "Connect internal requests to Jira, email, Slack, or documentation workflows",
+      "Create simple operational systems that a growing team can actually follow",
+    ],
     process: [
       "Operations discovery",
       "Gap and risk analysis",
@@ -346,6 +400,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Deployment, monitoring, and ongoing maintenance for critical systems.",
     heroSummary:
       "Keep your digital systems reliable with structured deployment pipelines, cloud operations, and proactive maintenance.",
+    visualImage: "/brand/service-cloud-maintenance.png",
     problem:
       "Many businesses launch systems but underinvest in maintenance. The result is slow drift, outages, and avoidable operational risk.",
     builds: [
@@ -361,6 +416,13 @@ export const servicePages: ServicePageContent[] = [
       "Reducing technical debt and regression risk",
     ],
     techStack: ["Vercel", "Cloud hosting", "DNS/SSL", "Monitoring tooling", "Release workflows"],
+    platforms: ["Vercel", "Cloudflare", "GitHub", "Google Analytics", "Search Console", "Resend", "Domain DNS"],
+    developerTools: ["CI/CD", "Environment variables", "Monitoring", "Uptime checks", "Dependency updates", "Backups"],
+    integrationIdeas: [
+      "Keep websites, portals, APIs, and dashboards deployable without last-minute panic",
+      "Add monitoring and maintenance routines around live systems",
+      "Document domains, DNS, SSL, environments, and release processes clearly",
+    ],
     process: [
       "Infrastructure and risk assessment",
       "Deployment and observability setup",
@@ -398,6 +460,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ongoing product and systems partnership for growth-stage teams.",
     heroSummary:
       "Work with Logicform Systems as a lean technical partner for continuous improvements, system evolution, and execution support.",
+    visualImage: "/brand/service-technical-partner.png",
     problem:
       "Most growing businesses do not need a large agency. They need a reliable partner who can translate priorities into shipping outcomes.",
     builds: [
@@ -413,6 +476,13 @@ export const servicePages: ServicePageContent[] = [
       "Long-term roadmap ownership and implementation",
     ],
     techStack: ["Next.js", "Automation platforms", "Cloud stack", "Analytics tooling", "Collaboration stack"],
+    platforms: ["GitHub", "Vercel", "Jira", "Linear", "Notion", "Confluence", "Slack", "OpenAI"],
+    developerTools: ["Roadmaps", "Backlogs", "Release notes", "Architecture reviews", "QA checklists", "Technical docs"],
+    integrationIdeas: [
+      "Turn founder or operations priorities into shipped improvements month by month",
+      "Coordinate website, app, automation, dashboard, and cloud work under one roadmap",
+      "Use AI and automation where it improves delivery without making the system fragile",
+    ],
     process: [
       "Monthly priorities and operating review",
       "Scope and milestone definition",

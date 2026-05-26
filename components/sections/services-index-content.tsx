@@ -6,6 +6,8 @@ import { PageHero } from "@/components/layout/page-hero";
 import { SiteShell } from "@/components/layout/site-shell";
 import { Section } from "@/components/layout/section";
 import { GlassCard } from "@/components/ui/glass-card";
+import { PlatformEcosystemStrip } from "@/components/sections/platform-ecosystem-strip";
+import { ProductFinderTest } from "@/components/sections/product-finder-test";
 import { serviceOfferings, type ServiceOffering } from "@/data/services";
 import { serviceIconMap } from "@/lib/service-icons";
 
@@ -29,9 +31,13 @@ export function ServicesIndexContent() {
       <main id="main-content" className="relative z-10">
         <PageHero
           eyebrow="Services"
-          title="Connected systems for modern business operations"
-          description="Logicform Systems builds websites, applications, dashboards, automation, cloud infrastructure, IT operations workflows, and ongoing technical partnership."
+          title="Choose the system your business actually needs"
+          description="Explore the core service paths, or use the Product Finder Test if you are not sure whether the next step is a website, app, dashboard, CRM, or automation."
         />
+
+        <PlatformEcosystemStrip compact className="!pt-0" />
+
+        <ProductFinderTest />
 
         <Section id="services-catalogue" className="section-divider pb-16">
           <Container>
@@ -51,7 +57,14 @@ export function ServicesIndexContent() {
                       href={service.fullPageHref}
                       className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
                     >
-                      Read full service page
+                      Understand this service
+                      <ArrowRight size={14} aria-hidden />
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm text-[var(--foreground-secondary)] hover:text-foreground"
+                    >
+                      Share your idea
                       <ArrowRight size={14} aria-hidden />
                     </Link>
                   </GlassCard>
@@ -63,7 +76,7 @@ export function ServicesIndexContent() {
               <p className="text-sm text-muted-foreground">
                 Need clarity before building? Explore the{" "}
                 <Link href="/services/systems-audit" className="text-accent hover:text-[var(--accent-hover)]">
-                  Digital Systems Audit
+                  Digital Systems & AI Audit
                 </Link>{" "}
                 or view{" "}
                 <Link href="/pricing" className="text-accent hover:text-[var(--accent-hover)]">

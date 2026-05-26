@@ -4,12 +4,12 @@ import { NextResponse } from "next/server";
 import { siteConfig } from "@/lib/site";
 
 const projectTypes = [
-  "Website / Landing Page",
-  "SaaS / Dashboard",
-  "AI / Automation",
-  "Cloud / Infrastructure",
-  "IT Systems / Operations",
-  "Ongoing Technical Partner",
+  "Website system",
+  "Custom web app",
+  "Dashboard / reporting",
+  "CRM / client system",
+  "AI automation",
+  "Ongoing technical partner",
 ] as const;
 
 const budgetRanges = [

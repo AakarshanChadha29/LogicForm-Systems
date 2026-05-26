@@ -32,7 +32,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What does a project cost?",
     answer:
-      "Website systems typically start from €2,500–€7,500. Business systems usually begin around €8,000 and can reach €30,000+ when data, integrations, and workflow complexity increase. Ongoing technical partnership starts from €2,000/month. A Digital Systems Audit starts from €1,200.",
+      "Website systems typically start from €2,500–€7,500. Business systems usually begin around €8,000 and can reach €30,000+ when data, integrations, and workflow complexity increase. Ongoing technical partnership starts from €2,000/month. A Digital Systems & AI Audit starts from €1,200.",
   },
   {
     question: "How long does a project take?",

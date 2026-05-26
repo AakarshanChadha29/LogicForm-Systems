@@ -23,7 +23,7 @@ export function CtaBand() {
           </div>
           <div className="relative mt-6 flex shrink-0 flex-wrap gap-3 md:mt-0">
             <Link href="#contact" className={buttonVariants({ size: "lg" })}>
-              Start a Project
+              Share your idea
               <ArrowRight size={16} aria-hidden />
             </Link>
             <Link href="#pricing" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>

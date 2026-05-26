@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
 
             <Link href="/contact" className={buttonVariants({ size: "lg" })}>
-              Tell us what you need
+              Share your idea
             </Link>
           </Container>
         </Section>

@@ -69,7 +69,7 @@ export function FeaturedPackagesSection() {
               href="/services/systems-audit"
               className="text-sm text-muted-foreground hover:text-foreground"
             >
-              Start with a Digital Systems Audit from €1,200
+              Start with a Digital Systems & AI Audit from €1,200
             </Link>
           </div>
         </ScrollReveal>
