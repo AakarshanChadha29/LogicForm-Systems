@@ -3,7 +3,6 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { GlassCard } from "@/components/ui/glass-card";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { featuredHomepageService, homepageServiceCards } from "@/data/homepage-services";
 import { cn } from "@/lib/utils";
@@ -25,15 +24,10 @@ function ServiceCardContent({
 }) {
   return (
     <>
-      <h3 className={cn("font-semibold tracking-tight text-foreground", compact ? "text-lg" : "text-2xl")}>
+      <h3 className={cn("font-semibold tracking-tight text-foreground", compact ? "text-lg" : "text-3xl")}>
         {title}
       </h3>
-      <div className="mt-3 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[rgba(0,0,0,0.28)] px-3 py-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-          Best for
-        </p>
-        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{whoFor}</p>
-      </div>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{whoFor}</p>
       <div className="mt-4">
         <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
           Includes
@@ -64,71 +58,76 @@ function ServiceCardContent({
 
 export function HomepageServicesSection() {
   const featured = featuredHomepageService;
+  const primaryServices = homepageServiceCards.filter((service) =>
+    ["website-system", "custom-web-apps", "dashboards", "ai-automation"].includes(service.id),
+  );
 
   return (
     <Section id="services" className="section-divider">
       <Container>
         <ScrollReveal>
-          <div className="max-w-3xl">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
             <p className="text-eyebrow">Services</p>
-            <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Systems built for real business operations
+            <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+              One partner for the digital layers that make work move.
             </h2>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              Whether you need a website, an internal tool, automation, or a long-term technical
-              partner, each engagement is scoped around operational clarity—not a list of unrelated
-              features.
+            </div>
+            <p className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground md:text-lg">
+              We do not sell disconnected deliverables. We build the visible front end, the internal
+              operating layer, and the workflows that connect them.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
-          <GlassCard className="mt-8 overflow-hidden border-[var(--border-strong)] premium-glow">
+          <div className="premium-media mt-10 overflow-hidden rounded-[var(--radius-xl)]">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="border-b border-[var(--border)] p-6 md:p-8 lg:border-b-0 lg:border-r">
-                <span className="rounded-full border border-[var(--border-strong)] bg-[var(--accent-muted)] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
-                  Flagship build
-                </span>
+              <div className="border-b border-[var(--border)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
+                <p className="text-eyebrow">Flagship engagement</p>
                 <div className="mt-4">
                   <ServiceCardContent {...featured} />
                 </div>
               </div>
-              <div className="flex flex-col justify-center bg-[rgba(0,0,0,0.35)] p-6 md:p-8">
-                <p className="text-eyebrow">System preview</p>
-                <div className="mt-3 space-y-2 font-mono text-[11px] text-[var(--foreground-secondary)]">
-                  <div className="rounded border border-[var(--border)] bg-[var(--surface-card)] px-3 py-2">
-                    intake → map workflows → build → integrate → deploy
-                  </div>
-                  <div className="rounded border border-[var(--border)] bg-[var(--surface-card)] px-3 py-2">
-                    dashboard · automation · approvals · reporting
-                  </div>
-                  <div className="rounded border border-[var(--border)] bg-[var(--surface-card)] px-3 py-2 text-accent">
-                    human-owned decisions at every critical step
-                  </div>
+              <div className="flex flex-col justify-center bg-[rgba(0,0,0,0.24)] p-6 md:p-8 lg:p-10">
+                <p className="text-eyebrow">Operating model</p>
+                <div className="mt-5 space-y-5">
+                  {[
+                    ["01", "Map the business workflow before designing screens."],
+                    ["02", "Build the smallest production-grade system that solves the real bottleneck."],
+                    ["03", "Connect data, approvals, reporting, and maintenance from the start."],
+                  ].map(([step, text]) => (
+                    <div key={step} className="grid grid-cols-[2.5rem_1fr] gap-4">
+                      <span className="font-mono text-xs text-accent">{step}</span>
+                      <p className="border-b border-[var(--border-subtle)] pb-4 text-sm leading-relaxed text-[var(--foreground-secondary)]">
+                        {text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </GlassCard>
+          </div>
         </ScrollReveal>
 
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {homepageServiceCards.map((service, index) => (
+        <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+          {primaryServices.map((service, index) => (
             <ScrollReveal key={service.id} delay={index * 0.05}>
-              <GlassCard interactive className="flex h-full flex-col p-5 md:p-6">
+              <div className="h-full border-t border-[var(--border-subtle)] pt-5">
                 <ServiceCardContent {...service} compact />
-              </GlassCard>
+              </div>
             </ScrollReveal>
           ))}
         </div>
 
-        <p className="mt-6 text-sm text-muted-foreground">
-          Not sure where to start?{" "}
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Not sure what should come first?{" "}
           <Link href="/services/systems-audit" className="text-accent hover:text-[var(--accent-hover)]">
-            Begin with a Digital Systems Audit
+            Start with a Digital Systems Audit
           </Link>{" "}
           or{" "}
           <Link href="/contact" className="text-accent hover:text-[var(--accent-hover)]">
-            tell us what you are trying to build
+            send the business problem
           </Link>
           .
         </p>

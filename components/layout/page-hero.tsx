@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import { Container } from "@/components/layout/container";
-import { GlassCard } from "@/components/ui/glass-card";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -12,18 +11,18 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
-    <section className="!pt-[calc(4.25rem+1.5rem)] pb-8 md:!pt-[calc(4.25rem+2.5rem)]">
+    <section className="!pt-[calc(4.25rem+2.25rem)] pb-10 md:!pt-[calc(4.25rem+3rem)] md:pb-14">
       <Container>
-        <GlassCard className="p-6 md:p-8">
+        <div className="max-w-4xl border-b border-[var(--border-subtle)] pb-8 md:pb-10">
           <p className="text-eyebrow">{eyebrow}</p>
-          <h1 className="mt-3 max-w-4xl text-balance text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+          <h1 className="mt-3 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground md:text-lg">
             {description}
           </p>
           {children ? <div className="mt-6">{children}</div> : null}
-        </GlassCard>
+        </div>
       </Container>
     </section>
   );

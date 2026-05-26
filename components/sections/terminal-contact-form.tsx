@@ -17,11 +17,11 @@ const projectTypes = [
 ] as const;
 
 const budgetRanges = [
-  "Under €1,000",
-  "€1,000–€2,500",
-  "€2,500–€5,000",
-  "€5,000–€10,000",
-  "€10,000+",
+  "Under €2,500",
+  "€2,500–€7,500",
+  "€7,500–€15,000",
+  "€15,000–€30,000",
+  "€30,000+",
 ] as const;
 
 const timelines = ["As soon as possible", "2–4 weeks", "1–3 months", "Flexible"] as const;

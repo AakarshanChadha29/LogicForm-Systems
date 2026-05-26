@@ -18,18 +18,18 @@ export function PricingSection() {
       <Container>
         <SectionHeader
           eyebrow="Pricing"
-          title="Grounded pricing for serious systems work"
-          description="Three main engagement paths with clear scope anchors. Final pricing depends on integrations, data complexity, and support requirements—confirmed after discovery."
+          title="Market-realistic pricing, scoped before build"
+          description="Clear ranges help you plan. The final proposal is based on workflow complexity, integrations, content depth, data risk, and the level of support required."
         />
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {homepagePricingPackages.map((pkg) => (
             <article
               key={pkg.id}
               className={cn(
-                "glass-card-interactive relative flex h-full flex-col p-6",
+                "relative flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border-subtle)] p-6 md:p-7",
                 pkg.recommended &&
-                  "border-[var(--border-strong)] bg-[linear-gradient(160deg,rgba(212,175,55,0.18),rgba(255,255,255,0.05))] shadow-[0_24px_64px_-30px_rgba(212,175,55,0.55)]",
+                  "border-[var(--border-strong)] bg-[linear-gradient(160deg,rgba(200,168,76,0.12),rgba(255,255,255,0.035))]",
               )}
             >
               {pkg.recommended ? (
@@ -41,12 +41,7 @@ export function PricingSection() {
               <header className={cn("mb-5", pkg.recommended && "pr-24")}>
                 <p className="text-3xl font-semibold tracking-tight text-foreground">{pkg.price}</p>
                 <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">{pkg.name}</h3>
-                <div className="mt-3 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[rgba(0,0,0,0.32)] px-3 py-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-                    Best for
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{pkg.bestFor}</p>
-                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pkg.bestFor}</p>
               </header>
 
               <ul className="space-y-2 text-sm text-muted-foreground">

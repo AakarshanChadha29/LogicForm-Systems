@@ -4,16 +4,16 @@ import { trustSignals } from "@/data/trust";
 
 export function TrustPositioningSection() {
   return (
-    <Section id="trust" className="!py-8 md:!py-10">
+    <Section id="trust" className="!py-6">
       <Container>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-0 border-y border-[var(--border-subtle)] sm:grid-cols-2 lg:grid-cols-4">
           {trustSignals.map((signal) => (
             <div
               key={signal.id}
-              className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-card)] px-4 py-4 backdrop-blur-md"
+              className="border-b border-[var(--border-subtle)] py-5 sm:px-5 lg:border-b-0 lg:border-r last:lg:border-r-0"
             >
-              <p className="text-sm font-semibold text-foreground">{signal.label}</p>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground md:text-sm">
+              <p className="text-sm font-semibold tracking-tight text-foreground">{signal.label}</p>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {signal.detail}
               </p>
             </div>

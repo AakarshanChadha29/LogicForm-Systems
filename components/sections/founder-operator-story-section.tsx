@@ -5,7 +5,6 @@ import { ArrowRight, Code2, Megaphone } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { GlassCard } from "@/components/ui/glass-card";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { siteConfig } from "@/lib/site";
 
@@ -31,12 +30,14 @@ export function FounderOperatorStorySection() {
     <Section id="founders" className="section-divider">
       <Container>
         <ScrollReveal>
-          <div className="max-w-3xl">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
             <p className="text-eyebrow">Founder team</p>
-            <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Technical execution and commercial judgement in one team
+            <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+              Built by a small team with full ownership.
             </h2>
-            <p className="mt-4 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:text-[1.0625rem]">
+            </div>
+            <p className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground md:text-lg">
               Logicform Systems is led by two founders with complementary ownership: one accountable
               for how systems are built, one accountable for how they are positioned, sold, and
               sustained commercially.
@@ -44,11 +45,11 @@ export function FounderOperatorStorySection() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 grid gap-0 border-y border-[var(--border-subtle)] md:grid-cols-2">
           {founders.map(({ icon: Icon, name, role, detail }, index) => (
             <ScrollReveal key={name} delay={index * 0.08}>
-              <GlassCard className="h-full p-6 md:p-7">
-                <span className="inline-flex rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--accent-muted)] p-2 text-accent">
+              <article className="h-full border-b border-[var(--border-subtle)] py-7 md:border-b-0 md:border-r md:px-7 last:md:border-r-0">
+                <span className="inline-flex text-accent">
                   <Icon size={18} aria-hidden />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">{name}</h3>
@@ -56,18 +57,18 @@ export function FounderOperatorStorySection() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                   {detail}
                 </p>
-              </GlassCard>
+              </article>
             </ScrollReveal>
           ))}
         </div>
 
         <ScrollReveal delay={0.12}>
-          <GlassCard className="mt-4 border-[var(--border-strong)] p-5 md:p-6">
-            <p className="text-pretty text-sm leading-relaxed text-[var(--foreground-secondary)] md:text-base">
+          <div className="mt-7 max-w-3xl">
+            <p className="text-pretty text-base leading-8 text-[var(--foreground-secondary)]">
               Together, they bring technical execution and commercial judgement into one operating
               model: systems that can be built, explained, sold, maintained, and improved.
             </p>
-          </GlassCard>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.16}>

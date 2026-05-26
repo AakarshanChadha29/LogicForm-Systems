@@ -1,4 +1,4 @@
-# Logicform Solutions Website
+# Logicform Systems Website
 
 Premium engineering systems homepage built with Next.js 15, TypeScript, Tailwind CSS v4, and Framer Motion.
 

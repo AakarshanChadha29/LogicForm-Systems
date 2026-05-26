@@ -17,7 +17,7 @@ export function CtaBand() {
               Turn your product idea into production-grade software.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Websites from €999 · Systems and AI from €2,500 · Ongoing partnership from €750/mo.
+              Websites from €2,500 · Systems from €8,000 · Partnership from €2,000/mo.
               Share your scope and get practical next steps.
             </p>
           </div>

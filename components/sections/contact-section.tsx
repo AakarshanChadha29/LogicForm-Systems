@@ -13,16 +13,16 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
   return (
     <Section id="contact" className={compact ? "!pb-10" : "section-divider pb-16"}>
       <Container>
-        <div className="glass-card p-6 md:p-9">
+        <div className="premium-media overflow-hidden rounded-[var(--radius-xl)] p-6 md:p-9">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="text-eyebrow">Contact</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Tell us what you are trying to build.
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+                Bring the business problem. We will shape the system.
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Share your goal, current problem, timeline, and existing tools. We will help you
-                understand the right next step.
+              <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground md:text-lg">
+                Share the goal, bottleneck, timeline, existing tools, and decision makers. You will
+                get a practical next step, not a vague sales call.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href={`mailto:${siteConfig.contactEmail}`} className={buttonVariants({ size: "lg" })}>

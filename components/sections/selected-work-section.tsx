@@ -3,117 +3,112 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { GlassCard } from "@/components/ui/glass-card";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { selectedWorkItems } from "@/data/selected-work";
 import { cn } from "@/lib/utils";
 
 export function SelectedWorkSection() {
+  const [featured, ...supporting] = selectedWorkItems;
+
   return (
     <Section id="selected-work" className="section-divider">
       <Container>
         <ScrollReveal>
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
             <div>
               <p className="text-eyebrow">Selected work</p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Selected systems we can build
+              <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+                Proof should feel concrete.
               </h2>
             </div>
-            <p className="text-pretty text-base leading-relaxed text-muted-foreground">
-              A mix of delivered work, internal platform builds, and concept systems that show how
-              Logicform approaches connected digital infrastructure. Concepts are labelled clearly—no
-              fake client claims.
+            <p className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground md:text-lg">
+              We show delivered work clearly and label concept work honestly. The goal is not a
+              portfolio wall. It is evidence of structured thinking, production care, and commercial
+              clarity.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="mt-8 space-y-5">
-          {selectedWorkItems.map((item, index) => (
-            <ScrollReveal key={item.id} delay={index * 0.06}>
-              <GlassCard
-                className={cn(
-                  "overflow-hidden",
-                  item.isConcept && "border-dashed border-[var(--border-strong)]",
-                )}
-              >
-                <div className="grid lg:grid-cols-[1fr_0.72fr]">
-                  <div className="border-b border-[var(--border)] p-6 md:p-7 lg:border-b-0 lg:border-r">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span
-                        className={cn(
-                          "rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em]",
-                          item.isConcept
-                            ? "border-[var(--border-strong)] text-[var(--foreground-secondary)]"
-                            : "border-[var(--border-strong)] bg-[var(--accent-muted)] text-accent",
-                        )}
-                      >
-                        {item.isConcept ? "Concept" : "Delivered"}
-                      </span>
-                      <span className="text-xs text-[var(--foreground-secondary)]">{item.label}</span>
-                    </div>
-                    <h3 className="mt-4 text-xl font-semibold tracking-tight text-foreground md:text-2xl">
-                      {item.title}
-                    </h3>
-                    <div className="mt-5 space-y-4">
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-                          Problem
-                        </p>
-                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.problem}</p>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-                          What was built
-                        </p>
-                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.built}</p>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-                          Outcome
-                        </p>
-                        <p className="mt-1.5 text-sm leading-relaxed text-[var(--foreground-secondary)]">
-                          {item.outcome}
-                        </p>
-                      </div>
-                    </div>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
-                      >
-                        View live project
-                        <ExternalLink size={14} aria-hidden />
-                      </a>
-                    ) : null}
+        {featured ? (
+          <ScrollReveal delay={0.08}>
+            <article className="mt-10 grid overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[rgba(255,255,255,0.035)] lg:grid-cols-[1.08fr_0.92fr]">
+              <div className="p-6 md:p-8 lg:p-10">
+                <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--foreground-secondary)]">
+                  <span className="text-accent">Delivered</span>
+                  <span aria-hidden>·</span>
+                  <span>{featured.label}</span>
+                </div>
+                <h3 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                  {featured.title}
+                </h3>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">
+                  {featured.outcome}
+                </p>
+                <div className="mt-8 grid gap-5 border-t border-[var(--border-subtle)] pt-6 md:grid-cols-2">
+                  <div>
+                    <p className="text-eyebrow">Problem</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {featured.problem}
+                    </p>
                   </div>
-                  <div className="flex flex-col justify-between bg-[rgba(0,0,0,0.32)] p-6 md:p-7">
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground-secondary)]">
-                        System layers
-                      </p>
-                      <ul className="mt-3 space-y-2">
-                        {item.layers.map((layer) => (
-                          <li
-                            key={layer}
-                            className="rounded border border-[var(--border)] bg-[var(--surface-card)] px-3 py-2 font-mono text-[11px] text-[var(--foreground-secondary)]"
-                          >
-                            {layer}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {item.isConcept ? (
-                      <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-                        Concept work illustrates approach and system thinking—not a delivered client
-                        engagement.
-                      </p>
-                    ) : null}
+                  <div>
+                    <p className="text-eyebrow">Built</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {featured.built}
+                    </p>
                   </div>
                 </div>
-              </GlassCard>
+                {featured.href ? (
+                  <a
+                    href={featured.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
+                  >
+                    View live project
+                    <ExternalLink size={14} aria-hidden />
+                  </a>
+                ) : null}
+              </div>
+
+              <div className="border-t border-[var(--border)] bg-[rgba(0,0,0,0.24)] p-6 md:p-8 lg:border-l lg:border-t-0 lg:p-10">
+                <p className="text-eyebrow">System layers</p>
+                <div className="mt-6 space-y-4">
+                  {featured.layers.map((layer, index) => (
+                    <div key={layer} className="grid grid-cols-[2.5rem_1fr] items-center gap-4">
+                      <span className="font-mono text-xs text-accent">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="border-b border-[var(--border-subtle)] py-3 text-sm text-[var(--foreground-secondary)]">
+                        {layer}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </ScrollReveal>
+        ) : null}
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {supporting.map((item, index) => (
+            <ScrollReveal key={item.id} delay={index * 0.06}>
+              <article
+                className={cn(
+                  "h-full rounded-[var(--radius-lg)] border border-[var(--border-subtle)] p-5 md:p-6",
+                  item.isConcept && "border-dashed",
+                )}
+              >
+                <p className="text-xs text-[var(--foreground-secondary)]">
+                  {item.isConcept ? "Concept" : "Internal build"} · {item.label}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {item.outcome}
+                </p>
+              </article>
             </ScrollReveal>
           ))}
         </div>

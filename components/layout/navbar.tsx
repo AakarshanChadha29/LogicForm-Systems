@@ -32,7 +32,7 @@ export function Navbar() {
       )}
     >
       <Container className="flex h-[4.25rem] items-center justify-between gap-4">
-        <Logo size="md" className="max-w-[10.5rem] sm:max-w-none" />
+        <Logo size="md" framed={false} className="max-w-[10.5rem] sm:max-w-none" />
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Primary">
           {navigationItems.map((item) => (
@@ -51,7 +51,7 @@ export function Navbar() {
             href="/contact"
             className={cn(buttonVariants({ size: "md" }), "hidden sm:inline-flex")}
           >
-            Tell us what you need
+            Start a project
           </Link>
 
           <button
@@ -90,7 +90,7 @@ export function Navbar() {
             className={cn(buttonVariants({ size: "md" }), "mt-3 w-full justify-center")}
             onClick={() => setMenuOpen(false)}
           >
-            Tell us what you need
+            Start a project
           </Link>
         </Container>
       </div>

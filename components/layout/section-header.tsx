@@ -16,12 +16,12 @@ export function SectionHeader({
   ...props
 }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-8 max-w-2xl md:mb-10", className)} {...props}>
+    <div className={cn("mb-8 max-w-3xl md:mb-10", className)} {...props}>
       <p className="text-eyebrow">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+      <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
         {title}
       </h2>
-      <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-[1.0625rem]">
+      <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
         {description}
       </p>
     </div>

@@ -12,7 +12,7 @@ export const featuredHomepageService: HomepageServiceCard = {
   id: "business-systems-build",
   title: "Business Systems Build",
   whoFor:
-    "Companies that need dashboards, internal tools, automations, portals, or CRM-style systems—not another disconnected app.",
+    "Companies that need an operational system: dashboards, internal tools, automations, portals, or CRM-style workflows built around how the team really works.",
   includes: [
     "Requirements and workflow mapping",
     "Full-stack application or dashboard build",
@@ -20,7 +20,7 @@ export const featuredHomepageService: HomepageServiceCard = {
     "Documentation and structured handover",
   ],
   outcome:
-    "One connected operational system your team can run, extend, and explain to stakeholders.",
+    "One connected operating layer your team can use, maintain, and explain to stakeholders.",
   href: "/contact",
   featured: true,
 };
@@ -29,25 +29,25 @@ export const homepageServiceCards: HomepageServiceCard[] = [
   {
     id: "website-system",
     title: "Website System",
-    whoFor: "Founders and businesses that need a credible, conversion-ready web presence.",
+    whoFor: "Companies that need a credible web presence with clear positioning, conversion paths, and production-grade build quality.",
     includes: ["Responsive structure", "SEO-ready setup", "Lead capture", "Deployment"],
-    outcome: "A website that supports trust, clarity, and inbound interest.",
+    outcome: "A website that supports trust, inbound interest, and cleaner lead handling.",
     href: "/services/websites",
   },
   {
     id: "custom-web-apps",
     title: "Custom Web Applications",
-    whoFor: "Teams that need portals, MVPs, or internal tools shaped around real workflows.",
+    whoFor: "Teams that need portals, MVPs, or internal tools shaped around actual workflows.",
     includes: ["Application architecture", "Role-based access", "API and data layer", "Production deployment"],
-    outcome: "Software that matches how your business actually operates.",
+    outcome: "Software that fits the business instead of forcing the business around generic tools.",
     href: "/services/custom-web-apps",
   },
   {
     id: "dashboards",
     title: "Dashboards & Reporting",
-    whoFor: "Operators who need live visibility over sales, delivery, customers, or KPIs.",
+    whoFor: "Operators who need live visibility over sales, delivery, customers, finance, or KPIs.",
     includes: ["KPI design", "Data connections", "Dashboard UI", "Reporting logic"],
-    outcome: "Decisions based on one source of truth—not scattered spreadsheets.",
+    outcome: "Decisions based on one reliable operating view, not scattered spreadsheets.",
     href: "/services/dashboards",
   },
   {

@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Logicform Systems",
-  tagline: "Premium Digital Systems for Modern Businesses",
+  tagline: "Digital Systems for Serious Operators",
   description:
-    "Logicform Systems designs and builds premium websites, custom web applications, dashboards, internal tools, AI-assisted workflows, automation systems, and ongoing technical partnership for businesses in Germany, Europe, India, and international markets.",
+    "Logicform Systems designs, builds, and maintains websites, internal tools, dashboards, automation systems, and AI-assisted workflows for businesses that need better digital operations.",
   url: "https://logicformsystems.com",
   contactEmail: "contact@logicformsystems.com",
   infoEmail: "info@logicformsystems.com",

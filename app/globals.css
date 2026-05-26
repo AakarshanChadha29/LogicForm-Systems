@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030303;
-  --background-subtle: #070604;
-  --foreground: #fffaf0;
-  --foreground-secondary: #e8ddc6;
-  --muted-foreground: #b8ad9b;
-  --accent: #d4af37;
-  --accent-muted: rgba(212, 175, 55, 0.16);
-  --accent-hover: #ffe38a;
-  --accent-strong: #f5c542;
-  --accent-secondary: #e8c96a;
-  --border: rgba(212, 175, 55, 0.32);
-  --border-strong: rgba(245, 215, 110, 0.58);
-  --border-subtle: rgba(212, 175, 55, 0.14);
-  --surface: rgba(255, 255, 255, 0.05);
-  --surface-elevated: rgba(255, 255, 255, 0.1);
-  --surface-card: rgba(255, 255, 255, 0.075);
-  --surface-card-hover: rgba(255, 255, 255, 0.13);
-  --surface-inset: rgba(0, 0, 0, 0.42);
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 0.875rem;
-  --radius-xl: 1.125rem;
+  --background: #050504;
+  --background-subtle: #0d0c0a;
+  --foreground: #fbf7ec;
+  --foreground-secondary: #d8cfbf;
+  --muted-foreground: #9f978a;
+  --accent: #c8a84c;
+  --accent-muted: rgba(200, 168, 76, 0.13);
+  --accent-hover: #e0c56b;
+  --accent-strong: #d9b85a;
+  --accent-secondary: #bda86f;
+  --border: rgba(220, 204, 158, 0.2);
+  --border-strong: rgba(222, 192, 103, 0.44);
+  --border-subtle: rgba(220, 204, 158, 0.11);
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-elevated: rgba(255, 255, 255, 0.07);
+  --surface-card: rgba(255, 255, 255, 0.052);
+  --surface-card-hover: rgba(255, 255, 255, 0.086);
+  --surface-inset: rgba(0, 0, 0, 0.34);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.75rem;
   --shadow-card:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 18px 44px -22px rgba(0, 0, 0, 0.82);
+    0 18px 52px -34px rgba(0, 0, 0, 0.9);
   --shadow-elevated:
     inset 0 1px 0 rgba(245, 215, 110, 0.14),
-    0 28px 60px -24px rgba(0, 0, 0, 0.88),
-    0 0 40px -20px rgba(212, 175, 55, 0.22);
-  --container: 76rem;
-  --section-space: clamp(3.25rem, 6vw, 5.25rem);
+    0 30px 72px -38px rgba(0, 0, 0, 0.92),
+    0 0 34px -26px rgba(200, 168, 76, 0.2);
+  --container: 74rem;
+  --section-space: clamp(3.75rem, 7vw, 6.75rem);
 }
 
 @theme inline {
@@ -42,8 +42,8 @@
   --color-border: var(--border);
   --color-surface: var(--surface);
   --color-surface-strong: var(--surface-elevated);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
 *,
@@ -137,7 +137,7 @@ select {
 
 .section-divider {
   border-top: 1px solid var(--border-subtle);
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(220, 204, 158, 0.025) 0%, transparent 42%);
 }
 
 .container-shell {
@@ -199,8 +199,8 @@ select.input-field option {
 .glass-card {
   border: 1px solid var(--border);
   background: var(--surface-card);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
 }
@@ -231,7 +231,7 @@ select.input-field option {
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #fffaf0 0%, var(--accent) 52%, var(--accent-hover) 100%);
+  background: linear-gradient(135deg, #fbf7ec 0%, var(--accent-strong) 58%, #f1dc9a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -240,7 +240,23 @@ select.input-field option {
 .premium-glow {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 0 48px -14px rgba(212, 175, 55, 0.42);
+    0 30px 90px -54px rgba(200, 168, 76, 0.46);
+}
+
+.editorial-rule {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+.premium-media {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+    #080807;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 36px 110px -68px rgba(200, 168, 76, 0.5);
 }
 
 .prose-page h2 {

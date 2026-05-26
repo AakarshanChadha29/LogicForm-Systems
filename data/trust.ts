@@ -1,23 +1,23 @@
 export const trustSignals = [
   {
     id: "systems",
-    label: "Connected systems",
-    detail: "Websites, workflows, dashboards, and tools built as one operating layer.",
+    label: "Built as an operating layer",
+    detail: "Websites, workflows, dashboards, and tools planned together instead of patched together.",
   },
   {
     id: "markets",
     label: "Germany · Europe · India",
-    detail: "Serving businesses locally and internationally with structured delivery.",
+    detail: "Structured remote delivery for companies that need clarity across markets and teams.",
   },
   {
     id: "approach",
-    label: "AI-assisted execution",
-    detail: "Automation where it saves time. Human control where judgment matters.",
+    label: "AI with human control",
+    detail: "Automation where it saves time, approval checkpoints where judgment matters.",
   },
   {
     id: "partner",
-    label: "Technical partnership",
-    detail: "From first build to deployment, maintenance, and ongoing improvements.",
+    label: "Long-term technical care",
+    detail: "From first build to deployment, monitoring, maintenance, and ongoing improvements.",
   },
 ] as const;
 

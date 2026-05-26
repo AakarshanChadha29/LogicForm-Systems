@@ -14,30 +14,30 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "website-system",
     name: "Website System",
-    price: "€1,500–€3,500",
-    bestFor: "Businesses that need a credible, conversion-ready web presence.",
+    price: "€2,500–€7,500",
+    bestFor: "Businesses that need a serious website with positioning, conversion flow, SEO structure, and production deployment.",
     includes: [
       "Responsive website structure",
       "SEO-ready setup",
       "Contact and lead capture",
       "Deployment and analytics basics",
     ],
-    timeline: "1–3 weeks",
+    timeline: "2–5 weeks",
     ctaLabel: "Launch Website",
     ctaHref: "/services/websites",
   },
   {
     id: "business-system",
     name: "Business System",
-    price: "€4,500–€12,000",
-    bestFor: "Dashboards, internal tools, automations, and connected operational systems.",
+    price: "€8,000–€30,000",
+    bestFor: "Dashboards, internal tools, automations, portals, and connected workflows that replace manual operations.",
     includes: [
       "Requirements and system mapping",
       "Dashboard, app, or automation build",
       "Integrations and data foundations",
       "Deployment and handover",
     ],
-    timeline: "3–8 weeks",
+    timeline: "4–12 weeks",
     ctaLabel: "Scope Business System",
     ctaHref: "/contact",
     recommended: true,
@@ -45,8 +45,8 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "technical-partner",
     name: "Technical Partner",
-    price: "from €1,500/month",
-    bestFor: "Teams needing ongoing technical support, improvements, and roadmap execution.",
+    price: "€2,000–€6,000/month",
+    bestFor: "Teams that need a reliable technical partner for roadmap execution, support, maintenance, and system improvement.",
     includes: [
       "Monthly support and improvements",
       "Automation and deployment care",
@@ -60,7 +60,7 @@ export const homepagePricingPackages: PricingPackage[] = [
 ];
 
 export const pricingAuditNote =
-  "Need clarity before building? Start with a Digital Systems Audit from €750.";
+  "Need clarity before building? Start with a Digital Systems Audit from €1,200.";
 
 export const pricingNote =
-  "Launch partner pricing may be available for selected companies, case-study projects, or long-term partnerships. Final pricing depends on scope, integrations, timeline, data complexity, automation risk, and support requirements.";
+  "Final pricing depends on scope, integrations, data complexity, automation risk, content depth, and support requirements. Smaller implementation phases are possible when a project needs to start lean and grow deliberately.";

@@ -71,8 +71,8 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Next.js, TypeScript, Tailwind CSS, SEO metadata, performance optimization, responsive design.",
-      startingPrice: "From €999",
-      timeline: "1–2 weeks",
+      startingPrice: "From €2,500",
+      timeline: "2–5 weeks",
       ctaLabel: "Start Website Project",
     },
   },
@@ -116,8 +116,8 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Workflow orchestration, API integrations, LLM-assisted steps, logging, and human-in-the-loop checkpoints.",
-      startingPrice: "From €2,500",
-      timeline: "2–5 weeks",
+      startingPrice: "From €6,000",
+      timeline: "3–8 weeks",
       ctaLabel: "Build AI Workflow",
     },
   },
@@ -161,8 +161,8 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Next.js dashboards, SQL reporting, API integrations, charting, and optional AI summaries.",
-      startingPrice: "From €2,500",
-      timeline: "3–6 weeks",
+      startingPrice: "From €6,000",
+      timeline: "4–10 weeks",
       ctaLabel: "Scope a Dashboard",
     },
   },
@@ -206,8 +206,8 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Next.js, TypeScript, REST APIs, SQL databases, role-based access, and modular architecture.",
-      startingPrice: "From €2,500",
-      timeline: "3–6 weeks",
+      startingPrice: "From €8,000",
+      timeline: "5–12 weeks",
       ctaLabel: "Scope a System",
     },
   },
@@ -251,7 +251,7 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Google Workspace, Atlassian, identity workflows, SOP structure, and practical operational tooling.",
-      startingPrice: "From €750",
+      startingPrice: "From €1,500",
       timeline: "1–4 weeks",
       ctaLabel: "Discuss IT Support",
     },
@@ -296,7 +296,7 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Vercel, DNS, SSL, observability basics, performance optimization, and structured release practices.",
-      startingPrice: "From €750/month",
+      startingPrice: "From €1,500/month",
       timeline: "Ongoing",
       ctaLabel: "Discuss Maintenance",
     },
@@ -341,7 +341,7 @@ export const serviceOfferings: ServiceOffering[] = [
       ],
       technicalApproach:
         "Structured discovery, architecture notes, practical documentation, and workshop-style training.",
-      startingPrice: "From €750",
+      startingPrice: "From €1,200",
       timeline: "1–3 weeks",
       ctaLabel: "Book a Strategy Session",
     },

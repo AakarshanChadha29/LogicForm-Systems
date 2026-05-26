@@ -55,7 +55,7 @@ export const servicePages: ServicePageContent[] = [
       "Roadmap and implementation sequencing",
       "Executive walkthrough and next-step brief",
     ],
-    pricingRange: "EUR750 - EUR2,500 depending on scope and number of systems assessed.",
+    pricingRange: "EUR1,200 - EUR4,000 depending on scope and number of systems assessed.",
     deliverables: [
       "Systems audit report",
       "Prioritized roadmap",
@@ -107,7 +107,7 @@ export const servicePages: ServicePageContent[] = [
       "QA, SEO setup, and performance pass",
       "Launch and handover",
     ],
-    pricingRange: "EUR999 - EUR6,000 based on scope, content depth, and integrations.",
+    pricingRange: "EUR2,500 - EUR7,500 based on scope, content depth, and integrations.",
     deliverables: [
       "Production-ready website",
       "Analytics and conversion tracking setup",
@@ -159,7 +159,7 @@ export const servicePages: ServicePageContent[] = [
       "Validation with real scenarios",
       "Rollout and optimization",
     ],
-    pricingRange: "EUR2,500 - EUR12,000 depending on complexity and number of workflows.",
+    pricingRange: "EUR6,000 - EUR25,000 depending on complexity and number of workflows.",
     deliverables: [
       "Production automation workflows",
       "Human-in-the-loop checkpoints",
@@ -212,7 +212,7 @@ export const servicePages: ServicePageContent[] = [
       "Validation with stakeholders",
       "Adoption and iteration",
     ],
-    pricingRange: "EUR2,500 - EUR15,000 depending on data sources and complexity.",
+    pricingRange: "EUR6,000 - EUR30,000 depending on data sources and complexity.",
     deliverables: [
       "Live dashboard or internal tool",
       "Connected data integrations",
@@ -264,7 +264,7 @@ export const servicePages: ServicePageContent[] = [
       "QA and stakeholder validation",
       "Production deployment and support",
     ],
-    pricingRange: "EUR4,000 - EUR30,000 depending on feature scope.",
+    pricingRange: "EUR8,000 - EUR45,000 depending on feature scope.",
     deliverables: [
       "Production-ready application",
       "Data and integration layer",
@@ -316,7 +316,7 @@ export const servicePages: ServicePageContent[] = [
       "Documentation and enablement",
       "Stabilization support",
     ],
-    pricingRange: "EUR750 - EUR5,000 depending on operational scope.",
+    pricingRange: "EUR1,500 - EUR7,500 depending on operational scope.",
     deliverables: [
       "Operational process map",
       "Configured support workflows",
@@ -368,7 +368,7 @@ export const servicePages: ServicePageContent[] = [
       "Routine updates and optimization",
       "Quarterly reliability review",
     ],
-    pricingRange: "EUR750/month - EUR3,500/month based on environment scope.",
+    pricingRange: "EUR1,500/month - EUR4,500/month based on environment scope.",
     deliverables: [
       "Managed deployment pipelines",
       "Monitoring and alert baseline",
@@ -420,7 +420,7 @@ export const servicePages: ServicePageContent[] = [
       "Review, release, and iteration",
       "Quarterly strategy refresh",
     ],
-    pricingRange: "EUR1,500/month - EUR8,000/month based on support scope.",
+    pricingRange: "EUR2,000/month - EUR8,000/month based on support scope.",
     deliverables: [
       "Monthly delivery plan",
       "Implemented systems improvements",
