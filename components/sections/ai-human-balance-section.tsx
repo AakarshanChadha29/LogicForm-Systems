@@ -33,11 +33,11 @@ export function AiHumanBalanceSection() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-eyebrow">Approach</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              AI-First, Human-Controlled
+              AI-Assisted Execution. Human-Owned Decisions.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Logicform Solutions designs systems that move faster without removing the people who
-              make the decisions.
+              Logicform Systems uses AI to accelerate delivery while keeping architecture, approvals,
+              and quality decisions with accountable humans.
             </p>
           </div>
         </ScrollReveal>

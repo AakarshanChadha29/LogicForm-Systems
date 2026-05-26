@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_PHONE = "491782681334";
-const WHATSAPP_MESSAGE = "Hi Logicform Solutions, I would like to discuss a project.";
+const WHATSAPP_MESSAGE = "Hi Logicform Systems, I would like to discuss a project.";
 
 const whatsappHref = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -24,7 +24,7 @@ export function WhatsAppButton() {
       href={whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contact Logicform Solutions on WhatsApp"
+      aria-label="Contact Logicform Systems on WhatsApp"
       className={cn(
         "fixed z-[60] inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--border-strong)]",
         "bg-[var(--surface-card)] px-3.5 text-sm font-medium text-[var(--foreground)] shadow-[var(--shadow-elevated)]",

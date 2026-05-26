@@ -1,16 +1,16 @@
 export const siteConfig = {
-  name: "Logicform Solutions",
-  tagline: "AI-First Software, Automation & Business Systems",
+  name: "Logicform Systems",
+  tagline: "Connected Digital Systems for Serious Operators",
   description:
-    "Logicform Solutions builds AI-first software systems, business automation workflows, dashboards, websites, cloud-ready platforms, and internal tools for small businesses, founders, and growing teams.",
+    "Logicform Systems builds connected websites, automations, dashboards, internal tools, AI-assisted workflows, and cloud-ready platforms that turn business chaos into operational clarity.",
   url: "https://logicformsolutions.com",
   contactEmail: "chadhaaakarshan@gmail.com",
-  legalName: "Logicform Solutions",
+  legalName: "Logicform Systems",
   founderName: "Aakarshan Chadha",
   founderTitle: "Founder & Technical Consultant",
   locale: "en_GB",
   keywords: [
-    "Logicform Solutions",
+    "Logicform Systems",
     "AI automation consultant Germany",
     "full-stack developer Germany",
     "SaaS engineering consultant",

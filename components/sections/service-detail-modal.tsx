@@ -65,14 +65,23 @@ export function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps
         </div>
       </div>
 
-      <Link
-        href="#contact"
-        onClick={onClose}
-        className={cn(buttonVariants({ size: "lg" }), "mt-6")}
-      >
-        {detail.ctaLabel}
-        <ArrowRight size={16} aria-hidden />
-      </Link>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <Link
+          href="#contact"
+          onClick={onClose}
+          className={cn(buttonVariants({ size: "lg" }))}
+        >
+          {detail.ctaLabel}
+          <ArrowRight size={16} aria-hidden />
+        </Link>
+        <Link
+          href={service.fullPageHref}
+          onClick={onClose}
+          className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}
+        >
+          Read full page
+        </Link>
+      </div>
     </GlassModal>
   );
 }

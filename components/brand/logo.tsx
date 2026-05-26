@@ -15,7 +15,7 @@ type LogoProps = {
   framed?: boolean;
 };
 
-const LOGO_ALT = "Logicform Solutions logo";
+const LOGO_ALT = "Logicform Systems logo";
 
 const fullLogoSources = ["/logo.png", "/logo.svg"] as const;
 const markLogoSource = "/logo-mark.svg";
@@ -46,7 +46,7 @@ function LogoTextFallback({ size }: { size: LogoProps["size"] }) {
       )}
     >
       <span className="text-[var(--foreground)]">Logicform</span>{" "}
-      <span className="text-[var(--foreground-secondary)]">Solutions</span>
+      <span className="text-[var(--foreground-secondary)]">Systems</span>
     </span>
   );
 }

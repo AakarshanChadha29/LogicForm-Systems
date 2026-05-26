@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import type { ServiceOffering } from "@/data/services";
 import { serviceIconMap } from "@/lib/service-icons";
 import { cn } from "@/lib/utils";
@@ -46,6 +48,12 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
             </li>
           ))}
         </ul>
+        <Link
+          href={service.fullPageHref}
+          className="mt-4 inline-flex text-sm font-medium text-accent transition-colors hover:text-[var(--accent-hover)]"
+        >
+          Read full page
+        </Link>
       </div>
     </article>
   );

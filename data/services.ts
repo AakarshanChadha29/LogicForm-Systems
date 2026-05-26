@@ -21,6 +21,7 @@ export type ServiceOffering = {
   id: string;
   label: string;
   title: string;
+  fullPageHref: string;
   previewTagline: string;
   icon: ServiceIcon;
   description: string;
@@ -34,6 +35,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "websites-digital-presence",
     label: "Service 01",
     title: "Websites & Digital Presence",
+    fullPageHref: "/services/websites",
     previewTagline: "Credible websites built for speed, structure, and conversion.",
     icon: "globe",
     description:
@@ -78,6 +80,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "ai-workflow-automation",
     label: "Service 02",
     title: "AI & Workflow Automation",
+    fullPageHref: "/services/ai-automation",
     previewTagline: "Automate repetitive work with human approval where it matters.",
     icon: "bot",
     description:
@@ -122,6 +125,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "dashboards-reporting",
     label: "Service 03",
     title: "Dashboards & Reporting Systems",
+    fullPageHref: "/services/dashboards",
     previewTagline: "Operational dashboards that turn data into clear decisions.",
     icon: "chart",
     description:
@@ -166,6 +170,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "custom-web-applications",
     label: "Service 04",
     title: "Custom Web Applications",
+    fullPageHref: "/services/custom-web-apps",
     previewTagline: "Web apps and internal tools shaped around how you work.",
     icon: "layers",
     description:
@@ -210,6 +215,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "it-systems-operations",
     label: "Service 05",
     title: "IT Systems & Operations",
+    fullPageHref: "/services/it-operations",
     previewTagline: "Practical IT workflows, access, and documentation for daily ops.",
     icon: "operations",
     description:
@@ -254,6 +260,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "cloud-deployment-maintenance",
     label: "Service 06",
     title: "Cloud, Deployment & Maintenance",
+    fullPageHref: "/services/cloud-maintenance",
     previewTagline: "Deploy, monitor, and maintain systems your business relies on.",
     icon: "cloud",
     description:
@@ -298,6 +305,7 @@ export const serviceOfferings: ServiceOffering[] = [
     id: "strategy-training-documentation",
     label: "Service 07",
     title: "Strategy, Training & Documentation",
+    fullPageHref: "/services/systems-audit",
     previewTagline: "Clear guidance so teams can adopt systems with confidence.",
     icon: "book",
     description:
