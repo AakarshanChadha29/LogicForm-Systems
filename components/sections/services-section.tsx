@@ -10,8 +10,8 @@ export function ServicesSection() {
       <Container>
         <SectionHeader
           eyebrow="Services"
-          title="Engineering Services for Real Business Systems"
-          description="Veltrix Labs delivers production-oriented software, AI workflows, cloud foundations, IT systems support, and data dashboards for teams that need dependable technical execution."
+          title="AI-First and Practical Technical Services"
+          description="From websites and internal tools to AI workflows, dashboards, cloud deployment, and IT operations—Logicform Solutions delivers business systems with clear scope, dependable execution, and technology matched to real needs."
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

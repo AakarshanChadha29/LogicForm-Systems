@@ -1,8 +1,8 @@
-<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Veltrix Labs">
-  <rect width="40" height="40" rx="10" fill="#2563EB"/>
-  <path d="M11.5 11.5L19.2 28.5H22.4L14.8 13.8L25.8 11.5H22.8L16.2 18.2L13.5 11.5H11.5Z" fill="white"/>
-  <path d="M27.5 11.5H24.8L19.8 19.8L21.8 23.5L27.5 11.5Z" fill="white" fill-opacity="0.92"/>
-  <circle cx="29.5" cy="28.5" r="2.5" fill="#0F766E"/>
-  <text x="50" y="26" fill="#0B1220" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" letter-spacing="-0.02em">Veltrix</text>
-  <text x="118" y="26" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" letter-spacing="-0.01em">Labs</text>
+<svg width="240" height="40" viewBox="0 0 240 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logicform Solutions">
+  <rect width="40" height="40" rx="10" fill="#d4af37"/>
+  <path d="M11.5 11.5L19.2 28.5H22.4L14.8 13.8L25.8 11.5H22.8L16.2 18.2L13.5 11.5H11.5Z" fill="#0a0a0a"/>
+  <path d="M27.5 11.5H24.8L19.8 19.8L21.8 23.5L27.5 11.5Z" fill="#0a0a0a" fill-opacity="0.92"/>
+  <circle cx="29.5" cy="28.5" r="2.5" fill="#f5d76e"/>
+  <text x="50" y="26" fill="#f8f5ec" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="600" letter-spacing="-0.02em">Logicform</text>
+  <text x="148" y="26" fill="#c8bfae" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="500" letter-spacing="-0.01em">Solutions</text>
 </svg>

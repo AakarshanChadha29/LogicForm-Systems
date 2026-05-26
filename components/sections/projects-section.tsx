@@ -35,7 +35,7 @@ function ProjectCard({
             {project.title}
           </h3>
         </div>
-        <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] p-2 text-muted-foreground">
+        <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--accent-muted)] p-2 text-accent">
           <Cpu size={17} strokeWidth={1.75} aria-hidden />
         </span>
       </div>
@@ -107,7 +107,7 @@ function ProjectModal({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[70] flex items-end justify-center bg-slate-900/40 p-4 backdrop-blur-sm md:items-center"
+        className="fixed inset-0 z-[70] flex items-end justify-center bg-black/70 p-4 backdrop-blur-sm md:items-center"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
         animate={prefersReducedMotion ? {} : { opacity: 1 }}
         exit={prefersReducedMotion ? {} : { opacity: 0 }}
@@ -120,7 +120,7 @@ function ProjectModal({
           aria-modal="true"
           aria-labelledby={`${project.id}-title`}
           aria-describedby={`${project.id}-overview`}
-          className="relative w-full max-w-3xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface-elevated)] p-6 shadow-[var(--shadow-elevated)] md:p-8"
+          className="surface-card relative w-full max-w-3xl p-6 md:p-8"
           initial={prefersReducedMotion ? false : { opacity: 0, y: 16, scale: 0.98 }}
           animate={prefersReducedMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
           exit={prefersReducedMotion ? {} : { opacity: 0, y: 12, scale: 0.98 }}
@@ -130,7 +130,7 @@ function ProjectModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 text-muted-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
+            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface-inset)] text-muted-foreground transition-colors hover:border-[var(--border-strong)] hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             aria-label="Close engineering specs modal"
           >
             <X size={16} />
@@ -192,7 +192,7 @@ function ProjectModal({
                 {project.modal.tools.map((tool) => (
                   <li
                     key={tool}
-                    className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+                    className="rounded-full border border-[var(--border)] bg-[var(--surface-inset)] px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
                   >
                     {tool}
                   </li>

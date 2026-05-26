@@ -14,20 +14,26 @@ export function PricingSection() {
       <Container>
         <SectionHeader
           eyebrow="Pricing"
-          title="Clear Packages for Serious Engineering Work"
-          description="Transparent starting points for websites, custom systems, and ongoing technical partnership. Final scope is confirmed after a practical discovery conversation."
+          title="Clear Packages for Websites, Systems, and AI"
+          description="Transparent starting points for websites, dashboards, AI workflows, and ongoing technical partnership. Final scope is confirmed after a practical discovery conversation."
         />
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {pricingPackages.map((pkg, index) => (
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {pricingPackages.map((pkg) => (
             <article
               key={pkg.id}
               className={cn(
-                "surface-card-interactive flex h-full flex-col p-6",
-                index === 1 && "border-[color-mix(in_srgb,var(--accent)_25%,var(--border))]",
+                "glass-card-interactive relative flex h-full flex-col p-6",
+                pkg.recommended && "border-[var(--border-strong)] bg-[var(--accent-muted)]",
               )}
             >
-              <header className="mb-5">
+              {pkg.recommended ? (
+                <span className="absolute right-4 top-4 rounded-full border border-[var(--border-strong)] bg-[var(--surface-elevated)] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+                  Recommended
+                </span>
+              ) : null}
+
+              <header className={cn("mb-5", pkg.recommended && "pr-24")}>
                 <p className="text-3xl font-semibold tracking-tight text-foreground">{pkg.price}</p>
                 <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">
                   {pkg.name}
@@ -53,7 +59,10 @@ export function PricingSection() {
                 <p className="mt-1 text-sm text-foreground">{pkg.timeline}</p>
                 <Link
                   href="#contact"
-                  className={cn(buttonVariants({ variant: index === 1 ? "primary" : "ghost", size: "lg" }), "mt-4")}
+                  className={cn(
+                    buttonVariants({ variant: pkg.recommended ? "primary" : "ghost", size: "lg" }),
+                    "mt-4 w-full sm:w-auto",
+                  )}
                 >
                   {pkg.ctaLabel}
                   <ArrowRight size={16} aria-hidden />

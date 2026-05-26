@@ -34,7 +34,7 @@ export const arroyoTestimonial = {
   reviewerRole: "Client Review",
   label: "Approved client feedback",
   quote:
-    "Veltrix Labs helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity. The work showed strong technical understanding, fast execution, and attention to how real customers evaluate industrial solutions.",
+    "Logicform Solutions helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity. The work showed strong technical understanding, fast execution, and attention to how real customers evaluate industrial solutions.",
   company: "Arroyo Technologies",
   projectUrl: "https://www.arroyo-technologies.com/",
 } as const;

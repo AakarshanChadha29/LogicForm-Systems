@@ -25,21 +25,21 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300",
+        "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter,box-shadow] duration-300",
         scrolled
-          ? "border-[var(--border)] bg-white/92 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)]"
-          : "border-transparent bg-white/70 backdrop-blur-sm",
+          ? "border-[var(--border)] bg-[rgba(5,5,5,0.88)] shadow-[0_1px_0_rgba(212,175,55,0.08)] backdrop-blur-xl"
+          : "border-transparent bg-[rgba(5,5,5,0.55)] backdrop-blur-md",
       )}
     >
       <Container className="flex h-[4.25rem] items-center justify-between gap-4">
-        <Logo size="md" />
+        <Logo size="md" className="max-w-[10.5rem] sm:max-w-none" />
 
         <nav className="hidden items-center gap-6 lg:flex xl:gap-7" aria-label="Primary">
           {navigationItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-[0.8125rem] text-muted-foreground transition-colors hover:text-foreground"
+              className="text-[0.8125rem] text-muted-foreground transition-colors hover:text-[var(--foreground)]"
             >
               {item.label}
             </Link>
@@ -56,7 +56,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--surface-elevated)] hover:text-[var(--foreground)] lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
@@ -70,7 +70,7 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-[var(--border)] bg-white transition-all lg:hidden",
+          "overflow-hidden border-t border-[var(--border)] bg-[rgba(8,8,8,0.96)] backdrop-blur-xl transition-all lg:hidden",
           menuOpen ? "max-h-[28rem]" : "max-h-0",
         )}
       >
@@ -79,7 +79,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="rounded-[var(--radius-sm)] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-[var(--surface-inset)] hover:text-foreground"
+              className="rounded-[var(--radius-sm)] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-[var(--surface-elevated)] hover:text-[var(--foreground)]"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}

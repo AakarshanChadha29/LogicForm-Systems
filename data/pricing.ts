@@ -6,52 +6,71 @@ export type PricingPackage = {
   includes: string[];
   timeline: string;
   ctaLabel: string;
+  recommended?: boolean;
 };
 
 export const pricingPackages: PricingPackage[] = [
   {
-    id: "launchpad",
-    name: "Launchpad Website",
+    id: "launch-website",
+    name: "Launch Website",
     price: "From €999",
     forDescription:
-      "Business websites, product websites, landing pages, and professional portfolios.",
+      "Business websites, landing pages, product websites, and professional portfolios.",
     includes: [
       "Strategy and page structure",
-      "Premium responsive UI",
+      "Premium responsive design",
       "SEO-ready setup",
-      "Contact integration",
-      "Performance and accessibility optimization",
+      "Contact form integration",
+      "Performance optimization",
       "Deployment support",
     ],
     timeline: "1–2 weeks",
-    ctaLabel: "Start Launchpad",
+    ctaLabel: "Start Website",
   },
   {
-    id: "systems-build",
-    name: "Systems Build",
+    id: "business-systems-build",
+    name: "Business Systems Build",
     price: "From €2,500",
     forDescription:
-      "Dashboards, CRM tools, SaaS MVPs, admin panels, and automation workflows.",
+      "Dashboards, internal tools, CRM-style systems, admin panels, and automation workflows.",
     includes: [
       "Requirements mapping",
-      "Full-stack application development",
-      "Dashboard/admin UI",
+      "Dashboard or internal tool UI",
       "API and database foundations",
-      "Authentication-ready architecture",
-      "Deployment and handover documentation",
+      "Workflow automation",
+      "Deployment setup",
+      "Handover documentation",
     ],
     timeline: "3–6 weeks",
     ctaLabel: "Scope a System",
+    recommended: true,
+  },
+  {
+    id: "ai-workflow-system",
+    name: "AI Workflow System",
+    price: "From €2,500",
+    forDescription:
+      "AI-powered workflows, document/email automation, human-in-the-loop approval systems, and tool integrations.",
+    includes: [
+      "AI workflow planning",
+      "Automation setup",
+      "Human approval logic",
+      "Tool integration",
+      "Testing and error handling",
+      "Documentation",
+    ],
+    timeline: "2–5 weeks",
+    ctaLabel: "Build AI Workflow",
   },
   {
     id: "technical-partner",
     name: "Technical Partner",
     price: "From €750/month",
     forDescription:
-      "Ongoing engineering, automation, IT operations, infrastructure, improvements, and support.",
+      "Ongoing technical support, improvements, automation, IT operations, monitoring, and roadmap support.",
     includes: [
       "Monthly engineering support",
-      "Feature updates",
+      "Website and system updates",
       "Automation improvements",
       "Troubleshooting",
       "Documentation",

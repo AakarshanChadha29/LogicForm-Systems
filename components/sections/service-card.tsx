@@ -1,15 +1,6 @@
-import { BarChart3, Bot, CloudCog, Headset, Layers3 } from "lucide-react";
-
 import type { ServiceOffering } from "@/data/services";
+import { serviceIconMap } from "@/lib/service-icons";
 import { cn } from "@/lib/utils";
-
-const iconMap = {
-  bot: Bot,
-  layers: Layers3,
-  cloud: CloudCog,
-  operations: Headset,
-  chart: BarChart3,
-} as const;
 
 type ServiceCardProps = {
   service: ServiceOffering;
@@ -17,7 +8,7 @@ type ServiceCardProps = {
 };
 
 export function ServiceCard({ service, className }: ServiceCardProps) {
-  const Icon = iconMap[service.icon];
+  const Icon = serviceIconMap[service.icon];
 
   return (
     <article className={cn("surface-card-interactive flex h-full flex-col p-6", className)}>
@@ -28,7 +19,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
             {service.title}
           </h3>
         </div>
-        <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] p-2 text-muted-foreground">
+        <span className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--accent-muted)] p-2 text-accent">
           <Icon size={17} strokeWidth={1.75} aria-hidden />
         </span>
       </header>

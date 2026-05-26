@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { NeuralBackground } from "@/components/layout/neural-background";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -20,11 +21,11 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
-const pageTitle = "Veltrix Labs | AI, Software & Cloud Engineering Consultancy";
+const pageTitle = `${siteConfig.name} | ${siteConfig.tagline}`;
 
 export const viewport: Viewport = {
-  themeColor: "#f7f9fc",
-  colorScheme: "light",
+  themeColor: "#050505",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
@@ -156,7 +157,7 @@ export default function RootLayout({
       <body className="min-h-full overflow-x-clip bg-background text-foreground">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-md focus:bg-[var(--accent)] focus:px-3 focus:py-2 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-md focus:bg-[var(--accent)] focus:px-3 focus:py-2 focus:text-sm focus:text-[#0a0a0a]"
         >
           Skip to main content
         </a>
@@ -164,9 +165,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <div data-theme="light" className="relative min-h-screen">
+        <div data-theme="dark" className="relative min-h-screen">
           <NeuralBackground />
           {children}
+          <WhatsAppButton />
         </div>
       </body>
     </html>

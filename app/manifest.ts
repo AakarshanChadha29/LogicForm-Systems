@@ -5,12 +5,12 @@ import { siteConfig } from "@/lib/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: "Veltrix",
+    short_name: "Logicform",
     description: siteConfig.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#f7f9fc",
-    theme_color: "#2563eb",
+    background_color: "#050505",
+    theme_color: "#d4af37",
     icons: [
       {
         src: "/icon.svg",

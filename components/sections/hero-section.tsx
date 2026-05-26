@@ -2,51 +2,84 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2, Cloud, Database, LayoutDashboard, Shield } from "lucide-react";
+import {
+  Bot,
+  CheckCircle2,
+  Globe,
+  LayoutDashboard,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
+import { FloatingOrb } from "@/components/ui/floating-orb";
+import { GlassCard } from "@/components/ui/glass-card";
 import { buttonVariants } from "@/components/ui/button";
-import { trustSignals } from "@/data/trust";
 import { cn } from "@/lib/utils";
 
-const architectureLayers = [
-  { label: "Application layer", detail: "Dashboards · APIs · Admin UI", icon: LayoutDashboard },
-  { label: "AI & automation", detail: "Workflows · Integrations", icon: Cloud },
-  { label: "Infrastructure", detail: "Cloud · Data · Observability", icon: Database },
-  { label: "Security & ops", detail: "Access · Monitoring", icon: Shield },
+const floatingCards = [
+  { label: "Website", icon: Globe, x: "8%", y: "10%", delay: 0 },
+  { label: "Automation", icon: Bot, x: "58%", y: "6%", delay: 0.4 },
+  { label: "Dashboard", icon: LayoutDashboard, x: "12%", y: "52%", delay: 0.8 },
+  { label: "AI Assist", icon: Sparkles, x: "62%", y: "48%", delay: 1.1 },
+  { label: "Human Approval", icon: ShieldCheck, x: "36%", y: "72%", delay: 1.4 },
 ] as const;
 
 function HeroVisual({ className }: { className?: string }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div className={cn("surface-card overflow-hidden", className)}>
-      <div className="border-b border-[var(--border)] bg-[var(--surface-inset)] px-4 py-3">
-        <p className="text-eyebrow">Delivery architecture</p>
-        <p className="mt-0.5 text-xs text-muted-foreground">From concept to production operations</p>
-      </div>
-      <div className="grid gap-2 p-4 sm:grid-cols-2">
-        {architectureLayers.map((layer) => {
-          const Icon = layer.icon;
-          return (
-            <div
-              key={layer.label}
-              className="rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-3 py-2.5"
-            >
-              <div className="flex items-center gap-2">
-                <span className="rounded-[var(--radius-sm)] bg-[var(--accent-muted)] p-1 text-accent">
-                  <Icon size={13} aria-hidden />
-                </span>
-                <p className="text-xs font-medium text-foreground">{layer.label}</p>
-              </div>
-              <p className="mt-1 pl-7 text-[11px] text-muted-foreground">{layer.detail}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="border-t border-[var(--border)] bg-[#0f172a] px-4 py-3 font-mono text-[10px] leading-relaxed text-slate-300">
-        <span className="text-blue-400">export</span> const stack ={" "}
-        <span className="text-amber-200">&quot;Next.js · TypeScript · Cloud&quot;</span>;
-      </div>
+    <div className={cn("relative min-h-[320px] md:min-h-[380px]", className)}>
+      <FloatingOrb className="absolute -right-6 top-0" size="lg" delay={0.2} />
+      <FloatingOrb className="absolute -left-8 bottom-4" size="md" delay={0.8} />
+
+      <GlassCard className="relative h-full overflow-hidden p-4 md:p-5 premium-glow">
+        <div className="border-b border-[var(--border)] pb-3">
+          <p className="text-eyebrow">System preview</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">Websites · workflows · dashboards · control</p>
+        </div>
+
+        <div className="relative mt-4 min-h-[240px] md:min-h-[280px]">
+          {floatingCards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={card.label}
+                className="absolute w-[44%] max-w-[11rem] sm:w-[42%]"
+                style={{ left: card.x, top: card.y }}
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : { y: [0, -6, 0], opacity: [0.92, 1, 0.92] }
+                }
+                transition={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        duration: 5 + card.delay,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: card.delay,
+                      }
+                }
+              >
+                <div className="glass-card-interactive flex items-center gap-2 px-3 py-2.5">
+                  <span className="rounded-[var(--radius-sm)] bg-[var(--accent-muted)] p-1 text-accent">
+                    <Icon size={14} aria-hidden />
+                  </span>
+                  <span className="text-[11px] font-medium text-foreground sm:text-xs">{card.label}</span>
+                </div>
+              </motion.div>
+            );
+          })}
+
+          <div className="absolute bottom-0 left-0 right-0 rounded-[var(--radius-md)] border border-[var(--border)] bg-[rgba(0,0,0,0.55)] px-3 py-2.5 font-mono text-[10px] text-[var(--foreground-secondary)]">
+            <span className="text-accent">workflow</span>
+            <span className="text-muted-foreground"> · automate · review · deploy</span>
+          </div>
+        </div>
+      </GlassCard>
     </div>
   );
 }
@@ -61,46 +94,41 @@ export function HeroSection() {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:gap-14"
+          className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-14"
         >
           <div>
-            <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-white px-3 py-1 text-xs font-medium text-[var(--foreground-secondary)] shadow-[var(--shadow-card)]">
-              Packages from <span className="ml-1 text-accent">€999</span>
-              <span className="mx-2 text-[var(--border-strong)]">·</span>
-              Germany · Europe · International
+            <span className="badge-pill px-3 py-1 text-xs font-medium text-[var(--foreground-secondary)]">
+              AI-first systems · Websites · Dashboards · Automation
             </span>
 
-            <h1 className="mt-5 max-w-[18ch] text-balance text-[2.35rem] font-semibold leading-[1.06] tracking-tight text-foreground sm:text-5xl lg:text-[3.15rem]">
-              Engineering Production-Grade Software, AI, and Infrastructure.
+            <h1 className="mt-5 max-w-[14ch] text-balance text-[2.25rem] font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.1rem]">
+              <span className="gold-gradient-text">Build Smarter</span>{" "}
+              <span className="text-foreground">Digital Systems</span>
             </h1>
+
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              Veltrix Labs helps startups, founders, and growing businesses design, build, and scale
-              secure software systems, automation workflows, dashboards, cloud platforms, and
-              operational tools.
+              Logicform Solutions creates websites, automation workflows, dashboards, and internal
+              tools that help businesses work faster without losing human control.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link href="#contact" className={buttonVariants({ size: "lg" })}>
                 Start a Project
               </Link>
-              <Link href="#projects" className={buttonVariants({ variant: "ghost", size: "lg" })}>
-                View Case Studies
+              <Link href="#services" className={buttonVariants({ variant: "ghost", size: "lg" })}>
+                Explore Services
               </Link>
             </div>
 
-            <div className="mt-8 grid gap-2 sm:grid-cols-2">
-              {trustSignals.map((signal) => (
-                <div
-                  key={signal.id}
-                  className="flex items-start gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-white/80 px-3 py-2.5"
-                >
-                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-accent" aria-hidden />
-                  <div>
-                    <p className="text-xs font-medium text-foreground">{signal.label}</p>
-                    <p className="text-[11px] text-muted-foreground">{signal.detail}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-6 flex flex-wrap gap-3 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5">
+                <CheckCircle2 size={14} className="text-accent" aria-hidden />
+                Germany · Europe · International
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CheckCircle2 size={14} className="text-accent" aria-hidden />
+                From €999
+              </span>
             </div>
           </div>
 

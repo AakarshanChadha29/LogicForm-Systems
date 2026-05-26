@@ -1,4 +1,4 @@
-# Veltrix Labs Website
+# Logicform Solutions Website
 
 Premium engineering systems homepage built with Next.js 15, TypeScript, Tailwind CSS v4, and Framer Motion.
 

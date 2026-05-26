@@ -1,16 +1,16 @@
 export const siteConfig = {
-  name: "Veltrix Labs",
-  tagline: "AI, Software & Cloud Engineering Consultancy",
+  name: "Logicform Solutions",
+  tagline: "AI-First Software, Automation & Business Systems",
   description:
-    "Veltrix Labs builds production-grade software, AI automation workflows, dashboards, cloud infrastructure, and business systems for startups, founders, and growing companies.",
-  url: "https://veltrixlabs.com",
+    "Logicform Solutions builds AI-first software systems, business automation workflows, dashboards, websites, cloud-ready platforms, and internal tools for small businesses, founders, and growing teams.",
+  url: "https://logicformsolutions.com",
   contactEmail: "chadhaaakarshan@gmail.com",
-  legalName: "Veltrix Labs",
+  legalName: "Logicform Solutions",
   founderName: "Aakarshan Chadha",
   founderTitle: "Founder & Technical Consultant",
   locale: "en_GB",
   keywords: [
-    "Veltrix Labs",
+    "Logicform Solutions",
     "AI automation consultant Germany",
     "full-stack developer Germany",
     "SaaS engineering consultant",
@@ -25,7 +25,7 @@ export const siteConfig = {
     "production-grade software",
   ],
   socialLinks: {
-    linkedin: "https://www.linkedin.com/company/veltrix-labs",
-    github: "https://github.com/veltrix-labs",
+    linkedin: "https://www.linkedin.com/company/logicform-solutions",
+    github: "https://github.com/logicform-solutions",
   },
 } as const;

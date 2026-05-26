@@ -9,15 +9,15 @@ export function CtaBand() {
   return (
     <section className="py-10 md:py-12">
       <Container>
-        <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-[color-mix(in_srgb,var(--accent)_20%,var(--border))] bg-[linear-gradient(135deg,#ffffff_0%,#eef3f8_55%,#e8f0fe_100%)] px-6 py-8 md:flex md:items-center md:justify-between md:gap-8 md:px-10 md:py-10">
-          <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/10 blur-3xl" />
+        <div className="cta-band px-6 py-8 md:flex md:items-center md:justify-between md:gap-8 md:px-10 md:py-10">
+          <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl" />
           <div className="relative max-w-xl">
             <p className="text-eyebrow">Ready to build?</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
               Turn your product idea into production-grade software.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Websites from €999 · Custom systems from €2,500 · Ongoing partnership from €750/mo.
+              Websites from €999 · Systems and AI from €2,500 · Ongoing partnership from €750/mo.
               Share your scope and get practical next steps.
             </p>
           </div>

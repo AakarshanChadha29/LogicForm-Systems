@@ -38,8 +38,7 @@ const timelines = [
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const inputClassName =
-  "w-full rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30";
+const inputClassName = "input-field";
 
 export function ContactSection() {
   const [name, setName] = useState("");
@@ -93,7 +92,7 @@ export function ContactSection() {
   return (
     <Section id="contact" className="section-divider pb-16">
       <Container>
-        <div className="surface-card p-6 md:p-9">
+        <div className="glass-card p-6 md:p-9">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="text-eyebrow">Contact</p>
@@ -132,7 +131,7 @@ export function ContactSection() {
               <p className="text-eyebrow">Project inquiry</p>
 
               {status === "success" ? (
-                <p className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-white p-4 text-sm leading-relaxed text-[var(--foreground-secondary)]">
+                <p className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 text-sm leading-relaxed text-[var(--foreground-secondary)]">
                   Thanks — your inquiry has been sent. I&apos;ll review the scope and reply with practical next steps.
                 </p>
               ) : (
@@ -267,7 +266,7 @@ export function ContactSection() {
                   </div>
 
                   {status === "error" ? (
-                    <p className="text-sm text-red-600" role="alert">
+                    <p className="text-sm text-[#f0a8a8]" role="alert">
                       Something went wrong. Please email{" "}
                       <a href={`mailto:${siteConfig.contactEmail}`} className="underline">
                         {siteConfig.contactEmail}
@@ -299,7 +298,7 @@ export function ContactSection() {
                   href={siteConfig.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-white px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-card)] px-3 py-1.5 text-xs text-muted-foreground backdrop-blur-sm transition-colors hover:border-[var(--border-strong)] hover:text-[var(--foreground)]"
                 >
                   <Link2 size={13} aria-hidden />
                   LinkedIn
@@ -308,7 +307,7 @@ export function ContactSection() {
                   href={siteConfig.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-white px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-card)] px-3 py-1.5 text-xs text-muted-foreground backdrop-blur-sm transition-colors hover:border-[var(--border-strong)] hover:text-[var(--foreground)]"
                 >
                   <Code2 size={13} aria-hidden />
                   GitHub
@@ -319,7 +318,7 @@ export function ContactSection() {
 
           <footer className="mt-8 border-t border-[var(--border)] pt-6">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-              <Logo size="sm" linked={false} />
+              <Logo size="sm" linked={false} framed={false} />
               <p className="text-xs text-muted-foreground">
                 © {year} {siteConfig.name}. All rights reserved.
               </p>
@@ -328,7 +327,7 @@ export function ContactSection() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="transition-colors hover:text-foreground"
+                    className="text-muted-foreground transition-colors hover:text-[var(--foreground)]"
                   >
                     {item.label}
                   </Link>
