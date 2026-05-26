@@ -15,6 +15,20 @@ import { serviceOfferings, type ServiceOffering } from "@/data/services";
 import { serviceIconMap } from "@/lib/service-icons";
 import { cn } from "@/lib/utils";
 
+const catalogOrder = [
+  "websites-digital-presence",
+  "custom-web-applications",
+  "dashboards-reporting",
+  "ai-workflow-automation",
+  "cloud-deployment-maintenance",
+  "it-systems-operations",
+  "strategy-training-documentation",
+] as const;
+
+const orderedServices = catalogOrder
+  .map((id) => serviceOfferings.find((service) => service.id === id))
+  .filter((service): service is ServiceOffering => Boolean(service));
+
 export function VisualServicesPreviewSection() {
   const [activeService, setActiveService] = useState<ServiceOffering | null>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -25,8 +39,8 @@ export function VisualServicesPreviewSection() {
         <ScrollReveal>
           <SectionHeader
             eyebrow="Services"
-            title="System Layers We Build"
-            description="Web presence, operations, analytics, and AI workflows designed as one connected system."
+            title="Capabilities we deliver as connected systems"
+            description="A clean catalogue of what Logicform Systems builds—from web presence and applications to automation, cloud, and ongoing partnership."
           />
         </ScrollReveal>
 
@@ -40,7 +54,7 @@ export function VisualServicesPreviewSection() {
             visible: { transition: { staggerChildren: 0.06 } },
           }}
         >
-          {serviceOfferings.map((service, index) => {
+          {orderedServices.map((service, index) => {
             const Icon = serviceIconMap[service.icon];
 
             return (

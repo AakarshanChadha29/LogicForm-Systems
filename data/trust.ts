@@ -1,31 +1,31 @@
 export const trustSignals = [
   {
-    id: "education",
-    label: "TU Berlin",
-    detail: "Computational Engineering Sciences",
+    id: "systems",
+    label: "Connected systems",
+    detail: "Websites, workflows, dashboards, and tools built as one operating layer.",
   },
   {
-    id: "location",
-    label: "Germany-based",
-    detail: "Serving Europe and India",
+    id: "markets",
+    label: "Germany · Europe · India",
+    detail: "Serving businesses locally and internationally with structured delivery.",
   },
   {
-    id: "delivery",
-    label: "Production-first",
-    detail: "Built for real business use",
+    id: "approach",
+    label: "AI-assisted execution",
+    detail: "Automation where it saves time. Human control where judgment matters.",
   },
   {
-    id: "scope",
-    label: "Full-stack + operations",
-    detail: "Software, AI, cloud, and IT systems",
+    id: "partner",
+    label: "Technical partnership",
+    detail: "From first build to deployment, maintenance, and ongoing improvements.",
   },
 ] as const;
 
 export const audienceSegments = [
-  "Founders building their first serious product",
-  "Startups scaling internal tools and dashboards",
-  "Businesses modernizing operations with automation",
-  "Teams needing a technical partner—not just a freelancer",
+  "Founders building their first serious digital system",
+  "Growing businesses modernizing operations with automation",
+  "Teams needing dashboards, internal tools, and connected workflows",
+  "Companies looking for a lean technical partner—not agency overhead",
 ] as const;
 
 export const arroyoTestimonial = {
@@ -34,7 +34,7 @@ export const arroyoTestimonial = {
   reviewerRole: "Client Review",
   label: "Approved client feedback",
   quote:
-    "Logicform Solutions helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity. The work showed strong technical understanding, fast execution, and attention to how real customers evaluate industrial solutions.",
+    "Logicform Systems helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity.",
   company: "Arroyo Technologies",
   projectUrl: "https://www.arroyo-technologies.com/",
 } as const;

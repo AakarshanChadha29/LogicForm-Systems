@@ -23,36 +23,37 @@ export function HeroSection() {
         >
           <div>
             <span className="badge-pill px-3 py-1 text-xs font-medium text-[var(--foreground-secondary)]">
-              Digital systems for modern businesses
+              Premium digital systems · Germany · Europe · India
             </span>
 
-            <h1 className="mt-5 max-w-[16ch] text-balance text-[2.25rem] font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.1rem]">
-              <span className="gold-gradient-text">Turn Business Chaos</span>{" "}
-              <span className="text-foreground">Into Working Digital Systems</span>
+            <h1 className="mt-5 max-w-[18ch] text-balance text-[2.25rem] font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.1rem]">
+              Build the digital system your business{" "}
+              <span className="gold-gradient-text">actually needs.</span>
             </h1>
 
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              Logicform Systems builds websites, automations, dashboards, internal tools, and
-              AI-assisted workflows that help businesses work faster without losing human control.
+              Logicform Systems designs and builds premium websites, dashboards, automations, internal
+              tools, and AI-assisted workflows for businesses that need clear execution, not scattered
+              software experiments.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Link href="#contact" className={buttonVariants({ size: "lg" })}>
-                Start a Project
+              <Link href="/contact" className={buttonVariants({ size: "lg" })}>
+                Tell us what you need
               </Link>
-              <Link href="#services" className={buttonVariants({ variant: "ghost", size: "lg" })}>
-                Explore Systems
+              <Link href="#find-your-system" className={buttonVariants({ variant: "ghost", size: "lg" })}>
+                Find the right system
               </Link>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 size={14} className="text-accent" aria-hidden />
-                Germany · Europe · International
+                Websites · Apps · Dashboards · Automation
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 size={14} className="text-accent" aria-hidden />
-                From €999
+                AI-assisted execution · Human-owned decisions
               </span>
             </div>
           </div>

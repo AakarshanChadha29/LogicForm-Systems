@@ -6,123 +6,61 @@ export type PricingPackage = {
   includes: string[];
   timeline: string;
   ctaLabel: string;
+  ctaHref: string;
   recommended?: boolean;
 };
 
-export const pricingPackages: PricingPackage[] = [
+export const homepagePricingPackages: PricingPackage[] = [
   {
-    id: "digital-systems-audit",
-    name: "Digital Systems Audit",
-    price: "€2,000–€4,500",
-    bestFor: "Businesses that need clarity before building.",
+    id: "website-system",
+    name: "Website System",
+    price: "From €1,500–€3,500",
+    bestFor: "Businesses that need a credible, conversion-ready web presence.",
     includes: [
-      "Website/system review",
-      "Workflow review",
-      "Automation opportunities",
-      "Dashboard opportunities",
-      "AI readiness",
-      "Implementation roadmap",
-    ],
-    timeline: "1–2 weeks",
-    ctaLabel: "Start Audit",
-  },
-  {
-    id: "launch-website",
-    name: "Launch Website System",
-    price: "From €3,000",
-    bestFor: "Small businesses, consultants, founders.",
-    includes: [
-      "Responsive website",
+      "Responsive website structure",
       "SEO-ready setup",
-      "Contact/WhatsApp integration",
-      "Deployment",
-      "Basic analytics",
+      "Contact and lead capture",
+      "Deployment and analytics basics",
     ],
-    timeline: "1–2 weeks",
+    timeline: "1–3 weeks",
     ctaLabel: "Launch Website",
+    ctaHref: "/services/websites",
   },
   {
-    id: "premium-website-system",
-    name: "Premium Website System",
-    price: "From €6,500",
-    bestFor: "Companies needing a stronger brand website and lead flow.",
+    id: "business-system",
+    name: "Business System",
+    price: "From €4,500–€12,000",
+    bestFor: "Dashboards, internal tools, automations, and connected operational systems.",
     includes: [
-      "Multi-page website",
-      "Service landing pages",
-      "Case study structure",
-      "Advanced visual design",
-      "SEO metadata and sitemap",
-      "Analytics setup",
+      "Requirements and system mapping",
+      "Dashboard, app, or automation build",
+      "Integrations and data foundations",
+      "Deployment and handover",
     ],
-    timeline: "3–5 weeks",
-    ctaLabel: "Build Premium Website",
-  },
-  {
-    id: "dashboard-reporting-system",
-    name: "Dashboard & Reporting System",
-    price: "From €6,500",
-    bestFor: "Businesses needing visibility over sales, operations, customers, or reports.",
-    includes: [
-      "Dashboard planning",
-      "Data structure",
-      "KPI design",
-      "CRM/sheet/database integration",
-      "Charts and reports",
-      "Optional AI summaries",
-    ],
-    timeline: "3–6 weeks",
-    ctaLabel: "Build Dashboard",
-  },
-  {
-    id: "ai-workflow-system",
-    name: "AI Workflow System",
-    price: "From €7,500",
-    bestFor: "Businesses with repetitive workflows and disconnected tools.",
-    includes: [
-      "Workflow mapping",
-      "AI-assisted process",
-      "Human approval logic",
-      "API/tool integrations",
-      "Testing",
-      "Documentation",
-    ],
-    timeline: "3–6 weeks",
-    ctaLabel: "Build AI Workflow",
-  },
-  {
-    id: "business-systems-build",
-    name: "Business Systems Build",
-    price: "From €15,000",
-    bestFor: "Dashboards, internal tools, portals, CRM-style systems, MVPs.",
-    includes: [
-      "Requirements mapping",
-      "Full-stack build",
-      "Database/API foundations",
-      "Dashboard/admin interface",
-      "Deployment",
-      "Handover documentation",
-    ],
-    timeline: "4–8 weeks",
+    timeline: "3–8 weeks",
     ctaLabel: "Scope Business System",
+    ctaHref: "/contact",
     recommended: true,
   },
   {
     id: "technical-partner",
     name: "Technical Partner",
-    price: "From €2,500/month",
-    bestFor: "Ongoing technical support, improvements, automation, deployment.",
+    price: "From €1,500/month",
+    bestFor: "Teams needing ongoing technical support, improvements, and roadmap execution.",
     includes: [
-      "Monthly support",
-      "Improvements",
-      "Automation monitoring",
-      "Troubleshooting",
-      "Documentation",
-      "Technical roadmap",
+      "Monthly support and improvements",
+      "Automation and deployment care",
+      "Troubleshooting and documentation",
+      "Technical roadmap guidance",
     ],
     timeline: "Ongoing",
     ctaLabel: "Discuss Partnership",
+    ctaHref: "/services/technical-partner",
   },
 ];
+
+export const pricingAuditNote =
+  "Need clarity before building? Start with a Digital Systems Audit from €750.";
 
 export const pricingNote =
   "Launch partner pricing may be available for selected companies, case-study projects, or long-term partnerships. Final pricing depends on scope, integrations, timeline, data complexity, automation risk, and support requirements.";

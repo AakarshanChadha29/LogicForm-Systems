@@ -28,8 +28,8 @@ export function InteractiveProjectsShowcaseSection() {
         <ScrollReveal>
           <SectionHeader
             eyebrow="Work"
-            title="Projects & Demos"
-            description="Selected delivery examples. Open technical details when you need depth."
+            title="Projects and delivery examples"
+            description="Selected examples of websites, dashboards, automation, and connected systems. View the full work catalogue on the Work page."
           />
         </ScrollReveal>
 

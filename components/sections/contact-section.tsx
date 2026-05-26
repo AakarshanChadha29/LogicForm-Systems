@@ -2,32 +2,27 @@
 
 import Link from "next/link";
 import { Code2, Link2, Mail } from "lucide-react";
-import { useMemo } from "react";
 
-import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { TerminalContactForm } from "@/components/sections/terminal-contact-form";
 import { buttonVariants } from "@/components/ui/button";
-import { footerLinks } from "@/data/navigation";
 import { siteConfig } from "@/lib/site";
 
-export function ContactSection() {
-  const year = useMemo(() => new Date().getFullYear(), []);
-
+export function ContactSection({ compact = false }: { compact?: boolean }) {
   return (
-    <Section id="contact" className="section-divider pb-16">
+    <Section id="contact" className={compact ? "!pb-10" : "section-divider pb-16"}>
       <Container>
         <div className="glass-card p-6 md:p-9">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="text-eyebrow">Contact</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Start a project with clear scope
+                Tell us what you are trying to build.
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Share your goals, timeline, and constraints. You will receive a practical engineering
-                perspective—not a generic sales pitch.
+                Share your goal, current problem, timeline, and existing tools. We will help you
+                understand the right next step.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href={`mailto:${siteConfig.contactEmail}`} className={buttonVariants({ size: "lg" })}>
@@ -37,17 +32,23 @@ export function ContactSection() {
               </div>
               <dl className="mt-8 grid gap-3 text-sm">
                 <div>
-                  <dt className="text-eyebrow">Email</dt>
-                  <dd className="mt-1">
-                    <a href={`mailto:${siteConfig.contactEmail}`} className="text-muted-foreground hover:text-accent">
+                  <dt className="text-eyebrow">Contact</dt>
+                  <dd className="mt-1 space-y-1">
+                    <a href={`mailto:${siteConfig.contactEmail}`} className="block text-muted-foreground hover:text-accent">
                       {siteConfig.contactEmail}
+                    </a>
+                    <a href={`mailto:${siteConfig.infoEmail}`} className="block text-muted-foreground hover:text-accent">
+                      {siteConfig.infoEmail}
+                    </a>
+                    <a href={`mailto:${siteConfig.enquiryEmail}`} className="block text-muted-foreground hover:text-accent">
+                      {siteConfig.enquiryEmail}
                     </a>
                   </dd>
                 </div>
                 <div>
                   <dt className="text-eyebrow">Engagement types</dt>
                   <dd className="mt-1 text-muted-foreground">
-                    Websites · SaaS · Automation · Cloud · Ongoing technical partnership
+                    Websites · Apps · Dashboards · Automation · Cloud · Technical partnership
                   </dd>
                 </div>
               </dl>
@@ -77,26 +78,6 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-
-          <footer className="mt-8 border-t border-[var(--border)] pt-6">
-            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-              <Logo size="sm" linked={false} framed={false} />
-              <p className="text-xs text-muted-foreground">
-                © {year} {siteConfig.name}. All rights reserved.
-              </p>
-              <nav aria-label="Footer" className="flex flex-wrap gap-4">
-                {footerLinks.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="text-muted-foreground transition-colors hover:text-[var(--foreground)]"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          </footer>
         </div>
       </Container>
     </Section>

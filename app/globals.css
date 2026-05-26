@@ -1,35 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --background-subtle: #080808;
-  --foreground: #f8f5ec;
-  --foreground-secondary: #c8bfae;
-  --muted-foreground: #9f9688;
+  --background: #030303;
+  --background-subtle: #070604;
+  --foreground: #fffaf0;
+  --foreground-secondary: #e8ddc6;
+  --muted-foreground: #b8ad9b;
   --accent: #d4af37;
-  --accent-muted: rgba(212, 175, 55, 0.12);
-  --accent-hover: #f5d76e;
+  --accent-muted: rgba(212, 175, 55, 0.16);
+  --accent-hover: #ffe38a;
+  --accent-strong: #f5c542;
   --accent-secondary: #e8c96a;
-  --border: rgba(212, 175, 55, 0.22);
-  --border-strong: rgba(212, 175, 55, 0.42);
-  --border-subtle: rgba(212, 175, 55, 0.1);
-  --surface: rgba(255, 255, 255, 0.04);
-  --surface-elevated: rgba(255, 255, 255, 0.09);
-  --surface-card: rgba(255, 255, 255, 0.06);
-  --surface-card-hover: rgba(255, 255, 255, 0.1);
-  --surface-inset: rgba(0, 0, 0, 0.35);
+  --border: rgba(212, 175, 55, 0.32);
+  --border-strong: rgba(245, 215, 110, 0.58);
+  --border-subtle: rgba(212, 175, 55, 0.14);
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-elevated: rgba(255, 255, 255, 0.1);
+  --surface-card: rgba(255, 255, 255, 0.075);
+  --surface-card-hover: rgba(255, 255, 255, 0.13);
+  --surface-inset: rgba(0, 0, 0, 0.42);
   --radius-sm: 0.375rem;
   --radius-md: 0.625rem;
   --radius-lg: 0.875rem;
   --radius-xl: 1.125rem;
   --shadow-card:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 16px 40px -24px rgba(0, 0, 0, 0.75);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 44px -22px rgba(0, 0, 0, 0.82);
   --shadow-elevated:
-    inset 0 1px 0 rgba(212, 175, 55, 0.1),
-    0 24px 56px -28px rgba(0, 0, 0, 0.85);
+    inset 0 1px 0 rgba(245, 215, 110, 0.14),
+    0 28px 60px -24px rgba(0, 0, 0, 0.88),
+    0 0 40px -20px rgba(212, 175, 55, 0.22);
   --container: 76rem;
-  --section-space: clamp(3rem, 5.5vw, 4.75rem);
+  --section-space: clamp(3.25rem, 6vw, 5.25rem);
 }
 
 @theme inline {
@@ -72,7 +74,7 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-strong);
   outline-offset: 2px;
 }
 
@@ -96,7 +98,7 @@ select {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .surface-card {
@@ -126,14 +128,16 @@ select {
   border-color: var(--border-strong);
   background: var(--surface-card-hover);
   box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
 }
 
 .surface-card-interactive:active {
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
 .section-divider {
   border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
 }
 
 .container-shell {
@@ -156,7 +160,7 @@ select {
   width: 100%;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.52);
   padding: 0.625rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -170,7 +174,7 @@ select {
 .input-field:focus-visible {
   outline: none;
   border-color: var(--border-strong);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 select.input-field option {
@@ -184,9 +188,9 @@ select.input-field option {
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
   background:
-    radial-gradient(ellipse 80% 70% at 100% 0%, rgba(212, 175, 55, 0.14), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(212, 175, 55, 0.08), transparent 50%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+    radial-gradient(ellipse 80% 70% at 100% 0%, rgba(212, 175, 55, 0.2), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(212, 175, 55, 0.1), transparent 50%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.04) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-card);
@@ -194,20 +198,20 @@ select.input-field option {
 
 .glass-card {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-card);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-card);
 }
 
 .glass-card-interactive {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-card);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-card);
   transition:
     border-color 0.25s ease,
     background-color 0.25s ease,
@@ -217,10 +221,8 @@ select.input-field option {
 
 .glass-card-interactive:hover {
   border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.09);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.45),
-    0 0 32px -12px rgba(212, 175, 55, 0.18);
+  background: var(--surface-card-hover);
+  box-shadow: var(--shadow-elevated);
   transform: translateY(-2px);
 }
 
@@ -229,7 +231,7 @@ select.input-field option {
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #f8f5ec 0%, #d4af37 55%, #f5d76e 100%);
+  background: linear-gradient(135deg, #fffaf0 0%, var(--accent) 52%, var(--accent-hover) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -237,6 +239,38 @@ select.input-field option {
 
 .premium-glow {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 0 40px -12px rgba(212, 175, 55, 0.35);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 48px -14px rgba(212, 175, 55, 0.42);
+}
+
+.prose-page h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose-page h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose-page p,
+.prose-page li {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.prose-page ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose-page ul li + li {
+  margin-top: 0.35rem;
 }

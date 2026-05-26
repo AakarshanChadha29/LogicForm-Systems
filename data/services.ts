@@ -79,7 +79,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     id: "ai-workflow-automation",
     label: "Service 02",
-    title: "AI & Workflow Automation",
+    title: "AI Workflow Automation",
     fullPageHref: "/services/ai-automation",
     previewTagline: "Automate repetitive work with human approval where it matters.",
     icon: "bot",
@@ -124,7 +124,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     id: "dashboards-reporting",
     label: "Service 03",
-    title: "Dashboards & Reporting Systems",
+    title: "Dashboards & Reporting",
     fullPageHref: "/services/dashboards",
     previewTagline: "Operational dashboards that turn data into clear decisions.",
     icon: "chart",
@@ -304,7 +304,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     id: "strategy-training-documentation",
     label: "Service 07",
-    title: "Strategy, Training & Documentation",
+    title: "Technical Strategy & Documentation",
     fullPageHref: "/services/systems-audit",
     previewTagline: "Clear guidance so teams can adopt systems with confidence.",
     icon: "book",

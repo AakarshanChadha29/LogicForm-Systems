@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 const pageTitle = `${siteConfig.name} | ${siteConfig.tagline}`;
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
+  themeColor: "#030303",
   colorScheme: "dark",
 };
 
@@ -38,7 +38,10 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
   category: "technology",
-  authors: [{ name: siteConfig.founderName }],
+  authors: [
+    { name: siteConfig.founders.technical.name },
+    { name: siteConfig.founders.commercial.name },
+  ],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   robots: {
@@ -99,7 +102,8 @@ export default function RootLayout({
         name: siteConfig.name,
         legalName: siteConfig.legalName,
         url: siteConfig.url,
-        logo: `${siteConfig.url}/icon.svg`,
+        logo: `${siteConfig.url}/logo.svg`,
+        email: siteConfig.contactEmail,
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -107,25 +111,29 @@ export default function RootLayout({
             email: siteConfig.contactEmail,
             availableLanguage: ["English", "German", "Hindi"],
           },
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: siteConfig.enquiryEmail,
+          },
         ],
         sameAs: [siteConfig.socialLinks.linkedin, siteConfig.socialLinks.github],
       },
       {
         "@type": "Person",
-        "@id": `${siteConfig.url}#founder`,
-        name: siteConfig.founderName,
-        jobTitle: siteConfig.founderTitle,
+        "@id": `${siteConfig.url}#founder-technical`,
+        name: siteConfig.founders.technical.name,
+        jobTitle: siteConfig.founders.technical.title,
+        email: siteConfig.founders.technical.email,
         worksFor: { "@id": `${siteConfig.url}#organization` },
-        alumniOf: {
-          "@type": "CollegeOrUniversity",
-          name: "Technische Universität Berlin",
-        },
-        knowsAbout: [
-          "AI systems",
-          "Cloud infrastructure",
-          "Full-stack software engineering",
-          "IT operations",
-        ],
+      },
+      {
+        "@type": "Person",
+        "@id": `${siteConfig.url}#founder-commercial`,
+        name: siteConfig.founders.commercial.name,
+        jobTitle: siteConfig.founders.commercial.title,
+        email: siteConfig.founders.commercial.email,
+        worksFor: { "@id": `${siteConfig.url}#organization` },
       },
       {
         "@type": "ProfessionalService",
@@ -133,17 +141,17 @@ export default function RootLayout({
         name: siteConfig.name,
         url: siteConfig.url,
         description: siteConfig.description,
-        provider: {
-          "@id": `${siteConfig.url}#organization`,
-        },
+        provider: { "@id": `${siteConfig.url}#organization` },
         serviceType: [
-          "AI and Automation Systems",
-          "Full-Stack SaaS Engineering",
-          "Cloud Infrastructure",
+          "Websites and Digital Presence",
+          "Custom Web Applications",
+          "Dashboards and Reporting",
+          "AI Workflow Automation",
+          "Cloud Deployment and Maintenance",
           "IT Systems and Operations",
-          "Data and Dashboard Solutions",
+          "Technical Partnership",
         ],
-        areaServed: ["Germany", "Europe", "India", "International"],
+        areaServed: siteConfig.markets,
       },
     ],
   };

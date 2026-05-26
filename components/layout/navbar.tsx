@@ -27,14 +27,14 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter,box-shadow] duration-300",
         scrolled
-          ? "border-[var(--border)] bg-[rgba(5,5,5,0.88)] shadow-[0_1px_0_rgba(212,175,55,0.08)] backdrop-blur-xl"
-          : "border-transparent bg-[rgba(5,5,5,0.55)] backdrop-blur-md",
+          ? "border-[var(--border)] bg-[rgba(3,3,3,0.92)] shadow-[0_1px_0_rgba(245,215,110,0.12)] backdrop-blur-xl"
+          : "border-transparent bg-[rgba(3,3,3,0.62)] backdrop-blur-md",
       )}
     >
       <Container className="flex h-[4.25rem] items-center justify-between gap-4">
         <Logo size="md" className="max-w-[10.5rem] sm:max-w-none" />
 
-        <nav className="hidden items-center gap-6 lg:flex xl:gap-7" aria-label="Primary">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Primary">
           {navigationItems.map((item) => (
             <Link
               key={item.label}
@@ -48,10 +48,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="#contact"
+            href="/contact"
             className={cn(buttonVariants({ size: "md" }), "hidden sm:inline-flex")}
           >
-            Start a Project
+            Tell us what you need
           </Link>
 
           <button
@@ -70,8 +70,8 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-[var(--border)] bg-[rgba(8,8,8,0.96)] backdrop-blur-xl transition-all lg:hidden",
-          menuOpen ? "max-h-[28rem]" : "max-h-0",
+          "overflow-hidden border-t border-[var(--border)] bg-[rgba(7,6,4,0.98)] backdrop-blur-xl transition-all lg:hidden",
+          menuOpen ? "max-h-[32rem]" : "max-h-0",
         )}
       >
         <Container className="flex flex-col gap-1 py-4">
@@ -86,11 +86,11 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#contact"
+            href="/contact"
             className={cn(buttonVariants({ size: "md" }), "mt-3 w-full justify-center")}
             onClick={() => setMenuOpen(false)}
           >
-            Start a Project
+            Tell us what you need
           </Link>
         </Container>
       </div>
