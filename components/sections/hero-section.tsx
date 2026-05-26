@@ -41,8 +41,8 @@ export function HeroSection() {
               <Link href="/contact" className={buttonVariants({ size: "lg" })}>
                 Tell us what you need
               </Link>
-              <Link href="#find-your-system" className={buttonVariants({ variant: "ghost", size: "lg" })}>
-                Find the right system
+              <Link href="/services" className={buttonVariants({ variant: "ghost", size: "lg" })}>
+                View services
               </Link>
             </div>
 

@@ -14,7 +14,7 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "website-system",
     name: "Website System",
-    price: "From €1,500–€3,500",
+    price: "€1,500–€3,500",
     bestFor: "Businesses that need a credible, conversion-ready web presence.",
     includes: [
       "Responsive website structure",
@@ -29,7 +29,7 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "business-system",
     name: "Business System",
-    price: "From €4,500–€12,000",
+    price: "€4,500–€12,000",
     bestFor: "Dashboards, internal tools, automations, and connected operational systems.",
     includes: [
       "Requirements and system mapping",
@@ -45,7 +45,7 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "technical-partner",
     name: "Technical Partner",
-    price: "From €1,500/month",
+    price: "from €1,500/month",
     bestFor: "Teams needing ongoing technical support, improvements, and roadmap execution.",
     includes: [
       "Monthly support and improvements",

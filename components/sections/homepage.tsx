@@ -1,16 +1,17 @@
 import { SiteShell } from "@/components/layout/site-shell";
-import { BlogPreviewSection } from "@/components/sections/blog-preview-section";
-import { BuildPathSection } from "@/components/sections/build-path-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { FaqPreviewSection } from "@/components/sections/faq-preview-section";
+import { FeaturedPackagesSection } from "@/components/sections/featured-packages-section";
 import { FounderOperatorStorySection } from "@/components/sections/founder-operator-story-section";
 import { HeroSection } from "@/components/sections/hero-section";
-import { InteractiveProjectsShowcaseSection } from "@/components/sections/interactive-projects-showcase-section";
+import { HomepageServicesSection } from "@/components/sections/homepage-services-section";
+import { LatestThinkingSection } from "@/components/sections/latest-thinking-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { ProblemStorySection } from "@/components/sections/problem-story-section";
 import { ProcessPreviewSection } from "@/components/sections/process-preview-section";
+import { SelectedWorkSection } from "@/components/sections/selected-work-section";
 import { TrustPositioningSection } from "@/components/sections/trust-positioning-section";
-import { VisualServicesPreviewSection } from "@/components/sections/visual-services-preview-section";
+import { WhatWeBuildSection } from "@/components/sections/what-we-build-section";
 
 export function Homepage() {
   return (
@@ -19,14 +20,15 @@ export function Homepage() {
         <HeroSection />
         <TrustPositioningSection />
         <ProblemStorySection />
-        <BuildPathSection />
-        <VisualServicesPreviewSection />
-        <InteractiveProjectsShowcaseSection />
+        <WhatWeBuildSection />
+        <HomepageServicesSection />
+        <FeaturedPackagesSection />
+        <SelectedWorkSection />
         <ProcessPreviewSection />
         <PricingSection />
         <FounderOperatorStorySection />
         <FaqPreviewSection />
-        <BlogPreviewSection />
+        <LatestThinkingSection />
         <ContactSection />
       </main>
     </SiteShell>

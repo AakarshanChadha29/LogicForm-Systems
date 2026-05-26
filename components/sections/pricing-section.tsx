@@ -18,8 +18,8 @@ export function PricingSection() {
       <Container>
         <SectionHeader
           eyebrow="Pricing"
-          title="Clear premium pricing anchors"
-          description="Three main paths for most businesses. Detailed scope is confirmed after discovery."
+          title="Grounded pricing for serious systems work"
+          description="Three main engagement paths with clear scope anchors. Final pricing depends on integrations, data complexity, and support requirements—confirmed after discovery."
         />
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
