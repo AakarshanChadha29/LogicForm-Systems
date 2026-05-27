@@ -62,9 +62,9 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-eyebrow">Markets</p>
+            <p className="text-eyebrow">Delivery</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.markets.join(" · ")}
+              Remote-first systems work for businesses operating across teams, tools, and markets.
             </p>
             <p className="mt-6 text-xs text-muted-foreground">
               © {year} {siteConfig.name}. All rights reserved.

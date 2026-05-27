@@ -37,7 +37,7 @@ export function PlatformEcosystemStrip({
   id = "platform-ecosystem",
   eyebrow = "Platforms and tools",
   title = "We connect the software your business already depends on.",
-  description = "From Google services and Atlassian workflows to CRMs, dashboards, cloud platforms, and AI layers, the goal is to turn scattered tools into one usable operating system.",
+  description = "From workspaces and CRMs to dashboards, payments, cloud platforms, and AI layers, the goal is compact: resolve friction across tools and turn them into one usable operating system.",
   items = corePlatformStripItems,
   className,
   compact = false,

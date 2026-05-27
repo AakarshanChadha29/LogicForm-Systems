@@ -54,23 +54,23 @@ function LogoText({
       <span className="inline-flex items-baseline gap-2">
         <span
           className={cn(
-            "gold-gradient-text font-semibold tracking-[0.01em]",
+            "gold-gradient-text font-medium tracking-normal",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
             size === "lg" && "text-[1.14rem]",
           )}
         >
-          Logicform
+          <span className="font-black">L</span>ogic<span className="font-black">F</span>orm
         </span>
         <span
           className={cn(
-            "font-medium tracking-[0.01em] text-[var(--foreground-secondary)]",
+            "font-medium tracking-normal text-[var(--foreground-secondary)]",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
             size === "lg" && "text-[1.14rem]",
           )}
         >
-          Systems
+          <span className="font-black text-[var(--foreground)]">S</span>ystems
         </span>
       </span>
       {showTagline ? (

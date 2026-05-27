@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site";
 
 const credibilityMarkers = [
   "TU Berlin · Computational Engineering Sciences",
-  "Germany-based with practical Europe and India market understanding",
+  "Remote-first delivery with cross-market business understanding",
   "IT operations experience across support, access workflows, and internal systems",
   "End-to-end ownership from requirements to production delivery",
 ] as const;
@@ -40,7 +40,7 @@ export function FounderSection() {
           </h2>
           <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin size={14} className="text-accent" aria-hidden />
-            {siteConfig.founderTitle} · Based in Germany
+            {siteConfig.founderTitle} · Remote-first delivery
           </p>
 
           <p className="mt-6 text-lg leading-relaxed text-foreground/90">

@@ -12,6 +12,35 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "eu-ai-act-readiness-august-2026",
+    title: "EU AI Act Readiness: What Businesses Should Prepare Before August 2026",
+    description:
+      "A practical systems checklist for teams using AI in workflows, dashboards, customer communication, and internal operations.",
+    date: "2026-05-27",
+    category: "Compliance",
+    readingTime: "7 min read",
+    ctaHref: "/services/systems-audit",
+    ctaLabel: "Review Your Systems",
+    sections: [
+      {
+        heading: "Treat AI readiness as systems work",
+        body: "The useful question is not simply whether a tool uses AI. It is where AI touches business data, who can approve outputs, what gets logged, and which workflows depend on automated decisions.",
+      },
+      {
+        heading: "Map every AI-assisted workflow",
+        body: "Create a register of AI use cases across marketing, support, sales, operations, reporting, and internal tools. For each workflow, record the purpose, data inputs, provider, human review point, and business impact if the output is wrong.",
+      },
+      {
+        heading: "Watch the August 2026 milestone",
+        body: "European Commission guidance states that the AI Act applies progressively, with major rules becoming applicable around 2 August 2026 and some exceptions for later dates. Timelines and support measures may change, so teams should verify current official guidance before making compliance decisions.",
+      },
+      {
+        heading: "Build controls before the deadline",
+        body: "Practical preparation includes access control, prompt and output review, data minimisation, vendor checks, incident handling, audit trails, and clear ownership for AI-assisted processes. These controls also make the business easier to operate.",
+      },
+    ],
+  },
+  {
     slug: "choose-right-business-automation-system",
     title: "How to Choose the Right Business Automation System",
     description:

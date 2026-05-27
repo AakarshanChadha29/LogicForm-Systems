@@ -9,15 +9,13 @@
     </linearGradient>
   </defs>
   <rect x="96" y="120" width="72" height="72" rx="18" fill="#090807" stroke="#d4af37" stroke-opacity="0.82" stroke-width="2"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M119.5 137H143.8L153 146.2V166L143.6 175.2H119.5L113 168.7V143.5L119.5 137ZM122.8 144.7V167.4H140.2L145.7 161.9V150.2L140.1 144.7H122.8Z" fill="url(#ogGold)"/>
-  <path d="M126.6 156.5H145.1" stroke="#fbf7ec" stroke-width="3.4" stroke-linecap="square"/>
-  <path d="M133.8 167L145.4 145.1" stroke="#fbf7ec" stroke-opacity="0.86" stroke-width="3.4" stroke-linecap="square"/>
-  <circle cx="122.8" cy="144.7" r="2.3" fill="#fff1a7"/>
-  <circle cx="145.1" cy="156.5" r="2.3" fill="#fff1a7"/>
-  <circle cx="133.8" cy="167" r="2.3" fill="#c8a84c"/>
+  <path d="M117 136H128V166H149V176H117V136Z" fill="url(#ogGold)"/>
+  <path d="M132 136H155V146H143V152H153V162H143V176H132V136Z" fill="url(#ogGold)"/>
+  <path d="M117 136H128V146H117V136Z" fill="#fff3b2" fill-opacity="0.9"/>
+  <path d="M132 136H155V146H132V136Z" fill="#fff3b2" fill-opacity="0.78"/>
   <text x="188" y="162" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="34" font-weight="650">Logicform Systems</text>
   <text x="96" y="248" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="46" font-weight="600">Premium digital systems for</text>
   <text x="96" y="308" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="46" font-weight="600">modern business operations</text>
   <text x="96" y="382" fill="#e8ddc6" font-family="system-ui, sans-serif" font-size="28">Websites · Apps · Dashboards · Automation · Partnership</text>
-  <text x="96" y="440" fill="#d4af37" font-family="system-ui, sans-serif" font-size="24" font-weight="600">Germany · Europe · India · International</text>
+  <text x="96" y="440" fill="#d4af37" font-family="system-ui, sans-serif" font-size="24" font-weight="600">Remote-first systems for cross-market operations</text>
 </svg>

@@ -6,8 +6,8 @@ export const trustSignals = [
   },
   {
     id: "markets",
-    label: "Germany · Europe · India",
-    detail: "Structured remote delivery for companies that need clarity across markets and teams.",
+    label: "International by design",
+    detail: "Structured remote delivery for companies resolving operational friction across markets and teams.",
   },
   {
     id: "approach",

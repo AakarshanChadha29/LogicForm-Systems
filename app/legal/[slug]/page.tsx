@@ -38,6 +38,16 @@ export default async function LegalPage({ params }: LegalPageProps) {
         <PageHero eyebrow="Legal" title={page.title} description={page.description} />
         <Section id="legal-content" className="section-divider pb-16">
           <Container className="max-w-3xl prose-page">
+            <div className="mb-8 rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-5">
+              {page.lastUpdated ? (
+                <p className="font-mono text-xs font-semibold uppercase text-[var(--accent)]">
+                  Last updated: {page.lastUpdated}
+                </p>
+              ) : null}
+              {page.notice ? (
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{page.notice}</p>
+              ) : null}
+            </div>
             {page.sections.map((section) => (
               <div key={section.heading}>
                 <h2>{section.heading}</h2>

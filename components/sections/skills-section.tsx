@@ -35,7 +35,7 @@ export function SkillsSection() {
         <div className="mt-6 surface-card p-6">
           <h3 className="text-base font-semibold text-foreground">Languages</h3>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Communication support for international clients across Europe and India.
+            Communication support for international clients and remote-first delivery.
           </p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-3">
             {languageCapabilities.map((entry) => (

@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Logicform Systems is led by a technical-commercial founder pair building premium digital systems for businesses in Germany, Europe, India, and international markets.",
+    "Logicform Systems is led by a technical-commercial founder pair building premium digital systems for businesses operating across teams, tools, and markets.",
   path: "/about",
 });
 

@@ -25,9 +25,9 @@ export const faqItems: FaqItem[] = [
       "Yes. We integrate CRMs, spreadsheets, databases, APIs, and reporting tools into unified operational dashboards.",
   },
   {
-    question: "Do you work with companies outside Germany?",
+    question: "Do you work with international companies?",
     answer:
-      "Yes. We work with businesses in Germany, Europe, India, and international markets.",
+      "Yes. Logicform Systems is built for remote-first delivery and can support businesses operating across markets, teams, and time zones.",
   },
   {
     question: "What does a project cost?",

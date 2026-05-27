@@ -1,49 +1,45 @@
-<svg width="318" height="58" viewBox="0 0 318 58" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformLogoTitle logicformLogoDesc">
+<svg width="326" height="58" viewBox="0 0 326 58" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformLogoTitle logicformLogoDesc">
   <title id="logicformLogoTitle">Logicform Systems logo</title>
-  <desc id="logicformLogoDesc">A premium Logicform Systems logo with a bold geometric systems mark and refined wordmark.</desc>
+  <desc id="logicformLogoDesc">A premium Logicform Systems logo with a bold geometric mark and professional wordmark.</desc>
   <defs>
-    <linearGradient id="markBorder" x1="5" y1="6" x2="43" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF4BB"/>
-      <stop offset="0.48" stop-color="#D8B852"/>
-      <stop offset="1" stop-color="#806316"/>
-    </linearGradient>
-    <linearGradient id="markGold" x1="10" y1="11" x2="37" y2="43" gradientUnits="userSpaceOnUse">
+    <linearGradient id="markGold" x1="10" y1="11" x2="38" y2="43" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFF6C9"/>
       <stop offset="0.46" stop-color="#D9B85A"/>
       <stop offset="1" stop-color="#9B781E"/>
     </linearGradient>
-    <linearGradient id="markGlass" x1="8" y1="8" x2="41" y2="47" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#16140F"/>
-      <stop offset="0.52" stop-color="#090807"/>
+    <linearGradient id="markBorder" x1="4" y1="6" x2="44" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4BB"/>
+      <stop offset="0.54" stop-color="#D8B852"/>
+      <stop offset="1" stop-color="#806316"/>
+    </linearGradient>
+    <linearGradient id="markGlass" x1="7" y1="8" x2="42" y2="47" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17150F"/>
+      <stop offset="0.58" stop-color="#090807"/>
       <stop offset="1" stop-color="#030303"/>
     </linearGradient>
-    <linearGradient id="wordGold" x1="58" y1="13" x2="199" y2="40" gradientUnits="userSpaceOnUse">
+    <linearGradient id="wordGold" x1="58" y1="13" x2="210" y2="40" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFF9E5"/>
       <stop offset="0.56" stop-color="#E3C767"/>
       <stop offset="1" stop-color="#C8A84C"/>
     </linearGradient>
-    <filter id="markGlow" x="-22%" y="-22%" width="144%" height="144%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#D7B64A" flood-opacity="0.26"/>
-      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.42"/>
+    <filter id="markGlow" x="-24%" y="-24%" width="148%" height="148%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.6" flood-color="#D7B64A" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.44"/>
     </filter>
   </defs>
-
   <g filter="url(#markGlow)">
-    <rect x="2.5" y="5.5" width="43" height="43" rx="12.5" fill="url(#markGlass)" stroke="url(#markBorder)" stroke-width="1.35"/>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2 13.8H30.6L37.2 20.4V34.1L30.4 40.8H14.2L9.8 36.4V18.2L14.2 13.8ZM15.9 19V35.3H28.3L32.4 31.2V23.3L28.2 19H15.9Z" fill="url(#markGold)"/>
-    <path d="M18.6 27.1H31.8" stroke="#FBF7EC" stroke-width="2.15" stroke-linecap="square"/>
-    <path d="M23.8 35.1L32 19.3" stroke="#FBF7EC" stroke-opacity="0.86" stroke-width="2.15" stroke-linecap="square"/>
-    <path d="M15.9 19H28.2L32.4 23.3" stroke="#FFF4BB" stroke-opacity="0.44" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"/>
-    <circle cx="15.9" cy="19" r="1.45" fill="#FFF1A7"/>
-    <circle cx="31.8" cy="27.1" r="1.45" fill="#FFF1A7"/>
-    <circle cx="23.8" cy="35.1" r="1.45" fill="#C8A84C"/>
+    <rect x="2.5" y="5.5" width="43" height="43" rx="12" fill="url(#markGlass)" stroke="url(#markBorder)" stroke-width="1.35"/>
+    <path d="M13 15H20V33H32V39H13V15Z" fill="url(#markGold)"/>
+    <path d="M22 15H36V21H29V25H35V31H29V39H22V15Z" fill="url(#markGold)"/>
+    <path d="M13 15H20V21H13V15Z" fill="#FFF3B2" fill-opacity="0.9"/>
+    <path d="M22 15H36V21H22V15Z" fill="#FFF3B2" fill-opacity="0.78"/>
   </g>
-
-  <text x="58" y="28.5" fill="url(#wordGold)" font-family="Geist, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="720">Logicform</text>
-  <text x="162" y="28.5" fill="#E6DDC8" font-family="Geist, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="520">Systems</text>
-  <path d="M59 37H236" stroke="#D7B64A" stroke-opacity="0.34" stroke-linecap="round"/>
-  <text x="58" y="49" fill="#9F978A" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="650" letter-spacing="0.22em">DIGITAL SYSTEMS STUDIO</text>
-  <circle cx="249" cy="37" r="2" fill="#D7B64A" fill-opacity="0.78"/>
-  <circle cx="260" cy="37" r="2" fill="#D7B64A" fill-opacity="0.42"/>
-  <circle cx="271" cy="37" r="2" fill="#D7B64A" fill-opacity="0.2"/>
+  <text x="58" y="29" fill="url(#wordGold)" font-family="Geist, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="520">
+    <tspan font-weight="860">L</tspan>ogic<tspan font-weight="860">F</tspan>orm
+  </text>
+  <text x="169" y="29" fill="#E6DDC8" font-family="Geist, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="520">
+    <tspan font-weight="860" fill="#FFF4BB">S</tspan>ystems
+  </text>
+  <path d="M59 38H242" stroke="#D7B64A" stroke-opacity="0.34" stroke-linecap="round"/>
+  <text x="58" y="50" fill="#9F978A" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="650" letter-spacing="0.22em">DIGITAL SYSTEMS STUDIO</text>
 </svg>

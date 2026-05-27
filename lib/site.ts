@@ -27,13 +27,13 @@ export const siteConfig = {
   },
   keywords: [
     "Logicform Systems",
-    "digital systems company Germany",
+    "digital systems company",
     "custom web applications",
     "business automation systems",
     "operational dashboards",
     "AI workflow automation",
-    "technical partner Germany",
-    "website systems Europe",
+    "technical systems partner",
+    "website systems",
     "internal tools development",
     "cloud deployment maintenance",
   ],
@@ -41,5 +41,5 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/company/logicform-systems",
     github: "https://github.com/logicform-systems",
   },
-  markets: ["Germany", "Europe", "India", "International"],
+  markets: ["International delivery", "Cross-market operations", "Remote-first systems"],
 } as const;
