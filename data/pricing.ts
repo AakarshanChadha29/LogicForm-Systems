@@ -15,12 +15,12 @@ export const homepagePricingPackages: PricingPackage[] = [
     id: "website-system",
     name: "Website System",
     price: "€2,500–€7,500",
-    bestFor: "Businesses that need a serious website with positioning, conversion flow, SEO structure, and production deployment.",
+    bestFor: "Businesses that need a serious website that explains the offer clearly, builds trust, captures leads, and is ready to publish.",
     includes: [
-      "Responsive website structure",
-      "SEO-ready setup",
-      "Contact and lead capture",
-      "Deployment and analytics basics",
+      "Positioning, page structure, and responsive build",
+      "SEO-ready metadata and fast production setup",
+      "Contact flow, lead capture, and analytics basics",
+      "Deployment, handover, and launch support",
     ],
     timeline: "2–5 weeks",
     ctaLabel: "Launch Website",
@@ -30,12 +30,12 @@ export const homepagePricingPackages: PricingPackage[] = [
     id: "business-system",
     name: "Business System",
     price: "€8,000–€30,000",
-    bestFor: "Dashboards, internal tools, automations, portals, and connected workflows that replace manual operations.",
+    bestFor: "Teams that need a dashboard, internal tool, automation, portal, or connected workflow to replace manual operations.",
     includes: [
-      "Requirements and system mapping",
-      "Dashboard, app, or automation build",
-      "Integrations and data foundations",
-      "Deployment and handover",
+      "Requirements mapping and build priority plan",
+      "Dashboard, web app, CRM flow, or automation build",
+      "Integrations, data foundations, and AI-assisted steps where useful",
+      "Testing, deployment, documentation, and handover",
     ],
     timeline: "4–12 weeks",
     ctaLabel: "Scope Business System",
@@ -46,7 +46,7 @@ export const homepagePricingPackages: PricingPackage[] = [
     id: "technical-partner",
     name: "Technical Partner",
     price: "€2,000–€6,000/month",
-    bestFor: "Teams that need a reliable technical partner for roadmap execution, support, maintenance, and system improvement.",
+    bestFor: "Teams that want ongoing technical execution, support, maintenance, automation improvement, and roadmap guidance.",
     includes: [
       "Monthly support and improvements",
       "Automation and deployment care",
@@ -60,7 +60,7 @@ export const homepagePricingPackages: PricingPackage[] = [
 ];
 
 export const pricingAuditNote =
-  "Need clarity before building? Start with a Digital Systems & AI Audit from €1,200.";
+  "Not sure what to build first? Start with a Digital Systems & AI Audit from €1,200 to map the right website, app, dashboard, CRM, or automation path.";
 
 export const pricingNote =
-  "Final pricing depends on scope, integrations, data complexity, automation risk, content depth, and support requirements. Smaller implementation phases are possible when a project needs to start lean and grow deliberately.";
+  "Final pricing depends on scope, integrations, data complexity, automation risk, content depth, and support requirements. If the full system is too large for day one, we can start with a focused phase and grow it deliberately.";

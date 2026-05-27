@@ -18,6 +18,7 @@ export function createPageMetadata({
   type = "website",
 }: PageMetadataOptions): Metadata {
   const url = `${siteConfig.url}${path}`;
+  const fullTitle = `${title} | ${siteConfig.name}`;
 
   return {
     title,
@@ -25,7 +26,7 @@ export function createPageMetadata({
     keywords: [...siteConfig.keywords, ...keywords],
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} | ${siteConfig.name}`,
+      title: fullTitle,
       description,
       url,
       siteName: siteConfig.name,
@@ -36,13 +37,13 @@ export function createPageMetadata({
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} — ${siteConfig.tagline}`,
+          alt: `${siteConfig.name} - premium digital systems, websites, dashboards, automation, and AI workflows`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${siteConfig.name}`,
+      title: fullTitle,
       description,
       images: ["/og-image.svg"],
     },

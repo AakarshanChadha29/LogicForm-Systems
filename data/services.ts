@@ -36,14 +36,14 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 01",
     title: "Websites & Digital Presence",
     fullPageHref: "/services/websites",
-    previewTagline: "Credible websites built for speed, structure, and conversion.",
+    previewTagline: "A premium website that explains your offer and turns visitors into inquiries.",
     icon: "globe",
     description:
-      "Modern business websites, landing pages, product websites, and professional portfolios built with responsive design, SEO structure, and performance in mind.",
+      "Modern business websites, landing pages, product websites, and professional portfolios built to make your offer clear, trustworthy, fast, and easy to contact.",
     outcomes: [
-      "A credible digital presence that reflects your business clearly",
-      "Structure built for search, speed, and mobile visitors",
-      "Pages designed to support leads, trust, and conversions",
+      "A digital presence that explains what you do in plain business language",
+      "Search, speed, and mobile foundations ready for real visitors",
+      "A lead path that makes it easier for the right people to contact you",
     ],
     capabilities: [
       "Business websites",
@@ -54,7 +54,7 @@ export const serviceOfferings: ServiceOffering[] = [
     ],
     detail: {
       overview:
-        "Modern websites, landing pages, product websites, and portfolios built for credibility, speed, and conversion.",
+        "Modern websites, landing pages, product websites, and portfolios built for credibility, speed, SEO structure, and lead conversion.",
       useCases: [
         "Business website",
         "Landing page",
@@ -63,17 +63,17 @@ export const serviceOfferings: ServiceOffering[] = [
         "Website redesign",
       ],
       included: [
-        "Structure and strategy",
-        "Responsive UI",
-        "SEO-ready setup",
-        "Contact integration",
-        "Deployment",
+        "Positioning and page structure",
+        "Responsive UI and conversion sections",
+        "SEO-ready metadata and performance basics",
+        "Contact integration and lead path",
+        "Deployment and launch handover",
       ],
       technicalApproach:
         "Next.js, TypeScript, Tailwind CSS, SEO metadata, performance optimization, responsive design.",
       startingPrice: "From €2,500",
       timeline: "2–5 weeks",
-      ctaLabel: "Start Website Project",
+      ctaLabel: "Plan a Website",
     },
   },
   {
@@ -81,14 +81,14 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 02",
     title: "AI Workflow Automation",
     fullPageHref: "/services/ai-automation",
-    previewTagline: "Automate repetitive work with human approval where it matters.",
+    previewTagline: "Reduce repetitive work while keeping people in control of decisions.",
     icon: "bot",
     description:
-      "AI-first workflows and automation systems that reduce repetitive work while keeping human approval where judgment matters.",
+      "AI-assisted workflows and automation systems that reduce repetitive work, connect tools, and keep human approval where judgment matters.",
     outcomes: [
       "Less time lost to manual, repetitive tasks",
       "Automation with clear human checkpoints where needed",
-      "Connected tools that support daily operations",
+      "Connected tools that support daily operations instead of adding more chaos",
     ],
     capabilities: [
       "AI workflow automation",
@@ -99,7 +99,7 @@ export const serviceOfferings: ServiceOffering[] = [
     ],
     detail: {
       overview:
-        "AI-powered workflows that connect your tools, reduce manual steps, and keep people in control of important decisions.",
+        "AI-assisted workflows that connect your tools, reduce manual steps, and keep people in control of important decisions.",
       useCases: [
         "Email and document automation",
         "Approval workflows",
@@ -118,7 +118,7 @@ export const serviceOfferings: ServiceOffering[] = [
         "Workflow orchestration, API integrations, LLM-assisted steps, logging, and human-in-the-loop checkpoints.",
       startingPrice: "From €6,000",
       timeline: "3–8 weeks",
-      ctaLabel: "Build AI Workflow",
+      ctaLabel: "Map an AI Workflow",
     },
   },
   {
@@ -126,13 +126,13 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 03",
     title: "Dashboards & Reporting",
     fullPageHref: "/services/dashboards",
-    previewTagline: "Operational dashboards that turn data into clear decisions.",
+    previewTagline: "Dashboards that replace scattered reports with one clear operating view.",
     icon: "chart",
     description:
-      "Operational dashboards and reporting systems that help businesses understand performance, track KPIs, and make better decisions.",
+      "Operational dashboards and reporting systems that help teams see performance, track KPIs, and stop relying on scattered spreadsheets.",
     outcomes: [
       "Clear visibility into performance and key metrics",
-      "Reporting that replaces scattered spreadsheets",
+      "Reporting that replaces scattered spreadsheets and repeated manual updates",
       "Faster decisions backed by structured data",
     ],
     capabilities: [
@@ -144,7 +144,7 @@ export const serviceOfferings: ServiceOffering[] = [
     ],
     detail: {
       overview:
-        "Dashboards and reporting systems that give teams a reliable view of performance, pipelines, and KPIs.",
+        "Dashboards and reporting systems that give teams a reliable view of performance, pipelines, KPIs, and weekly decisions.",
       useCases: [
         "Executive KPI dashboard",
         "CRM reporting",
@@ -171,13 +171,13 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 04",
     title: "Custom Web Applications",
     fullPageHref: "/services/custom-web-apps",
-    previewTagline: "Web apps and internal tools shaped around how you work.",
+    previewTagline: "Custom portals, admin tools, and MVPs built around real workflows.",
     icon: "layers",
     description:
-      "Full-stack web applications, admin panels, customer portals, MVPs, and internal tools designed around real business needs.",
+      "Full-stack web applications, admin panels, customer portals, MVPs, and internal tools designed around the way your team actually works.",
     outcomes: [
       "Software shaped around how your team actually works",
-      "A practical path from concept to usable product",
+      "A practical path from rough idea to usable product",
       "Systems that can grow with new features and users",
     ],
     capabilities: [
@@ -216,10 +216,10 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 05",
     title: "IT Systems & Operations",
     fullPageHref: "/services/it-operations",
-    previewTagline: "Practical IT workflows, access, and documentation for daily ops.",
+    previewTagline: "Cleaner access, documentation, and tool workflows for daily operations.",
     icon: "operations",
     description:
-      "Practical IT systems support for teams that need better workflows, access management, documentation, and operational reliability.",
+      "Practical IT systems support for teams that need cleaner workflows, access management, documentation, and more reliable operations.",
     outcomes: [
       "Cleaner access and identity practices",
       "Documented workflows teams can follow consistently",
@@ -261,10 +261,10 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 06",
     title: "Cloud, Deployment & Maintenance",
     fullPageHref: "/services/cloud-maintenance",
-    previewTagline: "Deploy, monitor, and maintain systems your business relies on.",
+    previewTagline: "Keep important websites, apps, and systems deployed, monitored, and cared for.",
     icon: "cloud",
     description:
-      "Deployment, hosting, domain setup, monitoring, performance optimization, and ongoing technical maintenance for business-critical systems.",
+      "Deployment, hosting, domain setup, monitoring, performance optimization, and ongoing technical maintenance for systems your business depends on.",
     outcomes: [
       "Stable hosting and deployment for live systems",
       "Domains, email, and monitoring set up properly",
@@ -306,10 +306,10 @@ export const serviceOfferings: ServiceOffering[] = [
     label: "Service 07",
     title: "Digital Systems & AI Audit",
     fullPageHref: "/services/systems-audit",
-    previewTagline: "Clear guidance on what to build, automate, connect, and maintain first.",
+    previewTagline: "A practical audit that tells you what to build, automate, or fix first.",
     icon: "book",
     description:
-      "A practical audit of tools, workflows, bottlenecks, AI opportunities, and implementation priorities before you invest in the wrong build.",
+      "A practical audit of tools, workflows, bottlenecks, AI opportunities, and implementation priorities before you commit budget to the wrong build.",
     outcomes: [
       "Clearer decisions before major build commitments",
       "A practical roadmap for systems, AI, automation, and integrations",
@@ -324,7 +324,7 @@ export const serviceOfferings: ServiceOffering[] = [
     ],
     detail: {
       overview:
-        "A focused audit that helps teams understand what to build, automate, connect, and improve first.",
+        "A focused audit that helps teams understand what to build, automate, connect, improve, or leave alone first.",
       useCases: [
         "Technical discovery",
         "Roadmap planning",
@@ -343,7 +343,7 @@ export const serviceOfferings: ServiceOffering[] = [
         "Structured discovery, architecture notes, practical documentation, and workshop-style training.",
       startingPrice: "From €1,200",
       timeline: "1–3 weeks",
-      ctaLabel: "Book a Strategy Session",
+      ctaLabel: "Book an Audit",
     },
   },
 ];

@@ -31,17 +31,17 @@ export function HeroSection() {
             </p>
 
             <h1 className="mt-4 max-w-[13ch] text-balance text-[2.65rem] font-semibold leading-[1] tracking-tight sm:text-6xl lg:text-[4.9rem]">
-              Digital systems for companies that need to operate better.
+              Websites and systems that make your business easier to run.
             </h1>
 
             <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-              We design, build, and maintain websites, internal tools, dashboards, automations, and
-              AI-assisted workflows that become part of how your business actually runs.
+              We help growing teams turn messy tools, manual work, and unclear data into connected
+              systems that are easier to run, improve, and maintain.
             </p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
               <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                Map my system
+                Tell us what feels messy
                 <ArrowRight size={16} aria-hidden />
               </Link>
               <Link
@@ -51,15 +51,15 @@ export function HeroSection() {
                   "w-full sm:w-auto",
                 )}
               >
-                View services and pricing
+                Compare services
               </Link>
             </div>
 
             <div className="mt-9 grid max-w-xl grid-cols-3 gap-2 border-y border-[var(--border-subtle)] py-4">
               {[
-                ["Web", "Presence"],
-                ["Ops", "Systems"],
-                ["AI", "Workflow"],
+                ["Web", "Lead flow"],
+                ["Ops", "Less manual"],
+                ["AI", "Automation"],
               ].map(([value, label]) => (
                 <div key={label} className="min-w-0 pr-1">
                   <p className="text-2xl font-semibold tracking-tight text-foreground">{value}</p>

@@ -73,7 +73,7 @@ export function TerminalContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [terminalLines, setTerminalLines] = useState<string[]>([
     "boot logicform-intake",
-    "status: ready to shape your plan",
+    "status: ready to understand the messy part",
   ]);
 
   const completion = useMemo(() => {
@@ -96,7 +96,7 @@ export function TerminalContactForm() {
   const resetForm = () => {
     setValues(initialValues);
     setStatus("idle");
-    setTerminalLines(["session reset", "status: ready to shape your plan"]);
+    setTerminalLines(["session reset", "status: ready to understand the messy part"]);
   };
 
   const validate = () => {
@@ -153,7 +153,7 @@ export function TerminalContactForm() {
         <div>
           <p className="text-eyebrow">Plan builder</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Tell us what feels messy. We will shape the next move.
+            Choose the closest direction, add the problem, and we will reply with a practical next step.
           </p>
         </div>
         <button
@@ -166,7 +166,10 @@ export function TerminalContactForm() {
         </button>
       </div>
 
-      <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-[rgba(0,0,0,0.55)] p-3 font-mono text-[11px] leading-relaxed text-[var(--foreground-secondary)] md:text-xs">
+      <div
+        className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-[rgba(0,0,0,0.55)] p-3 font-mono text-[11px] leading-relaxed text-[var(--foreground-secondary)] md:text-xs"
+        aria-live="polite"
+      >
         <div className="mb-3 flex items-center justify-between gap-4">
           <span className="text-accent">logicform@plan:~</span>
           <span>{completion}% complete</span>
@@ -182,6 +185,7 @@ export function TerminalContactForm() {
           label="Name"
           value={values.name}
           autoComplete="name"
+          required
           onChange={(value) => updateValue("name", value)}
         />
         <Field
@@ -190,6 +194,7 @@ export function TerminalContactForm() {
           type="email"
           value={values.email}
           autoComplete="email"
+          required
           onChange={(value) => updateValue("email", value)}
         />
         <Field
@@ -204,13 +209,15 @@ export function TerminalContactForm() {
           <ChipGroup
             options={timelines}
             value={values.timeline}
+            ariaLabel="Choose your preferred timeline"
             onChange={(value) => updateValue("timeline", value)}
           />
         </div>
       </div>
 
       <ChoicePanel
-        label="What direction feels closest?"
+        label="What do you think you need?"
+        helperText="Choose the closest option. If you are unsure, describe the mess and we will recommend the path."
         options={projectTypes}
         value={values.projectType}
         onChange={(value) => updateValue("projectType", value)}
@@ -218,6 +225,7 @@ export function TerminalContactForm() {
 
       <ChoicePanel
         label="Budget range"
+        helperText="A rough range is enough. It helps us recommend the right scope instead of overselling."
         options={budgetRanges}
         value={values.budgetRange}
         onChange={(value) => updateValue("budgetRange", value)}
@@ -233,7 +241,12 @@ export function TerminalContactForm() {
           onChange={(event) => updateValue("message", event.target.value)}
           className="input-field mt-2 min-h-32 resize-y"
           placeholder="Example: We get leads from the website, manage them in spreadsheets, and want a better client workflow with AI summaries and clear reporting."
+          required
+          aria-describedby="inquiry-message-help"
         />
+        <p id="inquiry-message-help" className="mt-2 text-xs text-muted-foreground">
+          A few sentences is enough: what is messy now, what tools you use, and what should feel easier.
+        </p>
       </div>
 
       <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
@@ -261,7 +274,7 @@ export function TerminalContactForm() {
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button type="submit" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")} disabled={status === "loading"}>
-          {status === "loading" ? "Sending..." : "Send plan request"}
+          {status === "loading" ? "Sending..." : "Send project request"}
           <ArrowRight size={16} aria-hidden />
         </button>
         <a href={`mailto:${siteConfig.contactEmail}`} className="text-sm text-muted-foreground hover:text-accent">
@@ -272,7 +285,7 @@ export function TerminalContactForm() {
       {status === "success" ? (
         <p className="mt-3 flex items-center gap-2 text-sm text-[var(--foreground-secondary)]" role="status">
           <CheckCircle2 size={15} className="text-accent" aria-hidden />
-          Inquiry received. We will respond with structured next steps.
+          Inquiry received. We will respond with the clearest next step, not a generic sales pitch.
         </p>
       ) : null}
       {status === "error" ? (
@@ -295,6 +308,7 @@ function Field({
   onChange,
   type = "text",
   autoComplete,
+  required = false,
 }: {
   id: string;
   label: string;
@@ -302,6 +316,7 @@ function Field({
   onChange: (value: string) => void;
   type?: string;
   autoComplete?: string;
+  required?: boolean;
 }) {
   return (
     <div>
@@ -315,6 +330,8 @@ function Field({
         onChange={(event) => onChange(event.target.value)}
         className="input-field mt-2"
         autoComplete={autoComplete}
+        required={required}
+        aria-required={required}
       />
     </div>
   );
@@ -324,39 +341,45 @@ function ChoicePanel({
   label,
   options,
   value,
+  helperText,
   onChange,
 }: {
   label: string;
   options: readonly string[];
   value: string;
+  helperText?: string;
   onChange: (value: string) => void;
 }) {
   return (
-    <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
-      <p className="text-xs font-medium text-[var(--foreground-secondary)]">{label}</p>
-      <ChipGroup options={options} value={value} onChange={onChange} />
-    </div>
+    <fieldset className="mt-4 rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
+      <legend className="px-1 text-xs font-medium text-[var(--foreground-secondary)]">{label}</legend>
+      {helperText ? <p className="mt-1 text-xs text-muted-foreground">{helperText}</p> : null}
+      <ChipGroup options={options} value={value} ariaLabel={label} onChange={onChange} />
+    </fieldset>
   );
 }
 
 function ChipGroup({
   options,
   value,
+  ariaLabel,
   onChange,
 }: {
   options: readonly string[];
   value: string;
+  ariaLabel?: string;
   onChange: (value: string) => void;
 }) {
   return (
-    <div className="mt-2 flex flex-wrap gap-2">
+    <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label={ariaLabel}>
       {options.map((option) => (
         <button
           key={option}
           type="button"
+          aria-pressed={value === option}
           onClick={() => onChange(option)}
           className={cn(
-            "rounded-full border px-3 py-1.5 text-xs transition-colors",
+            "rounded-full border px-3 py-1.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]",
             value === option
               ? "border-[var(--border-strong)] bg-[var(--accent-muted)] text-foreground"
               : "border-[var(--border-subtle)] text-muted-foreground hover:border-[var(--border-strong)] hover:text-foreground",
