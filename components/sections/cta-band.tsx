@@ -18,12 +18,12 @@ export function CtaBand() {
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
               Websites from €2,500 · Systems from €8,000 · Partnership from €2,000/mo.
-              Share your scope and get practical next steps.
+              Send the messy version of the idea and get practical next steps.
             </p>
           </div>
           <div className="relative mt-6 flex shrink-0 flex-wrap gap-3 md:mt-0">
             <Link href="#contact" className={buttonVariants({ size: "lg" })}>
-              Share your idea
+              Get a build roadmap
               <ArrowRight size={16} aria-hidden />
             </Link>
             <Link href="#pricing" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>

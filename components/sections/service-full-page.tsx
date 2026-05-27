@@ -103,7 +103,7 @@ export function ServiceFullPage({ service }: { service: ServicePageContent }) {
         <PageHero eyebrow="Service" title={service.title} description={service.heroSummary}>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-              Share your idea
+              Plan this service
               <ArrowRight size={16} aria-hidden />
             </Link>
             <Link
@@ -333,7 +333,7 @@ export function ServiceFullPage({ service }: { service: ServicePageContent }) {
                 {service.ctaText}
               </p>
               <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "mt-6")}>
-                Share your idea
+                Shape my plan
                 <ArrowRight size={16} aria-hidden />
               </Link>
             </div>

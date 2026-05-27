@@ -64,7 +64,7 @@ export function ServicesIndexContent() {
                       href="/contact"
                       className="mt-3 inline-flex items-center gap-1.5 text-sm text-[var(--foreground-secondary)] hover:text-foreground"
                     >
-                      Share your idea
+                      Get guidance
                       <ArrowRight size={14} aria-hidden />
                     </Link>
                   </GlassCard>

@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
 
             <Link href="/contact" className={buttonVariants({ size: "lg" })}>
-              Share your idea
+              Build with Logicform
             </Link>
           </Container>
         </Section>

@@ -51,7 +51,7 @@ export function Navbar() {
             href="/contact"
             className={cn(buttonVariants({ size: "md" }), "hidden sm:inline-flex")}
           >
-            Share your idea
+            Shape your plan
           </Link>
 
           <button
@@ -90,7 +90,7 @@ export function Navbar() {
             className={cn(buttonVariants({ size: "md" }), "mt-3 w-full justify-center")}
             onClick={() => setMenuOpen(false)}
           >
-            Share your idea
+            Shape your plan
           </Link>
         </Container>
       </div>

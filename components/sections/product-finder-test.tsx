@@ -32,88 +32,103 @@ const categoryLabels: Record<FinderCategory, string> = {
 
 const recommendations: Record<
   FinderCategory,
-  { explanation: string; features: string[]; href: string }
+  { explanation: string; plainMeaning: string; firstStep: string; features: string[]; href: string }
 > = {
   website: {
     explanation:
-      "You likely need a stronger public-facing system: positioning, service pages, lead capture, SEO foundations, and a reliable launch setup.",
-    features: ["Clear offer structure", "Conversion-ready pages", "Contact and CRM handoff", "Analytics and SEO basics"],
+      "Your first problem is probably trust and clarity. People need to understand what you do, why it matters, and how to contact you without confusion.",
+    plainMeaning:
+      "A Website System is not just pages. It is your business story, service explanation, lead capture, analytics, and the first step into your sales process.",
+    firstStep: "Start with your offer, audience, pages, contact flow, and launch plan.",
+    features: ["Clear service pages", "Trust-building structure", "Contact and lead flow", "Analytics and SEO basics"],
     href: "/services/websites",
   },
   webApp: {
     explanation:
-      "Your business probably needs software shaped around a real workflow: a portal, internal tool, MVP, or custom application.",
-    features: ["Role-based workflows", "Custom interface", "Data and API layer", "Production deployment"],
+      "Your work does not fit inside a normal template or simple form. You may need a custom online system built around your exact process.",
+    plainMeaning:
+      "A Custom Web App can be a client portal, admin panel, booking system, MVP, internal tool, or private workspace with logins and custom rules.",
+    firstStep: "Start by mapping users, actions, data, permissions, and the workflow the app must support.",
+    features: ["Custom workflow", "Login or role access", "Data and API layer", "Production deployment"],
     href: "/services/custom-web-apps",
   },
   dashboard: {
     explanation:
-      "Your next useful system is likely visibility: one place to see KPIs, pipeline, delivery, customers, and operational signals.",
-    features: ["KPI design", "Data source connections", "Leadership views", "Automated reporting"],
+      "Your business needs clearer visibility. The issue is not only collecting data; it is making the right numbers easy to see and act on.",
+    plainMeaning:
+      "A Dashboard brings scattered numbers into one view: sales, leads, projects, revenue, delivery, customers, or operations.",
+    firstStep: "Start by choosing the decisions you want the dashboard to help you make.",
+    features: ["Important metrics", "Data source connections", "Leadership views", "Automated reporting"],
     href: "/services/dashboards",
   },
   crm: {
     explanation:
-      "You may need a cleaner client-management layer: pipeline, account history, follow-ups, tasks, and handoffs in one operating view.",
-    features: ["Client records", "Pipeline stages", "Follow-up workflows", "Reporting and reminders"],
+      "Your lead or client process needs structure. The pain is probably missed follow-ups, scattered notes, unclear stages, or poor handoffs.",
+    plainMeaning:
+      "A CRM / Client System keeps clients, leads, stages, tasks, notes, reminders, and account history in one place.",
+    firstStep: "Start by defining your client stages and what should happen at each stage.",
+    features: ["Client records", "Pipeline stages", "Follow-up reminders", "Reporting and handoffs"],
     href: "/services/custom-web-apps",
   },
   automation: {
     explanation:
-      "Your biggest gain is likely removing repetitive manual work while keeping human approval where business judgment matters.",
-    features: ["Workflow mapping", "AI-assisted steps", "Human approval checkpoints", "Monitoring and fallback logic"],
+      "Your team is spending too much time on repeat work. The right move may be to connect tools and let routine steps happen automatically.",
+    plainMeaning:
+      "An Automation System moves information between tools, creates reminders, drafts summaries, routes requests, and can use AI where it saves time.",
+    firstStep: "Start with one repeated workflow that wastes time every week.",
+    features: ["Workflow mapping", "AI-assisted steps", "Human approval points", "Monitoring and fallback logic"],
     href: "/services/ai-automation",
   },
 };
 
 const finderQuestions: FinderQuestion[] = [
   {
-    question: "What feels most painful right now?",
+    question: "What are you trying to fix first?",
     options: [
       {
-        label: "We need better leads",
-        detail: "People do not understand or trust the offer quickly enough.",
+        label: "People should understand us and contact us",
+        detail: "This usually means your website, message, service pages, and contact flow need to be stronger.",
         scores: { website: 3, crm: 1 },
       },
       {
-        label: "Client work is hard to manage",
-        detail: "Follow-ups, stages, notes, and handoffs live in too many places.",
+        label: "We lose track of leads or clients",
+        detail: "This usually means you need a cleaner place for client stages, notes, follow-ups, and tasks.",
         scores: { crm: 3, webApp: 1 },
       },
       {
         label: "We cannot see the numbers clearly",
-        detail: "Reporting is scattered across tools, spreadsheets, or manual updates.",
+        detail: "This usually means your data is scattered and needs to become one simple decision view.",
         scores: { dashboard: 3, automation: 1 },
       },
       {
-        label: "Too much work is manual",
-        detail: "The team repeats the same copy-paste, email, document, or CRM tasks.",
+        label: "Too much work is repeated manually",
+        detail: "This usually means the same emails, files, reminders, updates, or approvals happen again and again.",
         scores: { automation: 3, dashboard: 1 },
       },
       {
-        label: "We need a custom online system",
-        detail: "Off-the-shelf tools do not fit how the business actually works.",
+        label: "We need a custom online tool",
+        detail: "This usually means a portal, app, admin panel, booking flow, or private workspace with custom logic.",
         scores: { webApp: 3, crm: 1 },
       },
     ],
   },
   {
-    question: "Where would the solution live?",
+    question: "Where does the problem happen most?",
     options: [
-      { label: "Public website", detail: "Visitors, prospects, and search traffic.", scores: { website: 3 } },
-      { label: "Internal team workspace", detail: "Operators, sales, support, delivery, or management.", scores: { webApp: 2, dashboard: 2, crm: 1 } },
-      { label: "Client or partner portal", detail: "External users need a login or shared workspace.", scores: { webApp: 3, crm: 1 } },
-      { label: "Behind the scenes", detail: "The work should happen automatically across tools.", scores: { automation: 3 } },
+      { label: "Before someone becomes a client", detail: "They are researching, comparing, reading, or deciding whether to trust you.", scores: { website: 3 } },
+      { label: "When managing clients or projects", detail: "The problem is in follow-ups, stages, notes, ownership, or daily delivery.", scores: { crm: 2, webApp: 2 } },
+      { label: "In reports and meetings", detail: "People ask for updates because the current numbers are not easy to find.", scores: { dashboard: 3 } },
+      { label: "Between different tools", detail: "Information has to move from one app, inbox, sheet, or system to another.", scores: { automation: 3 } },
     ],
   },
   {
-    question: "What would make the business feel more under control?",
+    question: "What result would feel most valuable?",
     options: [
-      { label: "More serious brand presence", detail: "Clearer story, credibility, and conversion.", scores: { website: 3 } },
-      { label: "One view of clients and pipeline", detail: "Who needs attention, what stage they are in, and what happens next.", scores: { crm: 3, dashboard: 1 } },
-      { label: "Live dashboards", detail: "Numbers that are updated and easy to explain.", scores: { dashboard: 3 } },
-      { label: "Less repetitive admin", detail: "Automated summaries, routing, reminders, and document flows.", scores: { automation: 3 } },
-      { label: "A tool no template can provide", detail: "A product or workflow that needs custom logic.", scores: { webApp: 3 } },
+      { label: "More serious enquiries", detail: "The right people understand the offer and know exactly how to reach out.", scores: { website: 3 } },
+      { label: "One clean client view", detail: "You can see who needs attention, what stage they are in, and what happens next.", scores: { crm: 3, dashboard: 1 } },
+      { label: "Numbers that update themselves", detail: "Reports become easier because the important numbers are already visible.", scores: { dashboard: 3, automation: 1 } },
+      { label: "Less admin every week", detail: "Routine updates, reminders, summaries, and handoffs happen with less manual work.", scores: { automation: 3 } },
+      { label: "A system built around our way of working", detail: "The business needs something more specific than a template or standard SaaS tool.", scores: { webApp: 3 } },
     ],
   },
 ];
@@ -153,12 +168,25 @@ export function ProductFinderTest() {
           <div>
             <p className="text-eyebrow">Product Finder Test</p>
             <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Not sure what you need? Let the problem choose.
+              Not sure what to build? Start with the problem.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground md:text-lg">
-              Answer a few business-focused questions and get a practical recommendation: website,
-              custom web app, dashboard, CRM, or automation.
+              Choose the sentence that sounds closest to your situation. You do not need technical
+              words. The test translates your business pain into the right starting direction:
+              website, app, dashboard, client system, or automation.
             </p>
+            <div className="mt-5 grid max-w-xl gap-2 text-sm text-[var(--foreground-secondary)]">
+              {[
+                "Website: people need to understand and trust you.",
+                "Dashboard: you need clearer numbers.",
+                "Automation: repeated work should happen faster.",
+                "Client system: leads and clients need a clean process.",
+              ].map((item) => (
+                <p key={item} className="border-l border-[var(--border-strong)] pl-3">
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
 
           <div className="premium-media overflow-hidden rounded-[var(--radius-xl)] p-5 md:p-6">
@@ -185,6 +213,10 @@ export function ProductFinderTest() {
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
                   {activeQuestion.question}
                 </h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Pick the closest option. It does not need to be perfect; this is only a first
+                  direction.
+                </p>
                 <div className="mt-5 grid gap-3">
                   {activeQuestion.options.map((option, index) => (
                     <button
@@ -210,6 +242,24 @@ export function ProductFinderTest() {
                 <p className="mt-4 text-base leading-8 text-muted-foreground">
                   {recommendation.explanation}
                 </p>
+                <div className="mt-5 grid gap-3">
+                  <div className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.025)] p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                      What that means
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                      {recommendation.plainMeaning}
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.025)] p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                      First practical step
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                      {recommendation.firstStep}
+                    </p>
+                  </div>
+                </div>
                 <div className="mt-5 grid gap-2 sm:grid-cols-2">
                   {recommendation.features.map((feature) => (
                     <div
@@ -222,7 +272,7 @@ export function ProductFinderTest() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                    Share your idea
+                    Send this result
                     <ArrowRight size={16} aria-hidden />
                   </Link>
                   <Link

@@ -152,7 +152,9 @@ export function TerminalContactForm() {
       <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] pb-3">
         <div>
           <p className="text-eyebrow">Plan builder</p>
-          <p className="mt-1 text-sm text-muted-foreground">Share your idea. We will shape your plan.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Tell us what feels messy. We will shape the next move.
+          </p>
         </div>
         <button
           type="button"

@@ -13,6 +13,7 @@ type LogoProps = {
   className?: string;
   linked?: boolean;
   framed?: boolean;
+  showTagline?: boolean;
 };
 
 const LOGO_ALT = "Logicform Systems logo";
@@ -21,33 +22,62 @@ const markLogoSource = "/logo-mark.svg";
 
 const sizes = {
   sm: {
-    mark: { width: 26, height: 26 },
-    full: { width: 148, height: 25 },
+    mark: { width: 28, height: 28 },
+    full: { width: 152, height: 28 },
   },
   md: {
-    mark: { width: 32, height: 32 },
-    full: { width: 188, height: 32 },
+    mark: { width: 36, height: 36 },
+    full: { width: 196, height: 36 },
   },
   lg: {
-    mark: { width: 38, height: 38 },
-    full: { width: 220, height: 37 },
+    mark: { width: 44, height: 44 },
+    full: { width: 232, height: 44 },
   },
 } as const;
 
-function LogoText({ size }: { size: LogoProps["size"] }) {
+function LogoText({
+  size,
+  showTagline,
+}: {
+  size: LogoProps["size"];
+  showTagline?: boolean;
+}) {
   return (
     <span
       className={cn(
-        "leading-none",
-        size === "sm" && "text-sm",
-        size === "md" && "text-base",
-        size === "lg" && "text-lg",
+        "flex min-w-0 flex-col justify-center leading-none",
+        size === "sm" && "gap-0.5",
+        size === "md" && "gap-1",
+        size === "lg" && "gap-1",
       )}
     >
-      <span className="font-semibold tracking-tight text-[var(--foreground)]">Logicform</span>
-      <span className="ml-2 font-medium tracking-tight text-[var(--foreground-secondary)]">
-        Systems
+      <span className="inline-flex items-baseline gap-2">
+        <span
+          className={cn(
+            "gold-gradient-text font-semibold tracking-tight",
+            size === "sm" && "text-sm",
+            size === "md" && "text-[1.02rem]",
+            size === "lg" && "text-lg",
+          )}
+        >
+          Logicform
+        </span>
+        <span
+          className={cn(
+            "font-medium tracking-tight text-[var(--foreground-secondary)]",
+            size === "sm" && "text-sm",
+            size === "md" && "text-[1.02rem]",
+            size === "lg" && "text-lg",
+          )}
+        >
+          Systems
+        </span>
       </span>
+      {showTagline ? (
+        <span className="hidden font-mono text-[0.5rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted-foreground)] sm:block">
+          Digital Systems Studio
+        </span>
+      ) : null}
     </span>
   );
 }
@@ -85,6 +115,7 @@ export function Logo({
   className,
   linked = true,
   framed = true,
+  showTagline = false,
 }: LogoProps) {
   const dimensions = sizes[size][variant === "mark" ? "mark" : "full"];
   const [showTextFallback, setShowTextFallback] = useState(false);
@@ -113,7 +144,7 @@ export function Logo({
     ) : (
       <span className={cn("inline-flex items-center gap-2.5", className)}>
         {mark}
-        <LogoText size={size} />
+        <LogoText size={size} showTagline={showTagline} />
       </span>
     );
 
