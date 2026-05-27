@@ -42,7 +42,8 @@
   --color-border: var(--border);
   --color-surface: var(--surface);
   --color-surface-strong: var(--surface-elevated);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
@@ -60,9 +61,55 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 460;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-space-grotesk), var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: 0;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "ss01" 1;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2,
+h3 {
+  font-weight: 650;
+}
+
+p,
+li {
+  letter-spacing: 0;
+}
+
+strong,
+b {
+  color: var(--foreground);
+  font-weight: 760;
+}
+
+em {
+  color: var(--accent-strong);
+  font-style: italic;
+}
+
+.tracking-tight {
+  letter-spacing: 0 !important;
 }
 
 a,
@@ -95,8 +142,9 @@ select {
 
 .text-eyebrow {
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-strong);
 }

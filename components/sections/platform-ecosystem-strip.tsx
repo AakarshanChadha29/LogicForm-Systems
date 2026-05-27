@@ -48,7 +48,7 @@ export function PlatformEcosystemStrip({
   return (
     <Section
       id={id}
-      className={cn("section-divider overflow-hidden", compact ? "py-8 md:py-10" : undefined, className)}
+      className={cn("section-divider overflow-hidden", compact ? "pt-12 pb-8 md:pt-14 md:pb-10" : undefined, className)}
     >
       <Container>
         <div className={cn("grid gap-6", compact ? "lg:grid-cols-[0.7fr_1.3fr]" : "lg:grid-cols-[0.82fr_1.18fr]")}>

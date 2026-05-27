@@ -30,14 +30,13 @@ export function HeroSection() {
               Logicform Systems
             </p>
 
-            <h1 className="mt-4 max-w-[14ch] text-balance text-[2.55rem] font-semibold leading-[1.02] sm:text-5xl lg:text-[4.25rem]">
-              Premium <span className="gold-gradient-text">systems</span> for sharper, AI-ready
-              operations.
+            <h1 className="mt-4 max-w-[13ch] text-balance text-[2.55rem] font-semibold leading-[1.02] sm:text-5xl lg:text-[4.25rem]">
+              Messy operations, refined into <span className="gold-gradient-text">premium systems</span>.
             </h1>
 
             <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-              We turn unclear tools, manual handoffs, and scattered data into sharp websites,
-              internal systems, dashboards, and automation that feel built around the way you work.
+              We design the website, workflows, dashboards, and AI-assisted automations that make
+              a growing business feel clearer, faster, and easier to control.
             </p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
