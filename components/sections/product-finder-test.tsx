@@ -131,6 +131,33 @@ const finderQuestions: FinderQuestion[] = [
       { label: "A system built around our way of working", detail: "The business needs something more specific than a template or standard SaaS tool.", scores: { webApp: 3 } },
     ],
   },
+  {
+    question: "Who needs to use or trust the system?",
+    options: [
+      { label: "New customers or prospects", detail: "The system has to explain the business clearly and make the next step feel obvious.", scores: { website: 3 } },
+      { label: "Our internal team", detail: "The system has to make daily work easier, cleaner, and less dependent on memory.", scores: { webApp: 2, automation: 1, crm: 1 } },
+      { label: "Managers or founders", detail: "The system has to show what is happening without asking people for manual updates.", scores: { dashboard: 3 } },
+      { label: "Clients after they sign", detail: "The system has to support onboarding, communication, documents, or delivery status.", scores: { crm: 2, webApp: 2 } },
+    ],
+  },
+  {
+    question: "How often does this problem show up?",
+    options: [
+      { label: "Every time someone checks us online", detail: "The website and offer story are shaping trust before you ever speak to the lead.", scores: { website: 3 } },
+      { label: "Every week in repeated admin", detail: "The same tasks, messages, files, or approvals keep taking time from the team.", scores: { automation: 3 } },
+      { label: "Every time we need a report", detail: "People need the same numbers again, but the data is hard to gather or trust.", scores: { dashboard: 3 } },
+      { label: "Every day in operations", detail: "The workflow itself needs a dedicated system, not another spreadsheet or workaround.", scores: { webApp: 3, crm: 1 } },
+    ],
+  },
+  {
+    question: "What do you already have?",
+    options: [
+      { label: "A website that no longer sells the offer", detail: "The foundation exists, but the message, structure, or enquiry path is not strong enough.", scores: { website: 3 } },
+      { label: "Spreadsheets and manual tracking", detail: "The business is running, but visibility and ownership depend on fragile manual habits.", scores: { dashboard: 2, crm: 2 } },
+      { label: "Many tools that do not talk to each other", detail: "The opportunity is probably in connecting systems and automating handoffs.", scores: { automation: 3, dashboard: 1 } },
+      { label: "A process that no existing tool fits", detail: "You may need a focused custom app around your specific users, rules, and data.", scores: { webApp: 3 } },
+    ],
+  },
 ];
 
 const emptyScores: Record<FinderCategory, number> = {
@@ -172,7 +199,7 @@ export function ProductFinderTest() {
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground md:text-lg">
               Choose the sentence that sounds closest to your situation. You do not need technical
-              words. The test translates your business pain into the right starting direction:
+              words. The finder translates your business pain into the right starting direction:
               website, app, dashboard, client system, or automation.
             </p>
             <div className="mt-5 grid max-w-xl gap-2 text-sm text-[var(--foreground-secondary)]">
@@ -272,7 +299,7 @@ export function ProductFinderTest() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                    Send this result
+                    Start a project inquiry
                     <ArrowRight size={16} aria-hidden />
                   </Link>
                   <Link

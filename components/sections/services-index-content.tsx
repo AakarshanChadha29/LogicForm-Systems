@@ -5,11 +5,12 @@ import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { SiteShell } from "@/components/layout/site-shell";
 import { Section } from "@/components/layout/section";
+import { buttonVariants } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { PlatformEcosystemStrip } from "@/components/sections/platform-ecosystem-strip";
-import { ProductFinderTest } from "@/components/sections/product-finder-test";
 import { serviceOfferings, type ServiceOffering } from "@/data/services";
 import { serviceIconMap } from "@/lib/service-icons";
+import { cn } from "@/lib/utils";
 
 const catalogOrder = [
   "websites-digital-presence",
@@ -32,12 +33,27 @@ export function ServicesIndexContent() {
         <PageHero
           eyebrow="Services"
           title="Choose the system your business actually needs"
-          description="Explore the core service paths, or use the Product Finder Test if you are not sure whether the next step is a website, app, dashboard, CRM, or automation."
+          description="Explore the core service paths, or use the Logicform Finder if you are not sure whether the next step is a website, app, dashboard, client system, or automation."
         />
 
         <PlatformEcosystemStrip compact className="!pt-0" />
 
-        <ProductFinderTest />
+        <Section id="service-guidance" className="section-divider !py-10">
+          <Container>
+            <div className="grid gap-5 border-y border-[var(--border-subtle)] py-6 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <p className="text-eyebrow">Guided route</p>
+                <h2 className="mt-2 max-w-2xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                  If you are unsure, let the Finder point you to the right service path.
+                </h2>
+              </div>
+              <Link href="/finder" className={cn(buttonVariants({ size: "lg" }), "w-full md:w-auto")}>
+                Take the finder
+                <ArrowRight size={16} aria-hidden />
+              </Link>
+            </div>
+          </Container>
+        </Section>
 
         <Section id="services-catalogue" className="section-divider pb-16">
           <Container>

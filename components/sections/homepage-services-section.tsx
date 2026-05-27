@@ -129,12 +129,12 @@ export function HomepageServicesSection() {
 
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           Not sure what should come first?{" "}
-          <Link href="/services/systems-audit" className="text-accent hover:text-[var(--accent-hover)]">
-            Start with a Digital Systems & AI Audit
+          <Link href="/finder" className="text-accent hover:text-[var(--accent-hover)]">
+            Use the Logicform Finder
           </Link>{" "}
           or{" "}
-          <Link href="/contact" className="text-accent hover:text-[var(--accent-hover)]">
-            send the business problem
+          <Link href="/services" className="text-accent hover:text-[var(--accent-hover)]">
+            compare every service path
           </Link>
           .
         </p>

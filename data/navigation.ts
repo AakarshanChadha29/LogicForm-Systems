@@ -1,14 +1,15 @@
 export const navigationItems = [
   { label: "Services", href: "/services" },
+  { label: "Finder", href: "/finder" },
   { label: "Work", href: "/work" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerLinks = {
   company: [
     { label: "Services", href: "/services" },
+    { label: "Finder", href: "/finder" },
     { label: "Pricing", href: "/pricing" },
     { label: "Work", href: "/work" },
     { label: "Blog", href: "/blog" },

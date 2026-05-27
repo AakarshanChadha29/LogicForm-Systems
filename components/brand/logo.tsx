@@ -23,15 +23,15 @@ const markLogoSource = "/logo-mark.svg";
 const sizes = {
   sm: {
     mark: { width: 28, height: 28 },
-    full: { width: 152, height: 28 },
+    full: { width: 164, height: 28 },
   },
   md: {
     mark: { width: 36, height: 36 },
-    full: { width: 196, height: 36 },
+    full: { width: 210, height: 36 },
   },
   lg: {
     mark: { width: 44, height: 44 },
-    full: { width: 232, height: 44 },
+    full: { width: 244, height: 44 },
   },
 } as const;
 
@@ -54,20 +54,20 @@ function LogoText({
       <span className="inline-flex items-baseline gap-2">
         <span
           className={cn(
-            "gold-gradient-text font-semibold tracking-tight",
+            "gold-gradient-text font-semibold tracking-[0.01em]",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
-            size === "lg" && "text-lg",
+            size === "lg" && "text-[1.14rem]",
           )}
         >
           Logicform
         </span>
         <span
           className={cn(
-            "font-medium tracking-tight text-[var(--foreground-secondary)]",
+            "font-medium tracking-[0.01em] text-[var(--foreground-secondary)]",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
-            size === "lg" && "text-lg",
+            size === "lg" && "text-[1.14rem]",
           )}
         >
           Systems
@@ -121,7 +121,12 @@ export function Logo({
   const [showTextFallback, setShowTextFallback] = useState(false);
 
   const mark = showTextFallback ? (
-    <span className="font-semibold text-accent">LF</span>
+    <span
+      aria-hidden
+      className="grid size-5 rotate-45 place-items-center border border-[var(--accent)] bg-[var(--accent-muted)]"
+    >
+      <span className="size-1.5 bg-[var(--accent)]" />
+    </span>
   ) : (
     <Image
       src={markLogoSource}

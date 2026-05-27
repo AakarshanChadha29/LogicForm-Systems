@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/site";
 const staticPages = [
   "",
   "/about",
+  "/finder",
   "/pricing",
   "/work",
   "/blog",

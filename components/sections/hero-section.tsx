@@ -31,27 +31,27 @@ export function HeroSection() {
             </p>
 
             <h1 className="mt-4 max-w-[13ch] text-balance text-[2.65rem] font-semibold leading-[1] tracking-tight sm:text-6xl lg:text-[4.9rem]">
-              Websites and systems that make your business easier to run.
+              Premium digital systems for businesses ready to move cleaner.
             </h1>
 
             <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-              We help growing teams turn messy tools, manual work, and unclear data into connected
-              systems that are easier to run, improve, and maintain.
+              We turn unclear tools, manual handoffs, and scattered data into sharp websites,
+              internal systems, dashboards, and automation that feel built around the way you work.
             </p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
-              <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                Tell us what feels messy
+              <Link href="/finder" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
+                Find your starting point
                 <ArrowRight size={16} aria-hidden />
               </Link>
               <Link
-                href="/services"
+                href="/contact"
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "lg" }),
                   "w-full sm:w-auto",
                 )}
               >
-                Compare services
+                Start a project inquiry
               </Link>
             </div>
 

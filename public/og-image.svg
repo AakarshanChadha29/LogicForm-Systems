@@ -1,11 +1,21 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#030303"/>
   <rect x="56" y="56" width="1088" height="518" rx="28" fill="#070604" stroke="rgba(212,175,55,0.32)"/>
-  <rect x="96" y="120" width="72" height="72" rx="16" fill="#d4af37"/>
-  <path d="M116 132L140 180H146L124 142L152 132H146L130 150L122 132H116Z" fill="#0a0a0a"/>
-  <path d="M158 132H152L142 152L146 160L158 132Z" fill="#0a0a0a" fill-opacity="0.92"/>
-  <circle cx="160" cy="178" r="5" fill="#f5d76e"/>
-  <text x="188" y="162" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="34" font-weight="600">Logicform Systems</text>
+  <defs>
+    <linearGradient id="ogGold" x1="104" y1="126" x2="160" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff6c9"/>
+      <stop offset="0.48" stop-color="#d9b85a"/>
+      <stop offset="1" stop-color="#9b781e"/>
+    </linearGradient>
+  </defs>
+  <rect x="96" y="120" width="72" height="72" rx="18" fill="#090807" stroke="#d4af37" stroke-opacity="0.82" stroke-width="2"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M119.5 137H143.8L153 146.2V166L143.6 175.2H119.5L113 168.7V143.5L119.5 137ZM122.8 144.7V167.4H140.2L145.7 161.9V150.2L140.1 144.7H122.8Z" fill="url(#ogGold)"/>
+  <path d="M126.6 156.5H145.1" stroke="#fbf7ec" stroke-width="3.4" stroke-linecap="square"/>
+  <path d="M133.8 167L145.4 145.1" stroke="#fbf7ec" stroke-opacity="0.86" stroke-width="3.4" stroke-linecap="square"/>
+  <circle cx="122.8" cy="144.7" r="2.3" fill="#fff1a7"/>
+  <circle cx="145.1" cy="156.5" r="2.3" fill="#fff1a7"/>
+  <circle cx="133.8" cy="167" r="2.3" fill="#c8a84c"/>
+  <text x="188" y="162" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="34" font-weight="650">Logicform Systems</text>
   <text x="96" y="248" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="46" font-weight="600">Premium digital systems for</text>
   <text x="96" y="308" fill="#fffaf0" font-family="system-ui, sans-serif" font-size="46" font-weight="600">modern business operations</text>
   <text x="96" y="382" fill="#e8ddc6" font-family="system-ui, sans-serif" font-size="28">Websites · Apps · Dashboards · Automation · Partnership</text>
