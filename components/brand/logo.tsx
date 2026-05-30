@@ -22,16 +22,16 @@ const markLogoSource = "/logo-mark.png";
 
 const sizes = {
   sm: {
-    mark: { width: 28, height: 28 },
-    full: { width: 164, height: 28 },
+    mark: { width: 36, height: 36 },
+    full: { width: 172, height: 36 },
   },
   md: {
-    mark: { width: 36, height: 36 },
-    full: { width: 210, height: 36 },
+    mark: { width: 48, height: 48 },
+    full: { width: 220, height: 48 },
   },
   lg: {
-    mark: { width: 44, height: 44 },
-    full: { width: 244, height: 44 },
+    mark: { width: 56, height: 56 },
+    full: { width: 252, height: 56 },
   },
 } as const;
 

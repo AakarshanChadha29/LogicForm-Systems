@@ -54,7 +54,7 @@ export function PlatformEcosystemStrip({
         <div className={cn("grid gap-6", compact ? "lg:grid-cols-[0.7fr_1.3fr]" : "lg:grid-cols-[0.82fr_1.18fr]")}>
           <div>
             <p className="text-eyebrow">{eyebrow}</p>
-            <h2 className={cn("mt-3 font-semibold tracking-tight text-foreground", compact ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl")}>
+            <h2 className={cn("mt-6 font-semibold tracking-tight text-foreground", compact ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl")}>
               {title}
             </h2>
           </div>
