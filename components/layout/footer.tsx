@@ -22,12 +22,6 @@ export function Footer() {
               <a href={`mailto:${siteConfig.contactEmail}`} className="block text-muted-foreground hover:text-accent">
                 {siteConfig.contactEmail}
               </a>
-              <a href={`mailto:${siteConfig.infoEmail}`} className="block text-muted-foreground hover:text-accent">
-                {siteConfig.infoEmail}
-              </a>
-              <a href={`mailto:${siteConfig.enquiryEmail}`} className="block text-muted-foreground hover:text-accent">
-                {siteConfig.enquiryEmail}
-              </a>
             </div>
           </div>
 

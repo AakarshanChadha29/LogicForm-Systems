@@ -1,32 +1,27 @@
 export const siteConfig = {
-  name: "Logicform Systems",
+  name: "LogicForm Systems",
   tagline: "Digital Systems for Serious Operators",
   description:
-    "Logicform Systems designs, builds, and maintains websites, internal tools, dashboards, automation systems, and AI-assisted workflows for businesses that need better digital operations.",
+    "LogicForm Systems designs, builds, and maintains websites, internal tools, dashboards, automation systems, and AI-assisted workflows for businesses that need better digital operations.",
   url: "https://logicformsystems.com",
   contactEmail: "contact@logicformsystems.com",
-  infoEmail: "info@logicformsystems.com",
-  enquiryEmail: "enquiry@logicformsystems.com",
-  legalName: "Logicform Systems",
+  // Single contact email — all inquiries go here
+  legalName: "LogicForm Systems",
   founderName: "Aakarshan Chadha",
-  founderTitle: "Technical Founder",
+  founderTitle: "Technical Founder — Architecture, Systems & AI",
   locale: "en_GB",
   founders: {
     technical: {
       name: "Aakarshan Chadha",
-      title: "Technical Founder",
-      email: "aakarshan@logicformsystems.com",
-      age: 28,
+      title: "Technical Founder — Architecture, Systems & AI",
     },
     commercial: {
       name: "Francesca Manes",
-      title: "Commercial Founder",
-      email: "francesca@logicformsystems.com",
-      age: 26,
+      title: "Commercial Founder — Strategy, Client & Market",
     },
   },
   keywords: [
-    "Logicform Systems",
+    "LogicForm Systems",
     "digital systems company",
     "custom web applications",
     "business automation systems",

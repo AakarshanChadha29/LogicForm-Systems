@@ -121,7 +121,7 @@ export default function RootLayout({
           {
             "@type": "ContactPoint",
             contactType: "customer support",
-            email: siteConfig.enquiryEmail,
+            email: siteConfig.contactEmail,
           },
         ],
         sameAs: [siteConfig.socialLinks.linkedin, siteConfig.socialLinks.github],
@@ -131,7 +131,6 @@ export default function RootLayout({
         "@id": `${siteConfig.url}#founder-technical`,
         name: siteConfig.founders.technical.name,
         jobTitle: siteConfig.founders.technical.title,
-        email: siteConfig.founders.technical.email,
         worksFor: { "@id": `${siteConfig.url}#organization` },
       },
       {
@@ -139,7 +138,6 @@ export default function RootLayout({
         "@id": `${siteConfig.url}#founder-commercial`,
         name: siteConfig.founders.commercial.name,
         jobTitle: siteConfig.founders.commercial.title,
-        email: siteConfig.founders.commercial.email,
         worksFor: { "@id": `${siteConfig.url}#organization` },
       },
       {

@@ -6,6 +6,7 @@ import {
   Globe,
   Headset,
   Layers3,
+  Shield,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,4 +20,5 @@ export const serviceIconMap: Record<ServiceIcon, LucideIcon> = {
   operations: Headset,
   cloud: CloudCog,
   book: BookOpen,
+  shield: Shield,
 };

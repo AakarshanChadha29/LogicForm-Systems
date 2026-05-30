@@ -33,15 +33,9 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
               <dl className="mt-8 grid gap-3 text-sm">
                 <div>
                   <dt className="text-eyebrow">Contact</dt>
-                  <dd className="mt-1 space-y-1">
+                  <dd className="mt-1">
                     <a href={`mailto:${siteConfig.contactEmail}`} className="block text-muted-foreground hover:text-accent">
                       {siteConfig.contactEmail}
-                    </a>
-                    <a href={`mailto:${siteConfig.infoEmail}`} className="block text-muted-foreground hover:text-accent">
-                      {siteConfig.infoEmail}
-                    </a>
-                    <a href={`mailto:${siteConfig.enquiryEmail}`} className="block text-muted-foreground hover:text-accent">
-                      {siteConfig.enquiryEmail}
                     </a>
                   </dd>
                 </div>

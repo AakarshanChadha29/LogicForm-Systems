@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 export const metadata = createPageMetadata({
   title: "Pricing",
   description:
-    "Premium pricing anchors for website systems, business systems, and ongoing technical partnership from Logicform Systems.",
+    "Clear starting prices for website systems, business systems, and ongoing technical partnership from LogicForm Systems. Every project scoped individually.",
   path: "/pricing",
 });
 
@@ -27,8 +27,8 @@ export default function PricingPage() {
       <main id="main-content" className="relative z-10">
         <PageHero
           eyebrow="Pricing"
-          title="Pricing for serious systems work"
-          description="Three common engagement paths. Final scope is confirmed after discovery so the build matches the business problem, technical risk, and support needs."
+          title="Clear starting prices, scoped per project"
+          description="Three common engagement paths. Every project is scoped individually — we confirm your number in the first conversation."
         />
 
         <Section id="pricing-content" className="section-divider pb-16">
@@ -38,16 +38,26 @@ export default function PricingPage() {
                 <article
                   key={pkg.id}
                   className={cn(
-                    "flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border-subtle)] p-6",
+                    "relative flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border-subtle)] p-6",
                     pkg.recommended && "border-[var(--border-strong)] bg-[var(--accent-muted)]",
                   )}
                 >
-                  <p className="text-3xl font-semibold text-foreground">{pkg.price}</p>
-                  <h2 className="mt-3 text-xl font-semibold text-foreground">{pkg.name}</h2>
+                  {pkg.recommended && (
+                    <span className="absolute right-4 top-4 rounded-full border border-[var(--border-strong)] bg-[rgba(0,0,0,0.52)] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+                      Most selected
+                    </span>
+                  )}
+                  {/* Name above price */}
+                  <h2 className="text-lg font-semibold text-[var(--foreground-secondary)]">{pkg.name}</h2>
+                  <p className="mt-2 text-3xl font-semibold text-foreground">{pkg.price}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{pkg.priceNote}</p>
                   <p className="mt-3 text-sm text-muted-foreground">{pkg.bestFor}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  <ul className="mt-4 flex-1 space-y-2 text-sm text-muted-foreground">
                     {pkg.includes.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li key={item} className="flex gap-2">
+                        <span className="shrink-0 text-[var(--accent)] font-bold">›</span>
+                        <span>{item}</span>
+                      </li>
                     ))}
                   </ul>
                   <Link href={pkg.ctaHref} className={cn(buttonVariants({ size: "lg" }), "mt-6")}>

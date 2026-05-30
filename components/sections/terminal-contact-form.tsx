@@ -48,16 +48,6 @@ const initialValues: InquiryValues = {
   message: "",
 };
 
-const fieldLabels: Record<keyof InquiryValues, string> = {
-  name: "Name",
-  email: "Work email",
-  company: "Company",
-  projectType: "Direction",
-  budgetRange: "Budget",
-  timeline: "Timeline",
-  message: "Idea",
-};
-
 const requiredFields: Array<keyof InquiryValues> = [
   "name",
   "email",
@@ -66,6 +56,39 @@ const requiredFields: Array<keyof InquiryValues> = [
   "timeline",
   "message",
 ];
+
+function ChipGroup({
+  options,
+  selected,
+  onChange,
+}: {
+  options: readonly string[];
+  selected: string;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {options.map((option) => {
+        const isSelected = selected === option;
+        return (
+          <button
+            key={option}
+            type="button"
+            onClick={() => onChange(option)}
+            className={cn(
+              "rounded-[var(--radius-sm)] border px-3 py-1.5 text-xs font-medium transition-all",
+              isSelected
+                ? "border-[var(--accent)] bg-[var(--accent)] text-[#0a0a08]"
+                : "border-[var(--border)] bg-[var(--surface-card)] text-muted-foreground hover:border-[var(--accent)] hover:text-[var(--accent)]",
+            )}
+          >
+            {option}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 export function TerminalContactForm() {
   const [values, setValues] = useState<InquiryValues>(initialValues);
@@ -146,9 +169,11 @@ export function TerminalContactForm() {
   return (
     <form
       onSubmit={submitInquiry}
-      className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[rgba(0,0,0,0.42)] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-5"
+      className="rounded-[var(--radius-lg)] border-t-2 border-[var(--accent)] border-x border-b border-[var(--border)] bg-[rgba(0,0,0,0.42)] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-5"
+      style={{ borderTopColor: "var(--accent)", borderTopWidth: "2px" }}
       noValidate
     >
+      {/* Header row */}
       <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] pb-3">
         <div>
           <p className="text-eyebrow">Plan builder</p>
@@ -159,235 +184,179 @@ export function TerminalContactForm() {
         <button
           type="button"
           onClick={resetForm}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:border-[var(--border-strong)] hover:text-foreground"
-          aria-label="Reset inquiry form"
+          className="mt-0.5 shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="Reset form"
         >
-          <RotateCcw size={15} aria-hidden />
+          <RotateCcw size={14} />
         </button>
       </div>
 
-      <div
-        className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-[rgba(0,0,0,0.55)] p-3 font-mono text-[11px] leading-relaxed text-[var(--foreground-secondary)] md:text-xs"
-        aria-live="polite"
-      >
-        <div className="mb-3 flex items-center justify-between gap-4">
-          <span className="text-accent">logicform@plan:~</span>
-          <span>{completion}% complete</span>
+      {/* Progress bar */}
+      <div className="mt-3 mb-4">
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-xs text-[var(--accent)] font-medium">{completion}% complete</span>
+          <span className="text-xs text-muted-foreground">{requiredFields.filter(f => values[f].trim().length > 0).length} of {requiredFields.length} fields</span>
         </div>
-        {terminalLines.map((line, index) => (
-          <p key={`${line}-${index}`}>$ {line}</p>
-        ))}
-      </div>
-
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <Field
-          id="inquiry-name"
-          label="Name"
-          value={values.name}
-          autoComplete="name"
-          required
-          onChange={(value) => updateValue("name", value)}
-        />
-        <Field
-          id="inquiry-email"
-          label="Work email"
-          type="email"
-          value={values.email}
-          autoComplete="email"
-          required
-          onChange={(value) => updateValue("email", value)}
-        />
-        <Field
-          id="inquiry-company"
-          label="Company"
-          value={values.company}
-          autoComplete="organization"
-          onChange={(value) => updateValue("company", value)}
-        />
-        <div className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
-          <p className="text-xs font-medium text-[var(--foreground-secondary)]">Timeline</p>
-          <ChipGroup
-            options={timelines}
-            value={values.timeline}
-            ariaLabel="Choose your preferred timeline"
-            onChange={(value) => updateValue("timeline", value)}
+        <div className="h-0.5 w-full rounded-full bg-[var(--border)]">
+          <div
+            className="h-0.5 rounded-full bg-[var(--accent)] transition-all duration-500"
+            style={{ width: `${completion}%` }}
           />
         </div>
       </div>
 
-      <ChoicePanel
-        label="What do you think you need?"
-        helperText="Choose the closest option. If you are unsure, describe the mess and we will recommend the path."
-        options={projectTypes}
-        value={values.projectType}
-        onChange={(value) => updateValue("projectType", value)}
-      />
-
-      <ChoicePanel
-        label="Budget range"
-        helperText="A rough range is enough. It helps us recommend the right scope instead of overselling."
-        options={budgetRanges}
-        value={values.budgetRange}
-        onChange={(value) => updateValue("budgetRange", value)}
-      />
-
-      <div className="mt-4">
-        <label htmlFor="inquiry-message" className="text-xs font-medium text-[var(--foreground-secondary)]">
-          What are you trying to make better?
-        </label>
-        <textarea
-          id="inquiry-message"
-          value={values.message}
-          onChange={(event) => updateValue("message", event.target.value)}
-          className="input-field mt-2 min-h-32 resize-y"
-          placeholder="Example: We get leads from the website, manage them in spreadsheets, and want a better client workflow with AI summaries and clear reporting."
-          required
-          aria-describedby="inquiry-message-help"
-        />
-        <p id="inquiry-message-help" className="mt-2 text-xs text-muted-foreground">
-          A few sentences is enough: what is messy now, what tools you use, and what should feel easier.
-        </p>
-      </div>
-
-      <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
-        <p className="text-xs font-medium text-[var(--foreground-secondary)]">Plan snapshot</p>
-        <div className="mt-3 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2">
-          {(Object.keys(fieldLabels) as Array<keyof InquiryValues>).map((key) => (
-            <p key={key} className="truncate">
-              <span className="text-[var(--foreground-secondary)]">{fieldLabels[key]}:</span>{" "}
-              {values[key] || "Not set"}
-            </p>
-          ))}
-        </div>
-      </div>
-
+      {/* Honeypot */}
       <input
         type="text"
         name="website"
         value={honeypot}
-        onChange={(event) => setHoneypot(event.target.value)}
-        className="hidden"
+        onChange={(e) => setHoneypot(e.target.value)}
+        className="sr-only"
         tabIndex={-1}
         autoComplete="off"
-        aria-hidden
+        aria-hidden="true"
       />
 
-      <div className="mt-4 flex flex-wrap items-center gap-3">
-        <button type="submit" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")} disabled={status === "loading"}>
-          {status === "loading" ? "Sending..." : "Send project request"}
-          <ArrowRight size={16} aria-hidden />
-        </button>
-        <a href={`mailto:${siteConfig.contactEmail}`} className="text-sm text-muted-foreground hover:text-accent">
-          Email directly
-        </a>
+      {/* Fields */}
+      <div className="space-y-4">
+        {/* Name + Email */}
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div>
+            <label htmlFor="tcf-name" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+              Name <span className="text-[var(--accent)]">*</span>
+            </label>
+            <input
+              id="tcf-name"
+              type="text"
+              autoComplete="name"
+              value={values.name}
+              onChange={(e) => updateValue("name", e.target.value)}
+              placeholder="Your name"
+              className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+            />
+          </div>
+          <div>
+            <label htmlFor="tcf-email" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+              Work email <span className="text-[var(--accent)]">*</span>
+            </label>
+            <input
+              id="tcf-email"
+              type="email"
+              autoComplete="email"
+              value={values.email}
+              onChange={(e) => updateValue("email", e.target.value)}
+              placeholder="you@company.com"
+              className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+            />
+          </div>
+        </div>
+
+        {/* Company */}
+        <div>
+          <label htmlFor="tcf-company" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+            Company
+          </label>
+          <input
+            id="tcf-company"
+            type="text"
+            autoComplete="organization"
+            value={values.company}
+            onChange={(e) => updateValue("company", e.target.value)}
+            placeholder="Company name (optional)"
+            className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          />
+        </div>
+
+        {/* Project type chips */}
+        <div>
+          <p className="mb-2 text-xs font-medium text-[var(--foreground-secondary)]">
+            Direction <span className="text-[var(--accent)]">*</span>
+          </p>
+          <ChipGroup
+            options={projectTypes}
+            selected={values.projectType}
+            onChange={(v) => updateValue("projectType", v)}
+          />
+        </div>
+
+        {/* Budget chips */}
+        <div>
+          <p className="mb-2 text-xs font-medium text-[var(--foreground-secondary)]">
+            Budget <span className="text-[var(--accent)]">*</span>
+          </p>
+          <ChipGroup
+            options={budgetRanges}
+            selected={values.budgetRange}
+            onChange={(v) => updateValue("budgetRange", v)}
+          />
+        </div>
+
+        {/* Timeline chips */}
+        <div>
+          <p className="mb-2 text-xs font-medium text-[var(--foreground-secondary)]">
+            Timeline <span className="text-[var(--accent)]">*</span>
+          </p>
+          <ChipGroup
+            options={timelines}
+            selected={values.timeline}
+            onChange={(v) => updateValue("timeline", v)}
+          />
+        </div>
+
+        {/* Message */}
+        <div>
+          <label htmlFor="tcf-message" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+            Idea / Problem <span className="text-[var(--accent)]">*</span>
+          </label>
+          <textarea
+            id="tcf-message"
+            rows={4}
+            value={values.message}
+            onChange={(e) => updateValue("message", e.target.value)}
+            placeholder="Describe the goal, bottleneck, or system you want to build…"
+            className="w-full resize-none rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          />
+        </div>
       </div>
 
-      {status === "success" ? (
-        <p className="mt-3 flex items-center gap-2 text-sm text-[var(--foreground-secondary)]" role="status">
-          <CheckCircle2 size={15} className="text-accent" aria-hidden />
-          Inquiry received. We will respond with the clearest next step, not a generic sales pitch.
-        </p>
-      ) : null}
-      {status === "error" ? (
-        <p className="mt-3 text-sm text-[#f0a8a8]" role="alert">
-          Check the missing detail above, or email{" "}
-          <a href={`mailto:${siteConfig.contactEmail}`} className="underline">
-            {siteConfig.contactEmail}
-          </a>
-          .
-        </p>
-      ) : null}
+      {/* Terminal */}
+      <div className="mt-4 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[rgba(0,0,0,0.55)] p-3 font-mono text-xs leading-5">
+        {terminalLines.map((line, i) => (
+          <p key={i} className="text-[var(--foreground-secondary)]">
+            <span className="text-[var(--accent)]">›</span> {line}
+          </p>
+        ))}
+        {status === "loading" && (
+          <p className="animate-pulse text-[var(--accent)]">› sending…</p>
+        )}
+        {status === "success" && (
+          <p className="flex items-center gap-1.5 text-emerald-400">
+            <CheckCircle2 size={12} /> inquiry sent — we will be in touch shortly
+          </p>
+        )}
+      </div>
+
+      {/* Email escape */}
+      <p className="mt-3 text-xs text-muted-foreground">
+        Rather just email us?{" "}
+        <a href={`mailto:${siteConfig.contactEmail}`} className="text-[var(--accent)] hover:text-[var(--accent-hover)]">
+          {siteConfig.contactEmail}
+        </a>
+      </p>
+
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === "loading" || status === "success"}
+        className={cn(
+          buttonVariants({ size: "lg" }),
+          "mt-4 w-full justify-center",
+          (status === "loading" || status === "success") && "opacity-60 pointer-events-none",
+        )}
+      >
+        {status === "loading" ? "Sending…" : status === "success" ? "Sent" : "Send inquiry"}
+        {status !== "loading" && status !== "success" && <ArrowRight size={16} aria-hidden />}
+      </button>
     </form>
-  );
-}
-
-function Field({
-  id,
-  label,
-  value,
-  onChange,
-  type = "text",
-  autoComplete,
-  required = false,
-}: {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  type?: string;
-  autoComplete?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="text-xs font-medium text-[var(--foreground-secondary)]">
-        {label}
-      </label>
-      <input
-        id={id}
-        type={type}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="input-field mt-2"
-        autoComplete={autoComplete}
-        required={required}
-        aria-required={required}
-      />
-    </div>
-  );
-}
-
-function ChoicePanel({
-  label,
-  options,
-  value,
-  helperText,
-  onChange,
-}: {
-  label: string;
-  options: readonly string[];
-  value: string;
-  helperText?: string;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <fieldset className="mt-4 rounded-[var(--radius-md)] border border-[var(--border-subtle)] p-3">
-      <legend className="px-1 text-xs font-medium text-[var(--foreground-secondary)]">{label}</legend>
-      {helperText ? <p className="mt-1 text-xs text-muted-foreground">{helperText}</p> : null}
-      <ChipGroup options={options} value={value} ariaLabel={label} onChange={onChange} />
-    </fieldset>
-  );
-}
-
-function ChipGroup({
-  options,
-  value,
-  ariaLabel,
-  onChange,
-}: {
-  options: readonly string[];
-  value: string;
-  ariaLabel?: string;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label={ariaLabel}>
-      {options.map((option) => (
-        <button
-          key={option}
-          type="button"
-          aria-pressed={value === option}
-          onClick={() => onChange(option)}
-          className={cn(
-            "rounded-full border px-3 py-1.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]",
-            value === option
-              ? "border-[var(--border-strong)] bg-[var(--accent-muted)] text-foreground"
-              : "border-[var(--border-subtle)] text-muted-foreground hover:border-[var(--border-strong)] hover:text-foreground",
-          )}
-        >
-          {option}
-        </button>
-      ))}
-    </div>
   );
 }

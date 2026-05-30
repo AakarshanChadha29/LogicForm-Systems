@@ -4,6 +4,8 @@ export type ProjectCaseStudy = {
   id: string;
   title: string;
   label: string;
+  sublabel?: string;
+  isConcept?: boolean;
   summary: string;
   stack: string[];
   highlights: string[];
@@ -66,6 +68,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     id: "custom-saas-crm-platforms",
     title: "Custom SaaS & CRM Platform Engineering",
     label: "Business Systems Engineering",
+    isConcept: true,
     mockupType: "dashboard",
     summary:
       "Custom dashboards, CRM views, and workflow systems for teams that need operational control and less manual work.",
@@ -103,7 +106,9 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
   {
     id: "scholar-ai-tu-berlin",
     title: "Scholar-AI",
-    label: "TU Berlin · Research Support Concept",
+    label: "Concept · Internal",
+    sublabel: "TU Berlin · Research Support Concept",
+    isConcept: true,
     mockupType: "terminal",
     summary:
       "AI-assisted academic tooling concept for research workflows, retrieval, and structured knowledge access.",

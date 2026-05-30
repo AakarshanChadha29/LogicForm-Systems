@@ -36,11 +36,11 @@ export function FounderSection() {
         >
           <p className="text-eyebrow">Founder & Technical Leadership</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-            {siteConfig.founderName}
+            {siteConfig.founders.technical.name}
           </h2>
           <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin size={14} className="text-accent" aria-hidden />
-            {siteConfig.founderTitle} · Remote-first delivery
+            {siteConfig.founders.technical.title} · Remote-first delivery
           </p>
 
           <p className="mt-6 text-lg leading-relaxed text-foreground/90">

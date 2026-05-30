@@ -18,8 +18,8 @@ export function PricingSection() {
       <Container>
         <SectionHeader
           eyebrow="Pricing"
-          title="Market-realistic pricing, scoped before build"
-          description="Clear ranges help you plan. The final proposal is based on workflow complexity, integrations, content depth, data risk, and the level of support required."
+          title="Clear starting prices, scoped per project"
+          description="Every project is scoped individually. We confirm your number in the first conversation — no surprise ranges, no vague estimates."
         />
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -39,15 +39,17 @@ export function PricingSection() {
               ) : null}
 
               <header className={cn("mb-5", pkg.recommended && "pr-24")}>
-                <p className="text-3xl font-semibold tracking-tight text-foreground">{pkg.price}</p>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">{pkg.name}</h3>
+                {/* Service name appears ABOVE price */}
+                <h3 className="text-lg font-semibold tracking-tight text-[var(--foreground-secondary)]">{pkg.name}</h3>
+                <p className="mt-2 text-3xl font-semibold tracking-tight text-foreground">{pkg.price}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{pkg.priceNote}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pkg.bestFor}</p>
               </header>
 
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {pkg.includes.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span className="shrink-0 text-[var(--accent)] font-bold">›</span>
                     <span>{item}</span>
                   </li>
                 ))}

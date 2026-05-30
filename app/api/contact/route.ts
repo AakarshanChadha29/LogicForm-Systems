@@ -133,7 +133,7 @@ export async function POST(request: Request) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
-      from: "Logicform Systems Website <onboarding@resend.dev>",
+      from: "LogicForm Systems <contact@logicformsystems.com>",
       to: siteConfig.contactEmail,
       replyTo: email,
       subject,

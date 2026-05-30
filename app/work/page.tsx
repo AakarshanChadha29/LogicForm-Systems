@@ -12,7 +12,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Work",
   description:
-    "Selected project examples and delivery patterns from Logicform Systems across websites, dashboards, automation, and business systems.",
+    "Selected project examples and delivery patterns from LogicForm Systems across websites, dashboards, automation, and business systems.",
   path: "/work",
 });
 
@@ -30,10 +30,22 @@ export default function WorkPage() {
           <Container>
             <div className="grid gap-4 md:grid-cols-2">
               {projectCaseStudies.map((project) => (
-                <GlassCard key={project.id} className="p-6">
-                  <p className="text-eyebrow">{project.label}</p>
+                <GlassCard key={project.id} className="flex flex-col p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-eyebrow">{project.label}</p>
+                      {project.sublabel && (
+                        <p className="mt-0.5 text-xs text-muted-foreground">{project.sublabel}</p>
+                      )}
+                    </div>
+                    {project.isConcept && (
+                      <span className="shrink-0 rounded-full border border-[var(--border)] bg-[var(--surface-inset)] px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-wider text-muted-foreground">
+                        Concept · Internal
+                      </span>
+                    )}
+                  </div>
                   <h2 className="mt-2 text-xl font-semibold text-foreground">{project.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {project.summary}
                   </p>
                   {project.liveUrl ? (
@@ -46,6 +58,10 @@ export default function WorkPage() {
                       View project
                       <ArrowRight size={14} aria-hidden />
                     </Link>
+                  ) : project.isConcept ? (
+                    <p className="mt-4 text-xs text-muted-foreground italic">
+                      Internal concept — not a live client project
+                    </p>
                   ) : null}
                 </GlassCard>
               ))}

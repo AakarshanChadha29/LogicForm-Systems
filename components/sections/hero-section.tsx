@@ -27,31 +27,36 @@ export function HeroSection() {
         >
           <div className="max-w-2xl">
             <p className="font-mono text-xs font-semibold uppercase text-[var(--foreground-secondary)]">
-              Logicform Systems
+              LogicForm Systems
             </p>
 
             <h1 className="mt-4 max-w-[13ch] text-balance text-[2.55rem] font-semibold leading-[1.02] sm:text-5xl lg:text-[4.25rem]">
               Messy operations, refined into <span className="gold-gradient-text">premium systems</span>.
             </h1>
 
-            <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
+            {/* Brighter subtext for contrast */}
+            <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-[rgba(255,255,255,0.82)] md:text-lg md:leading-8">
               We design the website, workflows, dashboards, and AI-assisted automations that make
               a growing business feel clearer, faster, and easier to control.
             </p>
 
+            {/* CTA hierarchy: gold primary = inquiry, ghost = finder */}
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
-              <Link href="/finder" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
-                Find your starting point
+              <Link
+                href="/contact"
+                className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
+              >
+                Start a project inquiry
                 <ArrowRight size={16} aria-hidden />
               </Link>
               <Link
-                href="/contact"
+                href="/finder"
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "lg" }),
                   "w-full sm:w-auto",
                 )}
               >
-                Start a project inquiry
+                Find your starting point
               </Link>
             </div>
 
@@ -79,16 +84,17 @@ export function HeroSection() {
           >
             <Image
               src="/brand/logicform-systems-hero.png"
-              alt="Abstract connected operating system visual for Logicform Systems"
+              alt="Abstract connected operating system visual for LogicForm Systems"
               fill
               priority
               sizes="(min-width: 1024px) 54vw, 100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,4,0.18),transparent_44%,rgba(5,5,4,0.22))]" />
-            <div className="absolute bottom-4 left-4 right-4 grid gap-2 rounded-[var(--radius-md)] border border-[rgba(255,255,255,0.12)] bg-[rgba(5,5,4,0.58)] p-3 backdrop-blur-md sm:grid-cols-3">
+            {/* Improved label readability */}
+            <div className="absolute bottom-4 left-4 right-4 grid gap-2 rounded-[var(--radius-md)] border border-[rgba(255,255,255,0.18)] bg-[rgba(5,5,4,0.72)] p-3 backdrop-blur-md sm:grid-cols-3">
               {["Resolve", "Integrate", "Maintain"].map((item) => (
-                <p key={item} className="text-xs font-medium text-[var(--foreground-secondary)]">
+                <p key={item} className="text-xs font-medium text-[rgba(255,255,255,0.88)]">
                   {item}
                 </p>
               ))}

@@ -2,6 +2,7 @@ export type PricingPackage = {
   id: string;
   name: string;
   price: string;
+  priceNote: string;
   bestFor: string;
   includes: string[];
   timeline: string;
@@ -14,7 +15,8 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "website-system",
     name: "Website System",
-    price: "€2,500–€7,500",
+    price: "From €2,500",
+    priceNote: "Scoped per project",
     bestFor: "Businesses that need a serious website that explains the offer clearly, builds trust, captures leads, and is ready to publish.",
     includes: [
       "Positioning, page structure, and responsive build",
@@ -29,7 +31,8 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "business-system",
     name: "Business System",
-    price: "€8,000–€30,000",
+    price: "From €8,000",
+    priceNote: "Scoped per project",
     bestFor: "Teams that need a dashboard, internal tool, automation, portal, or connected workflow to replace manual operations.",
     includes: [
       "Requirements mapping and build priority plan",
@@ -45,7 +48,8 @@ export const homepagePricingPackages: PricingPackage[] = [
   {
     id: "technical-partner",
     name: "Technical Partner",
-    price: "€2,000–€6,000/month",
+    price: "From €2,000/month",
+    priceNote: "Per month · scoped per engagement",
     bestFor: "Teams that want ongoing technical execution, support, maintenance, automation improvement, and roadmap guidance.",
     includes: [
       "Monthly support and improvements",
@@ -63,4 +67,4 @@ export const pricingAuditNote =
   "Not sure what to build first? Start with a Digital Systems & AI Audit from €1,200 to map the right website, app, dashboard, CRM, or automation path.";
 
 export const pricingNote =
-  "Final pricing depends on scope, integrations, data complexity, automation risk, content depth, and support requirements. If the full system is too large for day one, we can start with a focused phase and grow it deliberately.";
+  "Every project is scoped individually. We confirm your number in the first conversation — no surprise ranges, no vague estimates.";

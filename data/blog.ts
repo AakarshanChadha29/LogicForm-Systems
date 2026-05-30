@@ -8,7 +8,14 @@ export type BlogPost = {
   sections: Array<{ heading: string; body: string }>;
   ctaHref: string;
   ctaLabel: string;
+  sources?: Array<{ label: string; href: string }>;
 };
+
+function formatDate(iso: string): string {
+  const [year, month, day] = iso.split("-").map(Number);
+  const d = new Date(year, month - 1, day);
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
 
 export const blogPosts: BlogPost[] = [
   {
@@ -19,8 +26,22 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-27",
     category: "Compliance",
     readingTime: "7 min read",
-    ctaHref: "/services/systems-audit",
-    ctaLabel: "Review Your Systems",
+    ctaHref: "/services/ai-governance",
+    ctaLabel: "Start AI Governance Review",
+    sources: [
+      {
+        label: "EU AI Act — EUR-Lex Official Text",
+        href: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      },
+      {
+        label: "European Commission — AI Act timeline",
+        href: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      },
+      {
+        label: "EU AI Office — Compliance guidance",
+        href: "https://digital-strategy.ec.europa.eu/en/policies/ai-office",
+      },
+    ],
     sections: [
       {
         heading: "Treat AI readiness as systems work",
@@ -50,6 +71,16 @@ export const blogPosts: BlogPost[] = [
     readingTime: "6 min read",
     ctaHref: "/services/ai-automation",
     ctaLabel: "Explore AI Workflow Automation",
+    sources: [
+      {
+        label: "McKinsey — The state of AI in 2024",
+        href: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      },
+      {
+        label: "Gartner — Business process automation market",
+        href: "https://www.gartner.com/en/information-technology/insights/business-process-automation",
+      },
+    ],
     sections: [
       {
         heading: "Start with workflow pain, not tools",
@@ -75,6 +106,16 @@ export const blogPosts: BlogPost[] = [
     readingTime: "5 min read",
     ctaHref: "/services/custom-web-apps",
     ctaLabel: "Explore Custom Web Applications",
+    sources: [
+      {
+        label: "Statista — Global website count 2024",
+        href: "https://www.statista.com/statistics/1327521/number-of-websites-worldwide/",
+      },
+      {
+        label: "W3Techs — Web technology usage statistics",
+        href: "https://w3techs.com/technologies",
+      },
+    ],
     sections: [
       {
         heading: "Websites explain and convert",
@@ -99,75 +140,110 @@ export const blogPosts: BlogPost[] = [
     category: "Dashboards",
     readingTime: "5 min read",
     ctaHref: "/services/dashboards",
-    ctaLabel: "Explore Dashboard Systems",
+    ctaLabel: "Explore Dashboards & Reporting",
+    sources: [
+      {
+        label: "Tableau — State of Data & Analytics",
+        href: "https://www.tableau.com/reports/data-trends",
+      },
+      {
+        label: "Gartner — Data & Analytics leadership survey",
+        href: "https://www.gartner.com/en/data-analytics",
+      },
+    ],
     sections: [
       {
-        heading: "Spreadsheets stop scaling",
-        body: "As teams grow, manual reporting becomes slower, less reliable, and harder to maintain across departments.",
+        heading: "Scattered data kills decision speed",
+        body: "When key numbers live in spreadsheets, email threads, and disconnected tools, leadership spends more time finding data than acting on it.",
       },
       {
-        heading: "Dashboards create shared visibility",
-        body: "Role-based dashboards help leadership and operations teams see the same numbers, trends, and exceptions in real time.",
+        heading: "One view changes how teams operate",
+        body: "An operational dashboard that shows sales pipeline, delivery status, support volume, and key KPIs in one place reduces meeting load, clarifies priorities, and surfaces problems early.",
       },
       {
-        heading: "Good dashboards drive action",
-        body: "The goal is not more charts—it is faster decisions, clearer accountability, and fewer blind spots.",
+        heading: "Start with the decisions you need to make",
+        body: "The best dashboards are built backwards from real decisions: what does a team leader need to know every morning to run their area well?",
       },
     ],
   },
   {
-    slug: "ai-automation-for-small-businesses",
-    title: "AI Automation for Small Businesses: What to Automate First",
+    slug: "ai-in-business-operations",
+    title: "AI in Business Operations: Where It Actually Helps",
     description:
-      "Practical first automation targets for small teams that want speed without losing control.",
+      "A grounded look at where AI creates real operational value and where the hype still outpaces the reality for most businesses.",
     date: "2026-05-18",
     category: "AI",
     readingTime: "6 min read",
     ctaHref: "/services/ai-automation",
-    ctaLabel: "Build an AI Workflow",
+    ctaLabel: "Map an AI Workflow",
+    sources: [
+      {
+        label: "McKinsey Global Institute — AI and the future of work",
+        href: "https://www.mckinsey.com/featured-insights/artificial-intelligence/ai-automation-and-the-future-of-work-ten-things-to-solve-for",
+      },
+      {
+        label: "OpenAI — Business use case research",
+        href: "https://openai.com/research",
+      },
+      {
+        label: "MIT Technology Review — AI in enterprise",
+        href: "https://www.technologyreview.com/topic/artificial-intelligence/",
+      },
+    ],
     sections: [
       {
-        heading: "Automate high-frequency, low-judgment tasks first",
-        body: "Lead routing, document summarization, status updates, and report drafting are strong early candidates.",
+        heading: "High-value AI is mostly invisible",
+        body: "The AI use cases delivering real ROI in most businesses are not product features — they are internal: summarising documents, routing requests, drafting first versions, and flagging anomalies in data.",
       },
       {
-        heading: "Avoid automating unclear processes",
-        body: "If a workflow is inconsistent today, automation will usually amplify the confusion. Clarify the process first.",
+        heading: "Automation works best at handoff points",
+        body: "Where work moves from one person, tool, or team to another is usually where time is lost. AI can reduce that friction — not by replacing judgment, but by removing the manual steps around it.",
       },
       {
-        heading: "Measure time saved and error reduction",
-        body: "Successful automation projects define success in operational terms: hours saved, fewer handoffs, faster response times.",
+        heading: "Risk follows stakes",
+        body: "The higher the business impact of a wrong output, the more important human review becomes. Automate the low-stakes repetition. Keep humans in the loop for decisions that carry weight.",
       },
     ],
   },
   {
-    slug: "plan-custom-web-application-before-building",
-    title: "How to Plan a Custom Web Application Before Building",
+    slug: "digital-systems-audit-before-building",
+    title: "Why You Should Audit Before You Build",
     description:
-      "A structured planning approach for founders and operators preparing a custom app, portal, or internal system.",
+      "Most costly rebuild projects were avoidable. A structured audit before build commitment prevents budget waste and sets the right technical direction.",
     date: "2026-05-22",
-    category: "Product",
-    readingTime: "7 min read",
+    category: "Strategy",
+    readingTime: "5 min read",
     ctaHref: "/services/systems-audit",
-    ctaLabel: "Start with a Systems Audit",
+    ctaLabel: "Book a Systems Audit",
+    sources: [
+      {
+        label: "Standish Group — CHAOS Report on project success rates",
+        href: "https://www.standishgroup.com/",
+      },
+      {
+        label: "McKinsey — Why do so many IT projects fail?",
+        href: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value",
+      },
+    ],
     sections: [
       {
-        heading: "Define the job the system must do",
-        body: "Start with the operational outcome: what decision, workflow, or customer experience must improve after launch.",
+        heading: "Most rebuilds are unnecessary",
+        body: "The most common cause of expensive rebuilds is not bad technology — it is building the wrong thing first. A short audit surfaces what actually needs to change before budget is committed.",
       },
       {
-        heading: "Map users, roles, and data ownership",
-        body: "Identify who uses the system, what each role can do, and where data comes from before designing screens.",
+        heading: "What a good audit covers",
+        body: "Current tools, workflows, data structure, bottlenecks, AI opportunities, integration dependencies, and what should be built versus bought. The output is a clear priority list with reasoning.",
       },
       {
-        heading: "Sequence delivery in phases",
-        body: "A phased roadmap reduces risk, speeds time to value, and makes budget planning more realistic.",
+        heading: "Speed comes from clarity",
+        body: "Teams that audit first move faster in build — not slower. They know what they are building, why, and in what order. The build itself has fewer surprises.",
       },
     ],
   },
 ];
 
-export const blogPostBySlug = Object.fromEntries(blogPosts.map((post) => [post.slug, post])) as Record<
-  string,
-  BlogPost
->;
+export const blogPostBySlug: Record<string, BlogPost> = Object.fromEntries(
+  blogPosts.map((post) => [post.slug, post]),
+);
+
+export { formatDate };

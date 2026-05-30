@@ -193,7 +193,7 @@ export function ProductFinderTest() {
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
-            <p className="text-eyebrow">Product Finder Test</p>
+            <p className="text-eyebrow">System Finder</p>
             <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
               Not sure what to build? Start with the problem.
             </h2>
@@ -220,13 +220,13 @@ export function ProductFinderTest() {
             <div className="flex items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4">
               <div>
                 <p className="font-mono text-xs text-accent">logicform.finder</p>
-                <p className="mt-1 text-sm text-muted-foreground">{progress}% mapped</p>
+                <p className="mt-1 text-sm text-[var(--accent)] font-medium">{progress}% complete</p>
               </div>
               <button
                 type="button"
                 onClick={() => setAnswers([])}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-muted-foreground transition-colors hover:border-[var(--border-strong)] hover:text-foreground"
-                aria-label="Restart Product Finder Test"
+                aria-label="Restart System Finder"
               >
                 <RotateCcw size={15} aria-hidden />
               </button>

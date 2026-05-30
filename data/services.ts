@@ -5,7 +5,8 @@ export type ServiceIcon =
   | "layers"
   | "operations"
   | "cloud"
-  | "book";
+  | "book"
+  | "shield";
 
 export type ServiceDetail = {
   overview: string;
@@ -24,6 +25,7 @@ export type ServiceOffering = {
   fullPageHref: string;
   previewTagline: string;
   icon: ServiceIcon;
+  isNew?: boolean;
   description: string;
   outcomes: string[];
   capabilities: string[];
@@ -344,6 +346,52 @@ export const serviceOfferings: ServiceOffering[] = [
       startingPrice: "From €1,200",
       timeline: "1–3 weeks",
       ctaLabel: "Book an Audit",
+    },
+  },
+  {
+    id: "ai-governance",
+    label: "Service 08",
+    title: "AI Governance Systems",
+    fullPageHref: "/services/ai-governance",
+    previewTagline: "Prepare for the EU AI Act before August 2026 with practical governance systems.",
+    icon: "shield",
+    isNew: true,
+    description:
+      "Practical AI governance frameworks, audit trails, risk classification, and compliance documentation for businesses using AI in workflows, decisions, or customer interactions.",
+    outcomes: [
+      "Clear classification of AI use across your business operations",
+      "Audit trails and logging that meet regulatory expectations",
+      "Practical documentation ready for EU AI Act compliance",
+    ],
+    capabilities: [
+      "AI use case mapping",
+      "Risk classification",
+      "Audit trail setup",
+      "Compliance documentation",
+      "Human-in-the-loop controls",
+    ],
+    detail: {
+      overview:
+        "Practical AI governance for businesses preparing for the EU AI Act (August 2026). We map your AI use, classify risk, build controls, and document everything that regulators and auditors expect to see.",
+      useCases: [
+        "EU AI Act readiness",
+        "AI use case register",
+        "Risk classification",
+        "Compliance documentation",
+        "Ongoing governance support",
+      ],
+      included: [
+        "AI workflow inventory and risk classification",
+        "Human-in-the-loop control design",
+        "Audit trail and logging setup",
+        "Compliance documentation package",
+        "Governance review and handover",
+      ],
+      technicalApproach:
+        "Structured discovery, AI risk taxonomy, logging infrastructure, policy templates, and documentation aligned to EU AI Act requirements.",
+      startingPrice: "From €1,500",
+      timeline: "2–6 weeks",
+      ctaLabel: "Start AI Governance Review",
     },
   },
 ];

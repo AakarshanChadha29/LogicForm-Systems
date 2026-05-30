@@ -16,9 +16,9 @@ type LogoProps = {
   showTagline?: boolean;
 };
 
-const LOGO_ALT = "Logicform Systems logo";
+const LOGO_ALT = "LogicForm Systems logo";
 
-const markLogoSource = "/logo-mark.svg";
+const markLogoSource = "/logo-mark.png";
 
 const sizes = {
   sm: {
@@ -51,26 +51,28 @@ function LogoText({
         size === "lg" && "gap-1",
       )}
     >
-      <span className="inline-flex items-baseline gap-2">
+      <span className="inline-flex items-baseline gap-1.5">
+        {/* LogicForm — gold, heavy weight = primary brand word */}
         <span
           className={cn(
-            "gold-gradient-text font-medium tracking-normal",
+            "gold-gradient-text font-black tracking-normal",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
             size === "lg" && "text-[1.14rem]",
           )}
         >
-          <span className="font-black">L</span>ogic<span className="font-black">F</span>orm
+          LogicForm
         </span>
+        {/* Systems — light/muted = supporting word */}
         <span
           className={cn(
-            "font-medium tracking-normal text-[var(--foreground-secondary)]",
+            "font-light tracking-normal text-[var(--foreground-secondary)]",
             size === "sm" && "text-sm",
             size === "md" && "text-[1.02rem]",
             size === "lg" && "text-[1.14rem]",
           )}
         >
-          <span className="font-black text-[var(--foreground)]">S</span>ystems
+          Systems
         </span>
       </span>
       {showTagline ? (

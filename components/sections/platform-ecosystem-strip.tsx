@@ -62,7 +62,7 @@ export function PlatformEcosystemStrip({
             <p className="max-w-3xl text-sm leading-7 text-muted-foreground md:text-base">
               {description}
             </p>
-            <div className="platform-marquee mt-6 rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.025)] py-3">
+            <div className="platform-marquee mt-6 rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.025)] py-3 overflow-x-hidden">
               <div className="platform-marquee-track">
                 {marqueeItems.map((item, index) => (
                   <span key={`${item}-${index}`} className="platform-logo-chip">
