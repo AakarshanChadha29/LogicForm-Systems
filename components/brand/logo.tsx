@@ -138,10 +138,11 @@ export function Logo({
       priority={size === "md" && linked}
       unoptimized
       onError={() => setShowTextFallback(true)}
-      className={cn(
-        "h-auto max-h-full w-auto max-w-full shrink-0 object-contain object-left",
-        variant === "mark" && className,
-      )}
+      style={{
+        width: variant === "mark" ? dimensions.width : sizes[size].mark.width,
+        height: variant === "mark" ? dimensions.height : sizes[size].mark.height,
+      }}
+      className={cn("shrink-0 object-contain object-left", variant === "mark" && className)}
     />
   );
 
