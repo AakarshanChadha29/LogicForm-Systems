@@ -63,9 +63,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/logo-mark.svg", type: "image/svg+xml" }],
-    shortcut: ["/logo-mark.svg"],
-    apple: [{ url: "/logo-mark.svg" }],
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: ["/favicon-32x32.png"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -109,7 +112,7 @@ export default function RootLayout({
         name: siteConfig.name,
         legalName: siteConfig.legalName,
         url: siteConfig.url,
-        logo: `${siteConfig.url}/logo.svg`,
+        logo: `${siteConfig.url}/logo-mark.png`,
         email: siteConfig.contactEmail,
         contactPoint: [
           {

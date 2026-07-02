@@ -13,7 +13,7 @@ export function Footer() {
       <Container className="py-12 md:py-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Logo size="lg" linked={false} framed={false} showTagline />
+            <Logo size="md" linked={false} framed={false} />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Premium digital systems for businesses that need clarity, execution, and long-term
               technical partnership.

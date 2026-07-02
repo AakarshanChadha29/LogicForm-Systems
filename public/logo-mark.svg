@@ -1,32 +1,6 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformMarkTitle logicformMarkDesc">
+<svg width="790" height="790" viewBox="0 0 790 790" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformMarkTitle logicformMarkDesc">
   <title id="logicformMarkTitle">LogicForm Systems mark</title>
-  <desc id="logicformMarkDesc">A bold premium black and gold geometric mark for LogicForm Systems.</desc>
-  <defs>
-    <linearGradient id="markGold" x1="10" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF6C9"/>
-      <stop offset="0.46" stop-color="#D9B85A"/>
-      <stop offset="1" stop-color="#9B781E"/>
-    </linearGradient>
-    <linearGradient id="markBorder" x1="4" y1="3" x2="44" y2="45" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF4BB"/>
-      <stop offset="0.54" stop-color="#D8B852"/>
-      <stop offset="1" stop-color="#806316"/>
-    </linearGradient>
-    <linearGradient id="markGlass" x1="7" y1="5" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#17150F"/>
-      <stop offset="0.58" stop-color="#090807"/>
-      <stop offset="1" stop-color="#030303"/>
-    </linearGradient>
-    <filter id="markGlow" x="-24%" y="-24%" width="148%" height="148%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.6" flood-color="#D7B64A" flood-opacity="0.28"/>
-      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.44"/>
-    </filter>
-  </defs>
-  <g filter="url(#markGlow)">
-    <rect x="2.5" y="2.5" width="43" height="43" rx="12" fill="url(#markGlass)" stroke="url(#markBorder)" stroke-width="1.35"/>
-    <path d="M13 12H20V30H32V36H13V12Z" fill="url(#markGold)"/>
-    <path d="M22 12H36V18H29V22H35V28H29V36H22V12Z" fill="url(#markGold)"/>
-    <path d="M13 12H20V18H13V12Z" fill="#FFF3B2" fill-opacity="0.9"/>
-    <path d="M22 12H36V18H22V12Z" fill="#FFF3B2" fill-opacity="0.78"/>
-  </g>
+  <desc id="logicformMarkDesc">The black and gold diamond mark for LogicForm Systems.</desc>
+  <rect width="790" height="790" fill="#030303"/>
+  <image href="/logo-mark.png" width="790" height="790" preserveAspectRatio="xMidYMid meet"/>
 </svg>

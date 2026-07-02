@@ -1,26 +1,6 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformIconTitle logicformIconDesc">
-  <title id="logicformIconTitle">LogicForm Systems app icon</title>
-  <desc id="logicformIconDesc">A bold premium black and gold geometric LogicForm Systems mark.</desc>
-  <defs>
-    <linearGradient id="iconGold" x1="13" y1="10" x2="51" y2="54" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF6C9"/>
-      <stop offset="0.46" stop-color="#D9B85A"/>
-      <stop offset="1" stop-color="#9B781E"/>
-    </linearGradient>
-    <linearGradient id="iconBorder" x1="5" y1="4" x2="59" y2="60" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF4BB"/>
-      <stop offset="0.54" stop-color="#D8B852"/>
-      <stop offset="1" stop-color="#806316"/>
-    </linearGradient>
-    <linearGradient id="iconGlass" x1="8" y1="6" x2="57" y2="60" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#17150F"/>
-      <stop offset="0.58" stop-color="#090807"/>
-      <stop offset="1" stop-color="#030303"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#iconGlass)" stroke="url(#iconBorder)" stroke-width="1.8"/>
-  <path d="M18 16H27V40H43V48H18V16Z" fill="url(#iconGold)"/>
-  <path d="M30 16H49V24H39V29H47V37H39V48H30V16Z" fill="url(#iconGold)"/>
-  <path d="M18 16H27V24H18V16Z" fill="#FFF3B2" fill-opacity="0.9"/>
-  <path d="M30 16H49V24H30V16Z" fill="#FFF3B2" fill-opacity="0.78"/>
+<svg width="790" height="790" viewBox="0 0 790 790" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logicformIconTitle logicformIconDesc">
+  <title id="logicformIconTitle">LogicForm Systems icon</title>
+  <desc id="logicformIconDesc">The black and gold diamond mark for LogicForm Systems.</desc>
+  <rect width="790" height="790" fill="#030303"/>
+  <image href="/logo-mark.png" width="790" height="790" preserveAspectRatio="xMidYMid meet"/>
 </svg>
