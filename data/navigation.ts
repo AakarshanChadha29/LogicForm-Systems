@@ -1,7 +1,6 @@
 export const navigationItems = [
   { label: "Services", href: "/services" },
   { label: "System Finder", href: "/finder" },
-  { label: "Work", href: "/work" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
 ] as const;
@@ -11,7 +10,7 @@ export const footerLinks = {
     { label: "Services", href: "/services" },
     { label: "System Finder", href: "/finder" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Work", href: "/work" },
+    { label: "Our work", href: "/about#our-work" },
     { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },

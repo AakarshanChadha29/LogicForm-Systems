@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact Logicform Systems to discuss websites, dashboards, automation, internal tools, and ongoing technical partnership.",
+    "Contact LogicForm Systems to discuss websites, dashboards, automation, internal tools, and ongoing technical partnership.",
   path: "/contact",
 });
 

@@ -115,10 +115,10 @@ export function SelectedWorkSection() {
 
         <ScrollReveal delay={0.1}>
           <Link
-            href="/work"
+            href="/about#our-work"
             className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
           >
-            View work overview
+            View the client story
             <ArrowRight size={14} aria-hidden />
           </Link>
         </ScrollReveal>

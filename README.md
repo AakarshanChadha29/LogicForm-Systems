@@ -96,6 +96,7 @@ Required environment variable:
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_FROM_EMAIL=contact@logicformsystems.com
 ```
 
 ## Quality Checks
@@ -109,7 +110,7 @@ Recommended before launch:
 
 - Confirm `logicformsystems.com` points to the deployed Next.js application.
 - Update GitHub repository description/homepage from the old Veltrix/Vercel reference.
-- Configure `RESEND_API_KEY` in production.
+- Configure `RESEND_API_KEY` and a verified `RESEND_FROM_EMAIL` in production.
 - Send a real contact-form test from production.
 - Verify legal pages, imprint, privacy, GDPR, and cookie policy for Germany/EU usage.
 - Run mobile checks for homepage, pricing, services, and contact.

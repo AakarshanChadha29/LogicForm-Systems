@@ -216,8 +216,16 @@ export function ProductFinderTest() {
             </div>
           </div>
 
-          <div className="premium-media overflow-hidden rounded-[var(--radius-xl)] p-5 md:p-6">
-            <div className="flex items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4">
+          <div className="premium-media relative overflow-hidden rounded-[var(--radius-xl)] p-5 md:p-6">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-80"
+              aria-hidden
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(255,246,201,0.12), transparent 34%), linear-gradient(225deg, rgba(200,168,76,0.16), transparent 42%), repeating-linear-gradient(120deg, rgba(245,215,110,0.06) 0 1px, transparent 1px 18px)",
+              }}
+            />
+            <div className="relative flex items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4">
               <div>
                 <p className="font-mono text-xs text-accent">logicform.finder</p>
                 <p className="mt-1 text-sm text-[var(--accent)] font-medium">{progress}% complete</p>
@@ -231,9 +239,15 @@ export function ProductFinderTest() {
                 <RotateCcw size={15} aria-hidden />
               </button>
             </div>
+            <div className="relative mt-4 h-1 overflow-hidden rounded-full bg-[rgba(255,255,255,0.08)]">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#c8a84c,#fff3b2,#d9b85a)] shadow-[0_0_20px_rgba(217,184,90,0.5)] transition-all duration-500"
+                style={{ width: `${Math.max(progress, 8)}%` }}
+              />
+            </div>
 
             {activeQuestion ? (
-              <div className="pt-5">
+              <div className="relative pt-5">
                 <p className="text-sm text-[var(--foreground-secondary)]">
                   Question {answers.length + 1} of {finderQuestions.length}
                 </p>
@@ -250,9 +264,11 @@ export function ProductFinderTest() {
                       key={option.label}
                       type="button"
                       onClick={() => setAnswers((existing) => [...existing, index])}
-                      className="group rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.025)] p-4 text-left transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--surface-card-hover)]"
+                      className="group rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.035)] p-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:bg-[rgba(200,168,76,0.09)] hover:shadow-[0_18px_40px_-28px_rgba(217,184,90,0.7)]"
                     >
-                      <span className="text-sm font-semibold text-foreground">{option.label}</span>
+                      <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-[#fff3b2]">
+                        {option.label}
+                      </span>
                       <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
                         {option.detail}
                       </span>
@@ -261,7 +277,7 @@ export function ProductFinderTest() {
                 </div>
               </div>
             ) : (
-              <div className="pt-5">
+              <div className="relative pt-5">
                 <p className="text-eyebrow">Recommended direction</p>
                 <h3 className="mt-3 text-3xl font-semibold tracking-tight text-foreground">
                   {categoryLabels[result]}

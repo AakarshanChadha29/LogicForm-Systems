@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
-    apple: [{ url: "/icon.svg" }],
+    icon: [{ url: "/logo-mark.svg", type: "image/svg+xml" }],
+    shortcut: ["/logo-mark.svg"],
+    apple: [{ url: "/logo-mark.svg" }],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
