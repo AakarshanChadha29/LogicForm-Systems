@@ -29,8 +29,10 @@ const timelines = [
 
 type ContactPayload = {
   name?: string;
+  role?: string;
   email?: string;
   company?: string;
+  phone?: string;
   projectType?: string;
   projectTypes?: string[];
   budgetRange?: string;
@@ -60,8 +62,10 @@ export async function POST(request: Request) {
     }
 
     const name = body.name?.trim() ?? "";
+    const role = body.role?.trim() ?? "";
     const email = body.email?.trim() ?? "";
-    const company = body.company?.trim() ?? "Not provided";
+    const company = body.company?.trim() ?? "";
+    const phone = body.phone?.trim() ?? "";
     const selectedProjectTypes = Array.isArray(body.projectTypes)
       ? body.projectTypes.map((item) => item.trim()).filter(Boolean)
       : body.projectType?.trim()
@@ -75,11 +79,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Name is required." }, { status: 400 });
     }
 
+    if (!role) {
+      return NextResponse.json({ error: "Role is required." }, { status: 400 });
+    }
+
+    if (!company) {
+      return NextResponse.json({ error: "Company is required." }, { status: 400 });
+    }
+
     if (!email || !isValidEmail(email)) {
       return NextResponse.json(
         { error: "A valid work email is required." },
         { status: 400 },
       );
+    }
+
+    if (phone.length < 6) {
+      return NextResponse.json({ error: "Phone number is required." }, { status: 400 });
     }
 
     if (message.length < 20) {
@@ -117,13 +133,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid timeline." }, { status: 400 });
     }
 
-    const subject = `New inquiry — ${name}${company !== "Not provided" ? ` · ${company}` : ""}`;
+    const subject = `New inquiry — ${name} · ${company}`;
 
     const html = `
       <h2>New project inquiry</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Role:</strong> ${escapeHtml(role)}</p>
       <p><strong>Company:</strong> ${escapeHtml(company)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
       <p><strong>Project directions:</strong> ${escapeHtml(selectedProjectTypes.join(", "))}</p>
       <p><strong>Budget range:</strong> ${escapeHtml(budgetRange)}</p>
       <p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>
@@ -135,8 +153,10 @@ export async function POST(request: Request) {
       "New project inquiry",
       "",
       `Name: ${name}`,
-      `Email: ${email}`,
+      `Role: ${role}`,
       `Company: ${company}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
       `Project directions: ${selectedProjectTypes.join(", ")}`,
       `Budget range: ${budgetRange}`,
       `Timeline: ${timeline}`,

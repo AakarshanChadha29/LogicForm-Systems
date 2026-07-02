@@ -30,8 +30,10 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 
 type InquiryValues = {
   name: string;
+  role: string;
   email: string;
   company: string;
+  phone: string;
   projectTypes: string[];
   budgetRange: string;
   timeline: string;
@@ -40,15 +42,27 @@ type InquiryValues = {
 
 const initialValues: InquiryValues = {
   name: "",
+  role: "",
   email: "",
   company: "",
+  phone: "",
   projectTypes: [],
   budgetRange: "",
   timeline: "",
   message: "",
 };
 
-const requiredFields = ["name", "email", "projectTypes", "budgetRange", "timeline", "message"] as const;
+const requiredFields = [
+  "name",
+  "role",
+  "company",
+  "email",
+  "phone",
+  "projectTypes",
+  "budgetRange",
+  "timeline",
+  "message",
+] as const;
 
 function ChipGroup({
   options,
@@ -126,7 +140,10 @@ export function TerminalContactForm() {
 
   const validate = () => {
     if (!values.name.trim()) return "Please add your name.";
+    if (!values.role.trim()) return "Please add your role.";
+    if (!values.company.trim()) return "Please add your company.";
     if (!values.email.includes("@")) return "Please add a valid work email.";
+    if (values.phone.trim().length < 6) return "Please add a phone number.";
     if (values.projectTypes.length === 0) return "Choose at least one project direction.";
     if (!values.budgetRange) return "Choose a budget range.";
     if (!values.timeline) return "Choose a timeline.";
@@ -227,7 +244,7 @@ export function TerminalContactForm() {
 
       {/* Fields */}
       <div className="space-y-4">
-        {/* Name + Email */}
+        {/* Name + Role */}
         <div className="grid gap-3 sm:grid-cols-2">
           <div>
             <label htmlFor="tcf-name" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
@@ -240,6 +257,38 @@ export function TerminalContactForm() {
               value={values.name}
               onChange={(e) => updateValue("name", e.target.value)}
               placeholder="Your name"
+              className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+            />
+          </div>
+          <div>
+            <label htmlFor="tcf-role" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+              Role <span className="text-[var(--accent)]">*</span>
+            </label>
+            <input
+              id="tcf-role"
+              type="text"
+              autoComplete="organization-title"
+              value={values.role}
+              onChange={(e) => updateValue("role", e.target.value)}
+              placeholder="Founder, operations lead, manager..."
+              className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+            />
+          </div>
+        </div>
+
+        {/* Company + Email */}
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div>
+            <label htmlFor="tcf-company" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+              Company <span className="text-[var(--accent)]">*</span>
+            </label>
+            <input
+              id="tcf-company"
+              type="text"
+              autoComplete="organization"
+              value={values.company}
+              onChange={(e) => updateValue("company", e.target.value)}
+              placeholder="Company name"
               className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
             />
           </div>
@@ -259,18 +308,18 @@ export function TerminalContactForm() {
           </div>
         </div>
 
-        {/* Company */}
+        {/* Phone */}
         <div>
-          <label htmlFor="tcf-company" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
-            Company
+          <label htmlFor="tcf-phone" className="mb-1.5 block text-xs font-medium text-[var(--foreground-secondary)]">
+            Phone number <span className="text-[var(--accent)]">*</span>
           </label>
           <input
-            id="tcf-company"
-            type="text"
-            autoComplete="organization"
-            value={values.company}
-            onChange={(e) => updateValue("company", e.target.value)}
-            placeholder="Company name (optional)"
+            id="tcf-phone"
+            type="tel"
+            autoComplete="tel"
+            value={values.phone}
+            onChange={(e) => updateValue("phone", e.target.value)}
+            placeholder="+49 123 456789"
             className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-inset)] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
           />
         </div>
