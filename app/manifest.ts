@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: "Logicform",
+    short_name: "LogicForm",
     description: siteConfig.description,
     start_url: "/",
     display: "standalone",
@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#d4af37",
     icons: [
       {
-        src: "/icon.svg",
+        src: "/logo-mark.svg",
         sizes: "any",
         type: "image/svg+xml",
       },

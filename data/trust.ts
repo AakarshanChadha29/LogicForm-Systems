@@ -34,7 +34,7 @@ export const arroyoTestimonial = {
   reviewerRole: "Client Review",
   label: "Approved client feedback",
   quote:
-    "Logicform Systems helped us turn a complex technical product into a clear, professional digital platform. The website presents our water purification systems with strong structure, modern design, and practical business clarity.",
+    "LogicForm Systems helped us turn a complex technical product into a clear, professional digital platform. The design, graphics, structure, and ongoing day-to-day support have made the service feel dependable and easy to reach whenever we need help.",
   company: "Arroyo Technologies",
   projectUrl: "https://www.arroyo-technologies.com/",
 } as const;

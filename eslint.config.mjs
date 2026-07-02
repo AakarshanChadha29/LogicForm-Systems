@@ -17,6 +17,7 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "logicform-crm/**",
     "next-env.d.ts",
   ]),
 ]);

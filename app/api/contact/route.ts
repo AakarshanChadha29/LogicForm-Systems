@@ -32,6 +32,7 @@ type ContactPayload = {
   email?: string;
   company?: string;
   projectType?: string;
+  projectTypes?: string[];
   budgetRange?: string;
   timeline?: string;
   message?: string;
@@ -52,13 +53,6 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      return NextResponse.json(
-        { error: "Email service is not configured." },
-        { status: 503 },
-      );
-    }
-
     const body = (await request.json()) as ContactPayload;
 
     if (body.website?.trim()) {
@@ -68,9 +62,13 @@ export async function POST(request: Request) {
     const name = body.name?.trim() ?? "";
     const email = body.email?.trim() ?? "";
     const company = body.company?.trim() ?? "Not provided";
-    const projectType = body.projectType?.trim() ?? "Not specified";
-    const budgetRange = body.budgetRange?.trim() ?? "Not specified";
-    const timeline = body.timeline?.trim() ?? "Not specified";
+    const selectedProjectTypes = Array.isArray(body.projectTypes)
+      ? body.projectTypes.map((item) => item.trim()).filter(Boolean)
+      : body.projectType?.trim()
+        ? [body.projectType.trim()]
+        : [];
+    const budgetRange = body.budgetRange?.trim() ?? "";
+    const timeline = body.timeline?.trim() ?? "";
     const message = body.message?.trim() ?? "";
 
     if (!name) {
@@ -91,12 +89,28 @@ export async function POST(request: Request) {
       );
     }
 
-    if (projectType && !projectTypes.includes(projectType as (typeof projectTypes)[number])) {
-      return NextResponse.json({ error: "Invalid project type." }, { status: 400 });
+    if (selectedProjectTypes.length === 0) {
+      return NextResponse.json({ error: "Choose at least one project direction." }, { status: 400 });
+    }
+
+    const invalidProjectType = selectedProjectTypes.find(
+      (projectType) => !projectTypes.includes(projectType as (typeof projectTypes)[number]),
+    );
+
+    if (invalidProjectType) {
+      return NextResponse.json({ error: "Invalid project direction." }, { status: 400 });
+    }
+
+    if (!budgetRange) {
+      return NextResponse.json({ error: "Choose a budget range." }, { status: 400 });
     }
 
     if (budgetRange && !budgetRanges.includes(budgetRange as (typeof budgetRanges)[number])) {
       return NextResponse.json({ error: "Invalid budget range." }, { status: 400 });
+    }
+
+    if (!timeline) {
+      return NextResponse.json({ error: "Choose a timeline." }, { status: 400 });
     }
 
     if (timeline && !timelines.includes(timeline as (typeof timelines)[number])) {
@@ -110,7 +124,7 @@ export async function POST(request: Request) {
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Company:</strong> ${escapeHtml(company)}</p>
-      <p><strong>Project type:</strong> ${escapeHtml(projectType)}</p>
+      <p><strong>Project directions:</strong> ${escapeHtml(selectedProjectTypes.join(", "))}</p>
       <p><strong>Budget range:</strong> ${escapeHtml(budgetRange)}</p>
       <p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>
       <p><strong>Summary:</strong></p>
@@ -123,7 +137,7 @@ export async function POST(request: Request) {
       `Name: ${name}`,
       `Email: ${email}`,
       `Company: ${company}`,
-      `Project type: ${projectType}`,
+      `Project directions: ${selectedProjectTypes.join(", ")}`,
       `Budget range: ${budgetRange}`,
       `Timeline: ${timeline}`,
       "",
@@ -131,9 +145,17 @@ export async function POST(request: Request) {
       message,
     ].join("\n");
 
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Email service is not configured." },
+        { status: 503 },
+      );
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
+    const fromEmail = process.env.RESEND_FROM_EMAIL ?? "contact@logicformsystems.com";
     const { error } = await resend.emails.send({
-      from: "LogicForm Systems <contact@logicformsystems.com>",
+      from: `LogicForm Systems <${fromEmail}>`,
       to: siteConfig.contactEmail,
       replyTo: email,
       subject,
