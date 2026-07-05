@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Manrope, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { NeuralBackground } from "@/components/layout/neural-background";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
@@ -186,6 +187,7 @@ export default function RootLayout({
           {children}
           <WhatsAppButton />
         </div>
+        <Analytics />
       </body>
     </html>
   );
