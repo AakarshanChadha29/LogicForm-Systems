@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight, Quote } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,8 +6,6 @@ import { SiteShell } from "@/components/layout/site-shell";
 import { Section } from "@/components/layout/section";
 import { buttonVariants } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { projectCaseStudies } from "@/data/projects";
-import { arroyoTestimonial } from "@/data/trust";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -19,8 +16,6 @@ export const metadata = createPageMetadata({
 });
 
 export default function AboutPage() {
-  const arroyoProject = projectCaseStudies.find((project) => project.id === "arroyo-technologies");
-
   return (
     <SiteShell>
       <main id="main-content" className="relative z-10">
@@ -73,77 +68,6 @@ export default function AboutPage() {
             </div>
           </Container>
         </Section>
-
-        {arroyoProject ? (
-          <Section id="our-work" className="section-divider pb-8">
-            <Container>
-              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                <div>
-                  <p className="text-eyebrow mb-3">Our work</p>
-                  <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                    Live client work, kept close after launch.
-                  </h2>
-                  <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
-                    For now, we keep the work section focused on what is live, maintained, and
-                    useful as proof. Arroyo Technologies is a production platform we delivered and
-                    continue to support as their needs evolve.
-                  </p>
-                </div>
-
-                <div className="grid gap-4">
-                  <GlassCard className="p-6">
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <div>
-                        <p className="text-eyebrow">{arroyoProject.label}</p>
-                        <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
-                          {arroyoProject.title}
-                        </h3>
-                      </div>
-                      <Link
-                        href={arroyoProject.liveUrl ?? "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
-                      >
-                        View live
-                        <ArrowUpRight size={15} aria-hidden />
-                      </Link>
-                    </div>
-                    <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">
-                      {arroyoProject.summary}
-                    </p>
-                    <div className="mt-5 grid gap-2 sm:grid-cols-3">
-                      {arroyoProject.highlights.map((point) => (
-                        <p
-                          key={point}
-                          className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--surface-inset)] px-3 py-2 text-xs leading-relaxed text-[var(--foreground-secondary)]"
-                        >
-                          {point}
-                        </p>
-                      ))}
-                    </div>
-                  </GlassCard>
-
-                  <GlassCard className="p-6">
-                    <div className="flex items-start gap-3">
-                      <Quote size={18} className="mt-1 shrink-0 text-accent" aria-hidden />
-                      <div>
-                        <p className="text-eyebrow">{arroyoTestimonial.label}</p>
-                        <blockquote className="mt-3 text-sm leading-7 text-[var(--foreground-secondary)] md:text-base">
-                          &ldquo;{arroyoTestimonial.quote}&rdquo;
-                        </blockquote>
-                        <p className="mt-4 text-sm font-semibold text-foreground">
-                          Bharati, Founder
-                        </p>
-                        <p className="text-xs text-muted-foreground">{arroyoTestimonial.company}</p>
-                      </div>
-                    </div>
-                  </GlassCard>
-                </div>
-              </div>
-            </Container>
-          </Section>
-        ) : null}
 
         <Section id="company-origin" className="section-divider pb-8">
           <Container>
