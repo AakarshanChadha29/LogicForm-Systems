@@ -24,50 +24,10 @@ export type ProjectCaseStudy = {
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
   {
-    id: "arroyo-technologies",
-    title: "Arroyo Technologies",
-    label: "Full-Stack Digital Platform",
-    featured: true,
-    mockupType: "browser",
-    liveUrl: "https://www.arroyo-technologies.com/",
-    summary:
-      "A full-stack digital platform presenting ionization-based water purification systems for residential, hospitality, and commercial buyers.",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Responsive UI",
-      "SEO",
-      "Product Storytelling",
-    ],
-    highlights: [
-      "Responsive product storytelling",
-      "SEO and performance foundation",
-      "International market positioning",
-    ],
-    modal: {
-      overview:
-        "End-to-end platform for Arroyo Technologies—translating complex water purification technology into a clear, professional digital presence.",
-      problem:
-        "Industrial product complexity made it difficult for buyers to understand applications, trust the brand, and reach the right information quickly.",
-      solution:
-        "Structured product pages, application-focused storytelling, SEO-ready architecture, and a contact flow aligned to commercial evaluation.",
-      architecture: [
-        "Structured content hierarchy for product and application pages",
-        "Responsive layout system for international stakeholders",
-        "SEO and metadata foundation for discoverability",
-        "Legal and documentation structure for commercial trust",
-        "Performance-oriented implementation for global audiences",
-      ],
-      tools: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      outcome:
-        "A market-ready platform that presents industrial systems with clarity, credibility, and practical business structure.",
-    },
-  },
-  {
     id: "custom-saas-crm-platforms",
     title: "Custom SaaS & CRM Platform Engineering",
     label: "Business Systems Engineering",
+    featured: true,
     isConcept: true,
     mockupType: "dashboard",
     summary:

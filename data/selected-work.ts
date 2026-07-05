@@ -12,19 +12,6 @@ export type SelectedWorkItem = {
 
 export const selectedWorkItems: SelectedWorkItem[] = [
   {
-    id: "arroyo-technologies",
-    title: "Arroyo Technologies",
-    label: "Client project · Website & digital system",
-    problem:
-      "Complex industrial product positioning made it hard for buyers to understand applications, trust the brand, and reach the right information quickly.",
-    built:
-      "A full digital presence with structured product storytelling, application-focused pages, SEO-ready architecture, and a commercial contact flow.",
-    outcome:
-      "A market-ready platform that presents water purification systems with clarity, credibility, and practical business structure.",
-    layers: ["Website system", "SEO structure", "Product storytelling", "Lead capture", "Deployment"],
-    href: "https://www.arroyo-technologies.com/",
-  },
-  {
     id: "logicform-brand-platform",
     title: "LogicForm Systems Brand & Website Platform",
     label: "Internal build · Brand & web platform",

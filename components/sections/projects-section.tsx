@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Cpu, Quote, X } from "lucide-react";
+import { ArrowUpRight, Cpu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -10,7 +10,6 @@ import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { buttonVariants } from "@/components/ui/button";
 import { projectCaseStudies, type ProjectCaseStudy } from "@/data/projects";
-import { arroyoTestimonial } from "@/data/trust";
 import { cn } from "@/lib/utils";
 
 function ProjectCard({
@@ -244,11 +243,11 @@ export function ProjectsSection() {
       <Container>
         <SectionHeader
           eyebrow="Case Studies"
-          title="Engineering Work & Client Proof"
-          description="Production delivery for international clients—structured for credibility, performance, and practical business outcomes."
+          title="Engineering Work & Delivery Examples"
+          description="Selected examples of systems thinking, technical structure, and practical business outcomes."
         />
 
-                <div className="mb-6 grid gap-5 lg:grid-cols-[1.12fr_0.88fr]">
+        <div className="mb-6">
           <article className="surface-card flex flex-col p-6 md:p-7">
             <p className="text-eyebrow">{featured.label}</p>
             <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">{featured.title}</h3>
@@ -267,21 +266,9 @@ export function ProjectsSection() {
               <Link href="#contact" className={buttonVariants({ variant: "ghost", size: "lg" })}>Discuss Similar Work</Link>
             </div>
           </article>
-          <article className="surface-card flex flex-col p-6 md:p-7">
-            <div className="flex items-start justify-between gap-3">
-              <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface-inset)] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--accent-secondary)]">{arroyoTestimonial.label}</span>
-              <Quote size={18} className="text-[var(--border-strong)]" aria-hidden />
-            </div>
-            <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-[var(--foreground-secondary)]">&ldquo;{arroyoTestimonial.quote}&rdquo;</blockquote>
-            <footer className="mt-5 border-t border-[var(--border)] pt-4">
-              <p className="text-sm font-semibold text-foreground">{arroyoTestimonial.reviewerName}</p>
-              <p className="text-xs text-muted-foreground">{arroyoTestimonial.reviewerRole}</p>
-              <p className="text-xs text-muted-foreground">{arroyoTestimonial.company}</p>
-            </footer>
-          </article>
         </div>
-        <p className="mb-4 text-eyebrow">More engineering work</p>
-                <div className="grid gap-5 md:grid-cols-2">
+        <p className="mb-4 text-eyebrow">More delivery examples</p>
+        <div className="grid gap-5 md:grid-cols-2">
           {otherProjects.map((project) => (
             <ProjectCard key={project.id} project={project} onOpen={(id) => setActiveProjectId(id)} />
           ))}

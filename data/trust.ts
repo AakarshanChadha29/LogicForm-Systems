@@ -27,14 +27,3 @@ export const audienceSegments = [
   "Teams needing dashboards, internal tools, and connected workflows",
   "Companies looking for a lean technical partner—not agency overhead",
 ] as const;
-
-export const arroyoTestimonial = {
-  id: "arroyo-technologies",
-  reviewerName: "Arroyo Technologies Leadership",
-  reviewerRole: "Client Review",
-  label: "Approved client feedback",
-  quote:
-    "LogicForm Systems helped us turn a complex technical product into a clear, professional digital platform. The design, graphics, structure, and ongoing day-to-day support have made the service feel dependable and easy to reach whenever we need help.",
-  company: "Arroyo Technologies",
-  projectUrl: "https://www.arroyo-technologies.com/",
-} as const;

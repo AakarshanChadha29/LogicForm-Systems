@@ -10,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function WorkPage() {
-  redirect("/about#our-work");
+  redirect("/#selected-work");
 }

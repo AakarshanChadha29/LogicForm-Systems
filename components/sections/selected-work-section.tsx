@@ -22,9 +22,8 @@ export function SelectedWorkSection() {
               </h2>
             </div>
             <p className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground md:text-lg">
-              We show delivered work clearly and label concept work honestly. The goal is not a
-              portfolio wall. It is evidence of structured thinking, production care, and commercial
-              clarity.
+              We show internal builds and concept work clearly. The goal is not a portfolio wall. It
+              is evidence of structured thinking, production care, and commercial clarity.
             </p>
           </div>
         </ScrollReveal>
@@ -34,7 +33,9 @@ export function SelectedWorkSection() {
             <article className="mt-10 grid overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[rgba(255,255,255,0.035)] lg:grid-cols-[1.08fr_0.92fr]">
               <div className="p-6 md:p-8 lg:p-10">
                 <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--foreground-secondary)]">
-                  <span className="text-accent">Delivered</span>
+                  <span className="text-accent">
+                    {featured.isConcept ? "Concept" : "Internal build"}
+                  </span>
                   <span aria-hidden>·</span>
                   <span>{featured.label}</span>
                 </div>
@@ -115,10 +116,10 @@ export function SelectedWorkSection() {
 
         <ScrollReveal delay={0.1}>
           <Link
-            href="/about#our-work"
+            href="/contact"
             className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-[var(--accent-hover)]"
           >
-            View the client story
+            Discuss a similar system
             <ArrowRight size={14} aria-hidden />
           </Link>
         </ScrollReveal>
