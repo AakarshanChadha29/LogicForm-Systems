@@ -16,7 +16,7 @@ export const legalPages: LegalPageContent[] = [
     description: "How Logicform Systems handles personal data, project inquiries, and website communication.",
     lastUpdated: "27 May 2026",
     notice:
-      "This policy is written for clarity and should be reviewed against the final company structure, hosting setup, analytics tools, and processor list before publication.",
+      "This policy is written for clarity and is reviewed as the company structure, hosting setup, analytics tools, and processor list change.",
     sections: [
       {
         heading: "Who we are",
@@ -122,7 +122,7 @@ export const legalPages: LegalPageContent[] = [
     description: "Clear information about GDPR rights, data handling, processors, and privacy requests.",
     lastUpdated: "27 May 2026",
     notice:
-      "This page explains the intended privacy posture in plain English. It is not legal advice and should be checked against the final business setup, processors, and client contracts.",
+      "This page explains the privacy posture in plain English. It is not legal advice and should be read alongside any project-specific agreements.",
     sections: [
       {
         heading: "Our GDPR posture",
@@ -174,7 +174,7 @@ export const legalPages: LegalPageContent[] = [
     description: "Information about cookies and similar technologies used on this website.",
     lastUpdated: "27 May 2026",
     notice:
-      "The final cookie wording should match the actual analytics, tracking, consent, and hosting tools enabled on the live website.",
+      "This cookie wording is kept aligned with the analytics, tracking, consent, and hosting tools enabled on the live website.",
     sections: [
       {
         heading: "What are cookies",
@@ -203,24 +203,22 @@ export const legalPages: LegalPageContent[] = [
     title: "Imprint",
     description: "Legal imprint and company information for Logicform Systems.",
     lastUpdated: "27 May 2026",
-    notice:
-      "The imprint must be completed with the final legal address, registration, tax, and responsible-party details required for the business jurisdiction before publication.",
     sections: [
       {
         heading: "Company",
         paragraphs: [
           "Logicform Systems",
-          "Website: https://logicformsystems.com",
+          "Website: https://www.logicformsystems.com",
           "Email: contact@logicformsystems.com",
-          "Legal address: to be completed before publication",
-          "Registration or tax details: to be completed before publication where legally required",
+          "Remote-first digital systems studio serving clients across markets and time zones.",
+          "Formal business details are provided directly where required for proposals, contracts, invoices, or regulatory requests.",
         ],
       },
       {
         heading: "Responsible for content",
         paragraphs: [
           "Logicform Systems",
-          "Responsible party details to be completed before publication where legally required",
+          "For website, privacy, or legal inquiries, contact contact@logicformsystems.com.",
         ],
       },
     ],

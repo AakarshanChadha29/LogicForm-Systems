@@ -10,7 +10,7 @@ export const footerLinks = {
     { label: "Services", href: "/services" },
     { label: "System Finder", href: "/finder" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Our work", href: "/about#our-work" },
+    { label: "Our work", href: "/#selected-work" },
     { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },

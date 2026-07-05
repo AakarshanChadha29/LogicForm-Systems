@@ -28,7 +28,7 @@ export const selectedWorkItems: SelectedWorkItem[] = [
       "SEO metadata",
       "Content structure",
     ],
-    href: "https://logicformsystems.com",
+    href: "https://www.logicformsystems.com",
   },
   {
     id: "dashboard-crm-concept",

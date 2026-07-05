@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Digital Systems for Serious Operators",
   description:
     "LogicForm Systems designs, builds, and maintains websites, internal tools, dashboards, automation systems, and AI-assisted workflows for businesses that need better digital operations.",
-  url: "https://logicformsystems.com",
+  url: "https://www.logicformsystems.com",
   contactEmail: "contact@logicformsystems.com",
   // Single contact email — all inquiries go here
   legalName: "LogicForm Systems",
