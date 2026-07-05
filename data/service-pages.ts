@@ -470,7 +470,7 @@ export const servicePages: ServicePageContent[] = [
       "Release management, quality control, and production support",
     ],
     useCases: [
-      "Fractional technical leadership for founder-led teams",
+      "Fractional technical leadership for growing teams",
       "Execution partner for non-technical management",
       "Multi-system improvements across web and operations",
       "Long-term roadmap ownership and implementation",

@@ -220,7 +220,7 @@ export const legalPages: LegalPageContent[] = [
         heading: "Responsible for content",
         paragraphs: [
           "Logicform Systems",
-          "Represented by Aakarshan Chadha and Francesca Manes",
+          "Responsible party details to be completed before publication where legally required",
         ],
       },
     ],

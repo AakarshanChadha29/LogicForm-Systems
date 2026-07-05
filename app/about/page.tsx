@@ -10,12 +10,11 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { projectCaseStudies } from "@/data/projects";
 import { arroyoTestimonial } from "@/data/trust";
 import { createPageMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "About LogicForm Systems, a founder-led digital systems studio that builds and maintains websites, platforms, dashboards, automation, and long-term technical systems.",
+    "About LogicForm Systems, a digital systems studio helping businesses choose, build, and maintain the right websites, platforms, dashboards, automation, and AI-enabled systems.",
   path: "/about",
 });
 
@@ -27,8 +26,8 @@ export default function AboutPage() {
       <main id="main-content" className="relative z-10">
         <PageHero
           eyebrow="About"
-          title="A lean digital systems partner for serious operators"
-          description="We help businesses turn scattered digital work into clear websites, practical platforms, dashboards, automation, and ongoing technical support."
+          title="A digital systems partner for businesses that need clarity"
+          description="We help teams choose the right tools, avoid costly platform mistakes, and turn scattered digital work into reliable websites, platforms, dashboards, automation, and support."
         />
 
         {/* Company Vision */}
@@ -45,10 +44,9 @@ export default function AboutPage() {
                 help growing businesses look credible, work cleaner, and respond faster.
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-                Our model is direct: a small technical-commercial team working closely with founders,
-                operators, and decision-makers who need real execution, not agency overhead or generic
-                templates. Every system is scoped around the business problem and built so it can be
-                improved after launch.
+                Our model is direct: practical advice, careful scoping, clean delivery, and long-term
+                care. Every system is shaped around the business problem first, then built so it can be
+                improved after launch without trapping the company in a messy stack.
               </p>
             </div>
 
@@ -60,11 +58,11 @@ export default function AboutPage() {
                 },
                 {
                   label: "How we work",
-                  text: "Remote-first, project-scoped, founder-led. Clients speak directly with the people shaping and building the system.",
+                  text: "Remote-first, project-scoped, and plain-spoken. Clients get clear recommendations before committing to platforms, tools, or technical spend.",
                 },
                 {
                   label: "Who we work with",
-                  text: "Founders, operations leads, and decision-makers who know something is not working and want a partner who understands both business and build.",
+                  text: "Business owners, operations leads, and decision-makers who know something is not working and want a partner who understands both business and build.",
                 },
               ].map((item) => (
                 <GlassCard key={item.label} className="p-5">
@@ -147,78 +145,73 @@ export default function AboutPage() {
           </Section>
         ) : null}
 
-        {/* Founder Story */}
-        <Section id="founders-story" className="section-divider pb-8">
+        <Section id="company-origin" className="section-divider pb-8">
           <Container>
             <div className="max-w-3xl">
-              <p className="text-eyebrow mb-3">The story</p>
+              <p className="text-eyebrow mb-3">Why LogicForm exists</p>
               <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Two people. Different cities. The same hunger to build.
+                The digital market is moving fast. Most businesses are being asked to guess.
               </h2>
               <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
-                LogicForm Systems was built by two people who did not come from privilege or an easy start.
-                Both Aakarshan and Francesca grew up finding their own way — learning through setbacks,
-                picking up skills in the gaps between what was expected and what they actually wanted.
+                The idea for LogicForm Systems came from watching the market change faster than most
+                business owners could reasonably keep up with. New platforms, AI tools, automation
+                products, website builders, CRM systems, dashboards, and cloud services appear every
+                month, each promising to be the obvious choice.
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-                The pandemic hit during a period of real momentum. It disrupted plans, shifted industries,
-                and forced a reckoning — not just professionally, but personally. Like many people in their
-                generation, they had to rebuild: adapt to remote work, learn new tools, navigate a job
-                market that had changed overnight, and figure out what actually mattered.
+                For a growing company, that creates real pressure. Choose too quickly and the business
+                can end up paying for tools it does not need. Choose the wrong vendor and a simple launch
+                can become expensive, confusing, or impossible to maintain. Delay the decision and the
+                company falls behind competitors who are already using better systems.
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-                What came out of that period was not frustration — it was clarity. Both of them had always
-                wanted to build something of their own. The pandemic accelerated that conviction. The years
-                that followed were spent deepening technical knowledge, understanding how businesses actually
-                operate, and working out what kind of company they wanted to create.
+                AI has made that gap wider. It can unlock speed, better decisions, and cleaner operations,
+                but it has also created noise: exaggerated promises, weak implementations, hidden costs,
+                and businesses being sold solutions before anyone has understood the actual problem.
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-                LogicForm Systems is that company. Based in Berlin. Built for Europe. Focused on
-                businesses that are serious about growing and need a technical partner who can keep up.
+                LogicForm Systems exists to bring order to that moment. We help businesses understand
+                what they need, what they should avoid, and what is worth building now. Then we turn that
+                clarity into systems that are practical, maintainable, and ready to grow with the company.
               </p>
             </div>
           </Container>
         </Section>
 
-        {/* Founder cards */}
-        <Section id="founders" className="section-divider pb-16">
+        <Section id="principles" className="section-divider pb-16">
           <Container>
-            <p className="text-eyebrow mb-6">The founders</p>
-            <div className="grid gap-4 md:grid-cols-2">
-              <GlassCard className="p-6">
-                {/* Gold initials avatar */}
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent-muted)]">
-                  <span className="text-lg font-bold text-[var(--accent)]">AC</span>
-                </div>
-                <h2 className="text-lg font-semibold text-foreground">
-                  {siteConfig.founders.technical.name}
-                </h2>
-                <p className="mt-1 text-sm text-[var(--foreground-secondary)]">
-                  {siteConfig.founders.technical.title}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Full-stack systems, automation, dashboards, IT operations, cloud deployment,
-                  AI-assisted workflows, and technical architecture. Aakarshan brings the engineering
-                  depth that turns business problems into maintainable, production-grade systems.
-                </p>
-              </GlassCard>
-              <GlassCard className="p-6">
-                {/* Gold initials avatar */}
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent-muted)]">
-                  <span className="text-lg font-bold text-[var(--accent)]">FM</span>
-                </div>
-                <h2 className="text-lg font-semibold text-foreground">
-                  {siteConfig.founders.commercial.name}
-                </h2>
-                <p className="mt-1 text-sm text-[var(--foreground-secondary)]">
-                  {siteConfig.founders.commercial.title}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Sales operations, market positioning, client communication, marketing clarity,
-                  partnerships, and commercial execution. Francesca ensures that what we build
-                  is positioned clearly, delivered well, and built around real client needs.
-                </p>
-              </GlassCard>
+            <div className="max-w-3xl">
+              <p className="text-eyebrow mb-3">What guides the work</p>
+              <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                Fewer wrong turns. Better systems. Clearer launches.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
+                We focus on the decisions that make digital growth easier to manage: what to build,
+                what to buy, what to automate, what to connect, and what to leave alone until the
+                business is ready.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  label: "Choose with context",
+                  text: "Recommendations start with the business model, team capacity, budget, and growth stage, not with a fashionable tool.",
+                },
+                {
+                  label: "Build what lasts",
+                  text: "Systems should be easy to understand, maintain, and improve after launch, even as the company changes.",
+                },
+                {
+                  label: "Keep AI practical",
+                  text: "AI belongs where it saves time, reduces manual work, improves decisions, or strengthens service quality.",
+                },
+              ].map((item) => (
+                <GlassCard key={item.label} className="p-5">
+                  <p className="text-eyebrow mb-2">{item.label}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </GlassCard>
+              ))}
             </div>
 
             <div className="mt-8">

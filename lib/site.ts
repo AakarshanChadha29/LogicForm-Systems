@@ -7,19 +7,7 @@ export const siteConfig = {
   contactEmail: "contact@logicformsystems.com",
   // Single contact email — all inquiries go here
   legalName: "LogicForm Systems",
-  founderName: "Aakarshan Chadha",
-  founderTitle: "Technical Founder — Architecture, Systems & AI",
   locale: "en_GB",
-  founders: {
-    technical: {
-      name: "Aakarshan Chadha",
-      title: "Technical Founder — Architecture, Systems & AI",
-    },
-    commercial: {
-      name: "Francesca Manes",
-      title: "Commercial Founder — Strategy, Client & Market",
-    },
-  },
   keywords: [
     "LogicForm Systems",
     "digital systems company",

@@ -46,10 +46,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
   category: "technology",
-  authors: [
-    { name: siteConfig.founders.technical.name },
-    { name: siteConfig.founders.commercial.name },
-  ],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   robots: {
@@ -129,20 +125,6 @@ export default function RootLayout({
           },
         ],
         sameAs: [siteConfig.socialLinks.linkedin, siteConfig.socialLinks.github],
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteConfig.url}#founder-technical`,
-        name: siteConfig.founders.technical.name,
-        jobTitle: siteConfig.founders.technical.title,
-        worksFor: { "@id": `${siteConfig.url}#organization` },
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteConfig.url}#founder-commercial`,
-        name: siteConfig.founders.commercial.name,
-        jobTitle: siteConfig.founders.commercial.title,
-        worksFor: { "@id": `${siteConfig.url}#organization` },
       },
       {
         "@type": "ProfessionalService",
