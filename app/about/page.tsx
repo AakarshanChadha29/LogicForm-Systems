@@ -39,14 +39,14 @@ export default function AboutPage() {
                 Built for clarity, delivery, and long-term care.
               </h2>
               <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
-                LogicForm Systems is a Berlin-based digital systems studio. We build and maintain
-                the websites, web applications, dashboards, automations, and technical systems that
-                help growing businesses look credible, work cleaner, and respond faster.
+                LogicForm Systems is a remote-first digital systems studio. We build and maintain
+                websites, web applications, dashboards, automations, and technical systems around
+                each business&apos;s specific requirements, growth stage, and operating reality.
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
                 Our model is direct: practical advice, careful scoping, clean delivery, and long-term
-                care. Every system is shaped around the business problem first, then built so it can be
-                improved after launch without trapping the company in a messy stack.
+                care. Every system is shaped around the real business problem first, then built so it
+                can be improved after launch without trapping the company in a messy stack.
               </p>
             </div>
 
@@ -54,11 +54,11 @@ export default function AboutPage() {
               {[
                 {
                   label: "Vision to 2031",
-                  text: "Become a trusted digital systems partner for small and mid-size businesses across Europe, known for execution quality and steady technical care.",
+                  text: "Become a trusted digital systems partner for small and mid-size businesses that need reliable remote delivery, execution quality, and steady technical care.",
                 },
                 {
                   label: "How we work",
-                  text: "Remote-first, project-scoped, and plain-spoken. Clients get clear recommendations before committing to platforms, tools, or technical spend.",
+                  text: "Remote-first, requirement-led, and plain-spoken. Clients get clear recommendations before committing to platforms, tools, or technical spend.",
                 },
                 {
                   label: "Who we work with",
